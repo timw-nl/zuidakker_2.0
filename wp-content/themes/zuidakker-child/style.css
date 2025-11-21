@@ -1,0 +1,752 @@
+/*
+Theme Name: Zuidakker Child Theme
+Theme URI: https://zuidakker.nl
+Description: Custom child theme for Zuidakker community platform with 5-pillar design
+Author: Zuidakker
+Author URI: https://zuidakker.nl
+Template: kadence
+Version: 1.0.9
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: zuidakker-child
+*/
+
+/* ===================================
+   CSS VARIABLES - 5 PILLARS COLOR SCHEME
+   =================================== */
+:root {
+    /* Tuinen bij de Zuidakker - Green */
+    --pillar-tuinen-primary: #97bf85;
+    --pillar-tuinen-secondary: #6f9357;
+    
+    /* Geschiedenis van Zuidakker - Brown */
+    --pillar-geschiedenis-primary: #c27d55;
+    --pillar-geschiedenis-secondary: #b4412f;
+    
+    /* Ontmoeting aan de oever - Blue */
+    --pillar-ontmoeting-primary: #6ba7b6;
+    --pillar-ontmoeting-secondary: #2a677e;
+    
+    /* Voedseleducatie - Orange */
+    --pillar-educatie-primary: #f0a85f;
+    --pillar-educatie-secondary: #d97225;
+    
+    /* Verblijf bij de Zuidakker - Pink/Rose */
+    --pillar-verblijf-primary: #d98c8c;
+    --pillar-verblijf-secondary: #b35a5a;
+    
+    /* Sitemap - Dark Green */
+    --pillar-sitemap-primary: #2c5530;
+    --pillar-sitemap-secondary: #4a7c59;
+    
+    /* Header Green */
+    --header-green: #3d5e41;
+    --header-dark-green: #2c4730;
+    
+    /* Background */
+    --bg-light: #f5f5f0;
+}
+
+/* ===================================
+   PILLAR CARD STYLES
+   =================================== */
+
+/* ===================================
+   HEADER STYLING
+   =================================== */
+
+.site-header {
+    background-color: var(--header-green) !important;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+}
+
+.site-branding {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.site-title {
+    color: #fff !important;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.main-navigation a {
+    color: #fff !important;
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+
+.hero-section {
+    background-color: var(--bg-light);
+    padding: 3rem 2rem 2rem;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+}
+
+/* ===================================
+   PILLAR CARD STYLES
+   =================================== */
+
+.pillar-card {
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pillar-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.pillar-card-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.pillar-card h2,
+.pillar-card h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.pillar-card .subtitle {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.pillar-card p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Individual Pillar Colors */
+.pillar-tuinen {
+    background: var(--pillar-tuinen-primary);
+    border-radius: 12px;
+}
+
+.pillar-geschiedenis {
+    background: var(--pillar-geschiedenis-primary);
+    border-radius: 12px;
+}
+
+.pillar-ontmoeting {
+    background: var(--pillar-ontmoeting-primary);
+    border-radius: 12px;
+}
+
+.pillar-educatie {
+    background: var(--pillar-educatie-primary);
+    border-radius: 12px;
+}
+
+.pillar-verblijf {
+    background: var(--pillar-verblijf-primary);
+    border-radius: 12px;
+}
+
+.pillar-sitemap {
+    background: var(--pillar-sitemap-primary);
+}
+
+@media (max-width: 767px) {
+    .pillar-tuinen,
+    .pillar-geschiedenis,
+    .pillar-ontmoeting,
+    .pillar-educatie,
+    .pillar-verblijf {
+        border-radius: 12px !important;
+    }
+}
+
+/* ===================================
+   PAGE-SPECIFIC STYLING - PILLAR PAGES
+   =================================== */
+
+/* Tuinen (Gardens) - Green */
+body.page-tuinen .site-header {
+    background-color: var(--pillar-tuinen-primary) !important;
+    border-radius: 0 0 12px 12px;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+}
+
+body.page-tuinen .entry-header {
+    background-color: var(--pillar-tuinen-primary);
+    border-radius: 12px;
+    padding: 0.25rem 2rem;
+    margin-bottom: 0.5rem;
+}
+
+body.page-tuinen .site-content,
+body.page-tuinen .entry-content {
+    background-color: var(--pillar-tuinen-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    color: #fff;
+    margin-top: 0.5rem;
+}
+
+/* Geschiedenis (History) - Brown */
+body.page-geschiedenis .site-header {
+    background-color: var(--pillar-geschiedenis-primary) !important;
+    border-radius: 0 0 12px 12px;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+}
+
+body.page-geschiedenis .entry-header {
+    background-color: var(--pillar-geschiedenis-primary);
+    border-radius: 12px;
+    padding: 0.25rem 2rem;
+    margin-bottom: 0.5rem;
+}
+
+body.page-geschiedenis .site-content,
+body.page-geschiedenis .entry-content {
+    background-color: var(--pillar-geschiedenis-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    color: #fff;
+    margin-top: 0.5rem;
+}
+
+/* Ontmoeting (Meeting) - Blue */
+body.page-ontmoeting .site-header {
+    background-color: var(--pillar-ontmoeting-primary) !important;
+    border-radius: 0 0 12px 12px;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+}
+
+body.page-ontmoeting .entry-header {
+    background-color: var(--pillar-ontmoeting-primary);
+    border-radius: 12px;
+    padding: 0.25rem 2rem;
+    margin-bottom: 0.5rem;
+}
+
+body.page-ontmoeting .site-content,
+body.page-ontmoeting .entry-content {
+    background-color: var(--pillar-ontmoeting-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    color: #fff;
+    margin-top: 0.5rem;
+}
+
+/* Educatie (Food Education) - Orange */
+body.page-educatie .site-header {
+    background-color: var(--pillar-educatie-primary) !important;
+    border-radius: 0 0 12px 12px;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+}
+
+body.page-educatie .entry-header {
+    background-color: var(--pillar-educatie-primary);
+    border-radius: 12px;
+    padding: 0.25rem 2rem;
+    margin-bottom: 0.5rem;
+}
+
+body.page-educatie .site-content,
+body.page-educatie .entry-content {
+    background-color: var(--pillar-educatie-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    color: #fff;
+    margin-top: 0.5rem;
+}
+
+/* Verblijf (Accommodation) - Pink */
+body.page-verblijf .site-header {
+    background-color: var(--pillar-verblijf-primary) !important;
+    border-radius: 0 0 12px 12px;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+}
+
+body.page-verblijf .entry-header {
+    background-color: var(--pillar-verblijf-primary);
+    border-radius: 12px;
+    padding: 0.25rem 2rem;
+    margin-bottom: 0.5rem;
+}
+
+body.page-verblijf .site-content,
+body.page-verblijf .entry-content {
+    background-color: var(--pillar-verblijf-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    color: #fff;
+    margin-top: 0.5rem;
+}
+
+/* Sitemap - Dark Green */
+body.page-sitemap .site-header {
+    background-color: var(--pillar-sitemap-primary) !important;
+    border-radius: 0 0 12px 12px;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+}
+
+body.page-sitemap .entry-header {
+    background-color: var(--pillar-sitemap-primary);
+    border-radius: 12px;
+    padding: 0.25rem 2rem;
+    margin-bottom: 0.5rem;
+}
+
+body.page-sitemap .site-content,
+body.page-sitemap .entry-content {
+    background-color: var(--pillar-sitemap-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    color: #fff;
+    margin-top: 0.5rem;
+}
+
+/* General pillar page styling */
+body[class*="page-tuinen"],
+body[class*="page-geschiedenis"],
+body[class*="page-ontmoeting"],
+body[class*="page-educatie"],
+body[class*="page-verblijf"],
+body[class*="page-sitemap"] {
+    background-color: var(--bg-light);
+}
+
+/* Make sure text is readable on colored backgrounds */
+body[class*="page-tuinen"] .entry-content h1,
+body[class*="page-tuinen"] .entry-content h2,
+body[class*="page-tuinen"] .entry-content h3,
+body[class*="page-geschiedenis"] .entry-content h1,
+body[class*="page-geschiedenis"] .entry-content h2,
+body[class*="page-geschiedenis"] .entry-content h3,
+body[class*="page-ontmoeting"] .entry-content h1,
+body[class*="page-ontmoeting"] .entry-content h2,
+body[class*="page-ontmoeting"] .entry-content h3,
+body[class*="page-educatie"] .entry-content h1,
+body[class*="page-educatie"] .entry-content h2,
+body[class*="page-educatie"] .entry-content h3,
+body[class*="page-verblijf"] .entry-content h1,
+body[class*="page-verblijf"] .entry-content h2,
+body[class*="page-verblijf"] .entry-content h3,
+body[class*="page-sitemap"] .entry-content h1,
+body[class*="page-sitemap"] .entry-content h2,
+body[class*="page-sitemap"] .entry-content h3 {
+    color: #fff;
+}
+
+/* Rounded edges for content blocks */
+body[class*="page-tuinen"] .content-wrap,
+body[class*="page-geschiedenis"] .content-wrap,
+body[class*="page-ontmoeting"] .content-wrap,
+body[class*="page-educatie"] .content-wrap,
+body[class*="page-verblijf"] .content-wrap,
+body[class*="page-sitemap"] .content-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* ===================================
+   RESPONSIVE GRID FOR PILLARS
+   =================================== */
+
+.pillars-container {
+    background-color: var(--bg-light);
+    padding: 2rem;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .pillars-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* ===================================
+   BUTTON STYLES
+   =================================== */
+
+.pillar-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.pillar-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+/* ===================================
+   WOOCOMMERCE INTEGRATION
+   =================================== */
+
+.woocommerce .button.alt {
+    background-color: var(--pillar-tuinen-primary);
+}
+
+.woocommerce .button.alt:hover {
+    background-color: var(--pillar-tuinen-secondary);
+}
+
+/* ===================================
+   ACCESSIBILITY IMPROVEMENTS
+   =================================== */
+
+.pillar-card:focus,
+.pillar-button:focus {
+    outline: 3px solid #000;
+    outline-offset: 3px;
+}
+
+/* Screen reader only text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ===================================
+   GLOBAL STYLES
+   =================================== */
+
+body {
+    background-color: var(--bg-light);
+}
+
+.site-content {
+    background-color: var(--bg-light);
+}
+
+/* Remove default WordPress block editor padding on homepage */
+.home .entry-content,
+.page .entry-content {
+    padding: 0;
+}
+
+/* ===================================
+   HEADER NAVIGATION & LANGUAGE SWITCHER
+   =================================== */
+
+/* Hide all menu items by default */
+#primary-menu > li {
+    display: none !important;
+}
+
+/* Show only Sitemap link */
+#primary-menu > li a[href*="/sitemap"] {
+    display: block !important;
+}
+
+#primary-menu > li:has(a[href*="/sitemap"]) {
+    display: block !important;
+}
+
+/* Make navigation menu vertical */
+.site-header .primary-navigation ul,
+.site-header #primary-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem;
+}
+
+.site-header .primary-navigation li,
+.site-header #primary-menu > li {
+    display: block;
+    margin: 0;
+}
+
+.site-header .primary-navigation a {
+    display: block;
+    padding: 0.5rem 0;
+}
+
+/* Language switcher styling - Default (Homepage) */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: var(--header-green);
+    margin-top: 0.5rem;
+    border-radius: 12px;
+}
+
+.language-switcher .lang-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.25rem 0.5rem;
+}
+
+.language-switcher .lang-link:hover {
+    color: #fff;
+}
+
+.language-switcher .lang-link.active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.language-switcher .lang-separator {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Language switcher - Pillar page colors */
+body.page-tuinen .language-switcher {
+    background-color: var(--pillar-tuinen-primary);
+}
+
+body.page-geschiedenis .language-switcher {
+    background-color: var(--pillar-geschiedenis-primary);
+}
+
+body.page-ontmoeting .language-switcher {
+    background-color: var(--pillar-ontmoeting-primary);
+}
+
+body.page-educatie .language-switcher {
+    background-color: var(--pillar-educatie-primary);
+}
+
+body.page-verblijf .language-switcher {
+    background-color: var(--pillar-verblijf-primary);
+}
+
+body.page-sitemap .language-switcher {
+    background-color: var(--pillar-sitemap-primary);
+}
+
+/* ===================================
+   LOGO STYLING
+   =================================== */
+
+/* Logo Styling */
+.site-branding .custom-logo {
+    max-height: 80px;
+    width: auto;
+    height: auto;
+}
+
+/* Ensure logo is responsive */
+@media (max-width: 768px) {
+    .site-branding .custom-logo {
+        max-height: 60px;
+    }
+}
+
+/* ===================================
+   REDUCED SPACING FOR SPECIFIC DIVS
+   =================================== */
+
+/* Target the specific divs identified in browser dev tools */
+.entry-hero-container-inner {
+    padding: 0.5rem 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+}
+
+.hero-section-overlay {
+    padding: 0.5rem 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+}
+
+.hero-container {
+    padding: 0.5rem 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+}
+
+/* Further reduce entry-header spacing and center it */
+.entry-header {
+    padding: 0.25rem 1rem !important;
+    margin: 0 0 0.25rem 0 !important;
+    min-height: auto !important;
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Reduce any additional hero/header related spacing */
+.entry-hero-container,
+.hero-section,
+.page-hero-section {
+    padding: 0.5rem 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+}
+
+/* Override any theme defaults that might add extra spacing */
+.entry-hero-container-inner h1,
+.hero-section-overlay h1,
+.hero-container h1,
+.entry-header h1 {
+    margin: 0.25rem 0 !important;
+    padding: 0.25rem 0 !important;
+}
+
+/* Reduce line-height for tighter text spacing */
+.entry-hero-container-inner,
+.hero-section-overlay,
+.hero-container,
+.entry-header {
+    line-height: 1.2 !important;
+}
+
+/* Target entry-hero and primary elements specifically */
+.entry-hero {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+}
+
+.primary,
+#primary {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+}
+
+/* Target any hero-related elements */
+.entry-hero-wrap,
+.entry-hero-section,
+.hero-wrap {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+}
+
+/* Reduce spacing for primary content area */
+.primary .entry-content,
+#primary .entry-content {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Make sure hero titles are compact */
+.entry-hero h1,
+.entry-hero .entry-title,
+.primary h1 {
+    margin: 0 !important;
+    padding: 0.1rem 0 !important;
+    line-height: 1.1 !important;
+}
+
+/* Center all content within entry-header */
+.entry-header h1,
+.entry-header .entry-title,
+.entry-header .page-title {
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+}
+
+/* Make hero-container and site-container same width as content-container */
+.hero-container {
+    text-align: center !important;
+    margin: 0 auto !important;
+    max-width: 1200px !important;
+    width: 100% !important;
+    padding: 0 2rem !important;
+}
+
+.site-container {
+    text-align: center !important;
+    margin: 0 auto !important;
+    max-width: 1200px !important;
+    width: 100% !important;
+    padding: 0 2rem !important;
+}
+
+/* Center content within hero-container and site-container */
+.hero-container > *,
+.site-container > * {
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+
+/* Ensure hero-container site-container combination is centered */
+.hero-container .site-container {
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+}

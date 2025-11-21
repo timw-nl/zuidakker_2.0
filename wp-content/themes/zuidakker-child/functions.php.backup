@@ -1,0 +1,335 @@
+<?php
+/**
+ * Zuidakker Child Theme Functions
+ * 
+ * @package Zuidakker
+ */
+
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+/**
+ * Suppress PHP deprecation warnings
+ */
+error_reporting( E_ALL & ~E_DEPRECATED & ~E_STRICT );
+ini_set( 'display_errors', '0' );
+
+/**
+ * Enqueue parent and child theme styles
+ */
+function zuidakker_child_enqueue_styles() {
+    // Enqueue parent theme stylesheet
+    wp_enqueue_style( 
+        'kadence-style', 
+        get_template_directory_uri() . '/style.css',
+        array(),
+        wp_get_theme()->parent()->get('Version')
+    );
+    
+    // Enqueue child theme stylesheet
+    wp_enqueue_style( 
+        'zuidakker-child-style',
+        get_stylesheet_directory_uri() . '/style.css',
+        array( 'kadence-style' ),
+        wp_get_theme()->get('Version')
+    );
+}
+add_action( 'wp_enqueue_scripts', 'zuidakker_child_enqueue_styles' );
+
+/**
+ * Add custom body classes for pillar pages
+ */
+function zuidakker_custom_body_classes( $classes ) {
+    if ( is_page() ) {
+        global $post;
+        $slug = $post->post_name;
+        
+        // Map page slugs to pillar classes
+        $pillar_pages = array(
+            'tuinen' => 'page-tuinen',
+            'geschiedenis' => 'page-geschiedenis',
+            'ontmoeting' => 'page-ontmoeting',
+            'educatie' => 'page-educatie',
+            'verblijf' => 'page-verblijf',
+            'sitemap' => 'page-sitemap',
+        );
+        
+        if ( array_key_exists( $slug, $pillar_pages ) ) {
+            $classes[] = $pillar_pages[ $slug ];
+        }
+    }
+    
+    return $classes;
+}
+add_filter( 'body_class', 'zuidakker_custom_body_classes' );
+
+/**
+ * Register custom post type for History Items
+ */
+function zuidakker_register_history_cpt() {
+    $labels = array(
+        'name'               => __( 'Geschiedenis Items', 'zuidakker-child' ),
+        'singular_name'      => __( 'Geschiedenis Item', 'zuidakker-child' ),
+        'menu_name'          => __( 'Geschiedenis', 'zuidakker-child' ),
+        'add_new'            => __( 'Nieuwe toevoegen', 'zuidakker-child' ),
+        'add_new_item'       => __( 'Nieuw Geschiedenis Item', 'zuidakker-child' ),
+        'edit_item'          => __( 'Bewerk Geschiedenis Item', 'zuidakker-child' ),
+        'new_item'           => __( 'Nieuw Geschiedenis Item', 'zuidakker-child' ),
+        'view_item'          => __( 'Bekijk Geschiedenis Item', 'zuidakker-child' ),
+        'search_items'       => __( 'Zoek Geschiedenis Items', 'zuidakker-child' ),
+        'not_found'          => __( 'Geen geschiedenis items gevonden', 'zuidakker-child' ),
+        'not_found_in_trash' => __( 'Geen geschiedenis items gevonden in prullenbak', 'zuidakker-child' ),
+    );
+    
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'geschiedenis-item' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 5,
+        'menu_icon'          => 'dashicons-calendar-alt',
+        'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+        'show_in_rest'       => true, // Enable Gutenberg editor
+    );
+    
+    register_post_type( 'geschiedenis', $args );
+}
+add_action( 'init', 'zuidakker_register_history_cpt' );
+
+/**
+ * Register custom post type for Activities
+ */
+function zuidakker_register_activities_cpt() {
+    $labels = array(
+        'name'               => __( 'Activiteiten', 'zuidakker-child' ),
+        'singular_name'      => __( 'Activiteit', 'zuidakker-child' ),
+        'menu_name'          => __( 'Activiteiten', 'zuidakker-child' ),
+        'add_new'            => __( 'Nieuwe toevoegen', 'zuidakker-child' ),
+        'add_new_item'       => __( 'Nieuwe Activiteit', 'zuidakker-child' ),
+        'edit_item'          => __( 'Bewerk Activiteit', 'zuidakker-child' ),
+        'new_item'           => __( 'Nieuwe Activiteit', 'zuidakker-child' ),
+        'view_item'          => __( 'Bekijk Activiteit', 'zuidakker-child' ),
+        'search_items'       => __( 'Zoek Activiteiten', 'zuidakker-child' ),
+        'not_found'          => __( 'Geen activiteiten gevonden', 'zuidakker-child' ),
+        'not_found_in_trash' => __( 'Geen activiteiten gevonden in prullenbak', 'zuidakker-child' ),
+    );
+    
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'activiteit' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 6,
+        'menu_icon'          => 'dashicons-location',
+        'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+        'show_in_rest'       => true, // Enable Gutenberg editor
+        'taxonomies'         => array( 'category' ),
+    );
+    
+    register_post_type( 'activiteit', $args );
+}
+add_action( 'init', 'zuidakker_register_activities_cpt' );
+
+/**
+ * Add theme support for WooCommerce
+ */
+function zuidakker_add_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+}
+add_action( 'after_setup_theme', 'zuidakker_add_woocommerce_support' );
+
+/**
+ * Customize WooCommerce product columns
+ */
+function zuidakker_loop_columns() {
+    return 3; // 3 products per row
+}
+add_filter( 'loop_shop_columns', 'zuidakker_loop_columns' );
+
+/**
+ * Add shortcode for pillar cards grid
+ * Usage: [pillars_grid]
+ */
+function zuidakker_pillars_grid_shortcode( $atts ) {
+    ob_start();
+    ?>
+    <div class="pillars-container">
+        <div class="pillars-grid">
+            <a href="<?php echo home_url('/tuinen'); ?>" class="pillar-card pillar-tuinen">
+                <div class="pillar-card-icon">🌱</div>
+                <h3>Tuinen</h3>
+                <div class="subtitle">Gardens</div>
+                <p>Ontdek de tuinen van RKBS Kaskade basisschool bij Zuidakker.</p>
+            </a>
+            
+            <a href="<?php echo home_url('/geschiedenis'); ?>" class="pillar-card pillar-geschiedenis">
+                <div class="pillar-card-icon">🏛️</div>
+                <h3>Geschiedenis</h3>
+                <div class="subtitle">History</div>
+                <p>Ontdek de geschiedenis van activiteiten op Zuideinde 112 van de familie Warmerdam en de Zuidakker.</p>
+            </a>
+            
+            <a href="<?php echo home_url('/ontmoeting'); ?>" class="pillar-card pillar-ontmoeting">
+                <div class="pillar-card-icon">🌊</div>
+                <h3>Ontmoeting</h3>
+                <div class="subtitle">Meeting</div>
+                <p>Ontmoetingsplek aan de waterkant voor vergaderingen en volkstuinen.</p>
+            </a>
+            
+            <a href="<?php echo home_url('/educatie'); ?>" class="pillar-card pillar-educatie">
+                <div class="pillar-card-icon">🎓</div>
+                <h3>Voedseleducatie</h3>
+                <div class="subtitle">Food Education</div>
+                <p>Educatief programma over duurzame voedselproductie bij Zuidakker.</p>
+            </a>
+            
+            <a href="<?php echo home_url('/verblijf'); ?>" class="pillar-card pillar-verblijf">
+                <div class="pillar-card-icon">🏠</div>
+                <h3>Verblijf</h3>
+                <div class="subtitle">Stays</div>
+                <p>Korte verblijven, camping en accommodatie zoals boothuizen bij Zuidakker.</p>
+            </a>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode( 'pillars_grid', 'zuidakker_pillars_grid_shortcode' );
+
+/**
+ * Security: Remove WordPress version from header
+ */
+remove_action( 'wp_head', 'wp_generator' );
+
+/**
+ * Load Dutch language files
+ */
+function zuidakker_load_textdomain() {
+    load_child_theme_textdomain( 'zuidakker-child', get_stylesheet_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'zuidakker_load_textdomain' );
+
+/**
+ * Add Sitemap to navigation menu
+ */
+function zuidakker_add_sitemap_to_menu( $items, $args ) {
+    // Only add to primary navigation
+    if ( isset( $args->theme_location ) && $args->theme_location === 'primary' ) {
+        // Check if sitemap already exists in menu
+        $has_sitemap = false;
+        foreach ( $items as $item ) {
+            if ( strpos( $item->url, '/sitemap' ) !== false ) {
+                $has_sitemap = true;
+                break;
+            }
+        }
+        
+        // If sitemap doesn't exist, add it
+        if ( ! $has_sitemap ) {
+            $sitemap_page = get_page_by_path( 'sitemap' );
+            if ( $sitemap_page ) {
+                $sitemap_item = new stdClass();
+                $sitemap_item->ID = $sitemap_page->ID;
+                $sitemap_item->db_id = $sitemap_page->ID;
+                $sitemap_item->title = 'Sitemap';
+                $sitemap_item->url = get_permalink( $sitemap_page->ID );
+                $sitemap_item->menu_order = 1;
+                $sitemap_item->menu_item_parent = 0;
+                $sitemap_item->type = 'post_type';
+                $sitemap_item->object = 'page';
+                $sitemap_item->object_id = $sitemap_page->ID;
+                $sitemap_item->classes = array( 'menu-item', 'page-item-' . $sitemap_page->ID );
+                $sitemap_item->target = '';
+                $sitemap_item->attr_title = '';
+                $sitemap_item->description = '';
+                $sitemap_item->xfn = '';
+                $sitemap_item->current = false;
+                
+                // Add sitemap to beginning of array
+                array_unshift( $items, $sitemap_item );
+            }
+        }
+    }
+    
+    return $items;
+}
+add_filter( 'wp_nav_menu_objects', 'zuidakker_add_sitemap_to_menu', 10, 2 );
+
+/**
+ * Set Dutch as default language
+ */
+function zuidakker_set_default_language() {
+    // Set WordPress locale to Dutch
+    return 'nl_NL';
+}
+add_filter( 'locale', 'zuidakker_set_default_language' );
+
+/**
+ * Add language switcher to header - works with or without Polylang
+ */
+function zuidakker_add_language_switcher() {
+    // Check if Polylang is active
+    if ( function_exists( 'pll_the_languages' ) ) {
+        // Use Polylang's language switcher
+        ?>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var nav = document.querySelector('.site-header-item-main-navigation');
+            if (nav) {
+                var langSwitcher = document.createElement('div');
+                langSwitcher.className = 'language-switcher';
+                langSwitcher.innerHTML = '<?php 
+                    $languages = pll_the_languages( array( 'raw' => 1 ) );
+                    $output = '';
+                    $count = 0;
+                    foreach ( $languages as $lang ) {
+                        if ( $count > 0 ) $output .= '<span class="lang-separator">|</span>';
+                        $active = $lang['current_lang'] ? 'active' : '';
+                        $output .= '<a href="' . esc_url( $lang['url'] ) . '" class="lang-link ' . $active . '">' . strtoupper( $lang['slug'] ) . '</a>';
+                        $count++;
+                    }
+                    echo $output;
+                ?>';
+                nav.parentNode.insertBefore(langSwitcher, nav.nextSibling);
+            }
+        });
+        </script>
+        <?php
+    } else {
+        // Fallback: Show placeholder when Polylang is not configured
+        // Don't show language switcher until languages are configured in Polylang
+        ?>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var nav = document.querySelector('.site-header-item-main-navigation');
+            if (nav) {
+                var langSwitcher = document.createElement('div');
+                langSwitcher.className = 'language-switcher';
+                langSwitcher.style.opacity = '0.5';
+                langSwitcher.style.cursor = 'not-allowed';
+                langSwitcher.innerHTML = '<span class="lang-link" title="Configure languages in Polylang settings">NL</span><span class="lang-separator">|</span><span class="lang-link" title="Configure languages in Polylang settings">EN</span>';
+                nav.parentNode.insertBefore(langSwitcher, nav.nextSibling);
+            }
+        });
+        </script>
+        <?php
+    }
+}
+add_action( 'wp_footer', 'zuidakker_add_language_switcher' );

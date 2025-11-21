@@ -1,0 +1,70 @@
+services:
+  wordpress:
+    image: wordpress:latest
+    container_name: zuidakker_wordpress_2.0
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: zuidakker
+      WORDPRESS_DB_PASSWORD: zuidakker
+      WORDPRESS_DB_NAME: zuidakker
+      WORDPRESS_DEBUG: 'false'
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_MEMORY_LIMIT', '256M');
+        define('WP_MAX_MEMORY_LIMIT', '512M');
+        error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./php-custom.ini:/usr/local/etc/php/conf.d/php-custom.ini
+      - ./setup:/var/www/setup
+    depends_on:
+      - db
+    restart: always
+  
+  wpcli:
+    image: wordpress:cli
+    container_name: zuidakker_wpcli_2.0
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+      - ./setup:/var/www/setup
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: zuidakker
+      WORDPRESS_DB_PASSWORD: zuidakker
+      WORDPRESS_DB_NAME: zuidakker
+    depends_on:
+      - db
+      - wordpress
+    entrypoint: sh -c "chown -R www-data:www-data /var/www/html && tail -f /dev/null"
+
+  db:
+    image: mysql:8.0
+    container_name: zuidakker_mysql_2.0
+    environment:
+      MYSQL_DATABASE: zuidakker
+      MYSQL_USER: zuidakker
+      MYSQL_PASSWORD: zuidakker
+      MYSQL_ROOT_PASSWORD: Quirinus
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: zuidakker_phpmyadmin_2.0
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: Quirinus
+    depends_on:
+      - db
+    restart: always
+
+volumes:
+  db_data:
+  wordpress_data:

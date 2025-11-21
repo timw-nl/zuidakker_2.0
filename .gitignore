@@ -1,0 +1,116 @@
+# WordPress Core
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/xmlrpc.php
+/license.txt
+/readme.html
+
+# WordPress Config
+wp-config.php
+wp-config-sample.php
+
+# Database
+*.sql
+*.sql.gz
+*.sql.tar.gz
+/setup/*.sql
+
+# Uploads (can be large)
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/cache/
+
+# Backup files
+wp-content/backup-db/
+wp-content/backups/
+*.bak
+*.backup
+
+# Logs
+*.log
+error_log
+debug.log
+wp-content/debug.log
+
+# Default themes (keep only custom)
+wp-content/themes/twenty*/
+
+# Default plugins (keep only needed)
+wp-content/plugins/akismet/
+wp-content/plugins/hello.php
+
+# Node modules & Build artifacts
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Test artifacts
+test-results/
+playwright-report/
+playwright/.cache/
+tests/**/*-snapshots/**/*.png
+!tests/**/*-snapshots/**/.gitkeep
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Docker volumes data
+db_data/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Compiled assets
+*.min.css
+*.min.js
+/dist/
+/build/
+
+# WordPress specific
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/cache/*
+wp-content/object-cache.php
+
+# Premium Plugins (don't commit licensed plugins)
+# Uncomment if you have these:
+# wp-content/plugins/woocommerce-bookings/
+# wp-content/plugins/woocommerce-subscriptions/
+
+# Keep important files
+!wp-content/
+!wp-content/themes/
+!wp-content/themes/zuidakker-child/
+!wp-content/plugins/.gitkeep
+!wp-content/uploads/.gitkeep
+
+# Specific files to keep
+!wp-content/themes/zuidakker-child/**/*
