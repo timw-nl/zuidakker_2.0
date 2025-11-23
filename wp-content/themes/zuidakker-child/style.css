@@ -61,6 +61,11 @@ Text Domain: zuidakker-child
     margin-bottom: 0.5rem;
 }
 
+/* Homepage uses Tuinen colors */
+.home .site-header {
+    background-color: var(--pillar-tuinen-primary) !important;
+}
+
 .site-branding {
     display: flex;
     align-items: center;
@@ -83,8 +88,8 @@ Text Domain: zuidakker-child
    =================================== */
 
 .hero-section {
-    background-color: var(--bg-light);
-    padding: 3rem 2rem 2rem;
+    background-color: var(--pillar-tuinen-primary);
+    padding: 2rem 1rem 1rem;
     text-align: left;
     max-width: 1200px;
     margin: 0 auto;
@@ -93,13 +98,13 @@ Text Domain: zuidakker-child
 .hero-section h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #2c2c2c;
+    color: #fff;
     margin-bottom: 0.5rem;
 }
 
 .hero-section p {
     font-size: 1.1rem;
-    color: #666;
+    color: rgba(255, 255, 255, 0.95);
     margin-bottom: 1.5rem;
     max-width: 800px;
 }
@@ -109,7 +114,7 @@ Text Domain: zuidakker-child
    =================================== */
 
 .pillar-card {
-    border-radius: 12px;
+    border-radius: 0;
     padding: 2.5rem 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     min-height: 320px;
@@ -122,7 +127,8 @@ Text Domain: zuidakker-child
     text-decoration: none;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .pillar-card:hover {
@@ -165,28 +171,28 @@ Text Domain: zuidakker-child
 
 /* Individual Pillar Colors */
 .pillar-tuinen {
-    background: var(--pillar-tuinen-primary);
-    border-radius: 12px;
+    background: var(--pillar-tuinen-secondary);
+    border-radius: 0;
 }
 
 .pillar-geschiedenis {
-    background: var(--pillar-geschiedenis-primary);
-    border-radius: 12px;
+    background: var(--pillar-geschiedenis-secondary);
+    border-radius: 0;
 }
 
 .pillar-ontmoeting {
-    background: var(--pillar-ontmoeting-primary);
-    border-radius: 12px;
+    background: var(--pillar-ontmoeting-secondary);
+    border-radius: 0;
 }
 
 .pillar-educatie {
-    background: var(--pillar-educatie-primary);
-    border-radius: 12px;
+    background: var(--pillar-educatie-secondary);
+    border-radius: 0;
 }
 
 .pillar-verblijf {
-    background: var(--pillar-verblijf-primary);
-    border-radius: 12px;
+    background: var(--pillar-verblijf-secondary);
+    border-radius: 0;
 }
 
 .pillar-sitemap {
@@ -199,7 +205,7 @@ Text Domain: zuidakker-child
     .pillar-ontmoeting,
     .pillar-educatie,
     .pillar-verblijf {
-        border-radius: 12px !important;
+        border-radius: 0 !important;
     }
 }
 
@@ -208,158 +214,222 @@ Text Domain: zuidakker-child
    =================================== */
 
 /* Tuinen (Gardens) - Green */
+body.page-tuinen {
+    background-color: var(--pillar-tuinen-primary);
+}
+
 body.page-tuinen .site-header {
     background-color: var(--pillar-tuinen-primary) !important;
-    border-radius: 0 0 12px 12px;
+    border-radius: 0;
     padding: 0.5rem 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+}
+
+body.page-tuinen .entry-hero-container,
+body.page-tuinen .entry-hero-container-inner,
+body.page-tuinen .site-container,
+body.page-tuinen .entry-hero {
+    background-color: var(--pillar-tuinen-primary) !important;
 }
 
 body.page-tuinen .entry-header {
     background-color: var(--pillar-tuinen-primary);
-    border-radius: 12px;
-    padding: 0.25rem 2rem;
-    margin-bottom: 0.5rem;
+    border-radius: 0;
+    padding: 2rem 1rem 1rem;
+    margin-bottom: 0;
+    color: #fff;
 }
 
 body.page-tuinen .site-content,
 body.page-tuinen .entry-content {
     background-color: var(--pillar-tuinen-secondary);
-    border-radius: 12px;
+    border-radius: 0;
     padding: 2rem;
     color: #fff;
-    margin-top: 0.5rem;
+    margin: 0;
 }
 
 /* Geschiedenis (History) - Brown */
+body.page-geschiedenis {
+    background-color: var(--pillar-geschiedenis-primary);
+}
+
 body.page-geschiedenis .site-header {
     background-color: var(--pillar-geschiedenis-primary) !important;
-    border-radius: 0 0 12px 12px;
+    border-radius: 0;
     padding: 0.5rem 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+}
+
+body.page-geschiedenis .entry-hero-container,
+body.page-geschiedenis .entry-hero-container-inner,
+body.page-geschiedenis .site-container,
+body.page-geschiedenis .entry-hero {
+    background-color: var(--pillar-geschiedenis-primary) !important;
 }
 
 body.page-geschiedenis .entry-header {
     background-color: var(--pillar-geschiedenis-primary);
-    border-radius: 12px;
-    padding: 0.25rem 2rem;
-    margin-bottom: 0.5rem;
+    border-radius: 0;
+    padding: 2rem 1rem 1rem;
+    margin-bottom: 0;
+    color: #fff;
 }
 
 body.page-geschiedenis .site-content,
 body.page-geschiedenis .entry-content {
     background-color: var(--pillar-geschiedenis-secondary);
-    border-radius: 12px;
+    border-radius: 0;
     padding: 2rem;
     color: #fff;
-    margin-top: 0.5rem;
+    margin: 0;
 }
 
 /* Ontmoeting (Meeting) - Blue */
+body.page-ontmoeting {
+    background-color: var(--pillar-ontmoeting-primary);
+}
+
 body.page-ontmoeting .site-header {
     background-color: var(--pillar-ontmoeting-primary) !important;
-    border-radius: 0 0 12px 12px;
+    border-radius: 0;
     padding: 0.5rem 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+}
+
+body.page-ontmoeting .entry-hero-container,
+body.page-ontmoeting .entry-hero-container-inner,
+body.page-ontmoeting .site-container,
+body.page-ontmoeting .entry-hero {
+    background-color: var(--pillar-ontmoeting-primary) !important;
 }
 
 body.page-ontmoeting .entry-header {
     background-color: var(--pillar-ontmoeting-primary);
-    border-radius: 12px;
-    padding: 0.25rem 2rem;
-    margin-bottom: 0.5rem;
+    border-radius: 0;
+    padding: 2rem 1rem 1rem;
+    margin-bottom: 0;
+    color: #fff;
 }
 
 body.page-ontmoeting .site-content,
 body.page-ontmoeting .entry-content {
     background-color: var(--pillar-ontmoeting-secondary);
-    border-radius: 12px;
+    border-radius: 0;
     padding: 2rem;
     color: #fff;
-    margin-top: 0.5rem;
+    margin: 0;
 }
 
 /* Educatie (Food Education) - Orange */
+body.page-educatie {
+    background-color: var(--pillar-educatie-primary);
+}
+
 body.page-educatie .site-header {
     background-color: var(--pillar-educatie-primary) !important;
-    border-radius: 0 0 12px 12px;
+    border-radius: 0;
     padding: 0.5rem 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+}
+
+body.page-educatie .entry-hero-container,
+body.page-educatie .entry-hero-container-inner,
+body.page-educatie .site-container,
+body.page-educatie .entry-hero {
+    background-color: var(--pillar-educatie-primary) !important;
 }
 
 body.page-educatie .entry-header {
     background-color: var(--pillar-educatie-primary);
-    border-radius: 12px;
-    padding: 0.25rem 2rem;
-    margin-bottom: 0.5rem;
+    border-radius: 0;
+    padding: 2rem 1rem 1rem;
+    margin-bottom: 0;
+    color: #fff;
 }
 
 body.page-educatie .site-content,
 body.page-educatie .entry-content {
     background-color: var(--pillar-educatie-secondary);
-    border-radius: 12px;
+    border-radius: 0;
     padding: 2rem;
     color: #fff;
-    margin-top: 0.5rem;
+    margin: 0;
 }
 
 /* Verblijf (Accommodation) - Pink */
+body.page-verblijf {
+    background-color: var(--pillar-verblijf-primary);
+}
+
 body.page-verblijf .site-header {
     background-color: var(--pillar-verblijf-primary) !important;
-    border-radius: 0 0 12px 12px;
+    border-radius: 0;
     padding: 0.5rem 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+}
+
+body.page-verblijf .entry-hero-container,
+body.page-verblijf .entry-hero-container-inner,
+body.page-verblijf .site-container,
+body.page-verblijf .entry-hero {
+    background-color: var(--pillar-verblijf-primary) !important;
 }
 
 body.page-verblijf .entry-header {
     background-color: var(--pillar-verblijf-primary);
-    border-radius: 12px;
-    padding: 0.25rem 2rem;
-    margin-bottom: 0.5rem;
+    border-radius: 0;
+    padding: 2rem 1rem 1rem;
+    margin-bottom: 0;
+    color: #fff;
 }
 
 body.page-verblijf .site-content,
 body.page-verblijf .entry-content {
     background-color: var(--pillar-verblijf-secondary);
-    border-radius: 12px;
+    border-radius: 0;
     padding: 2rem;
     color: #fff;
-    margin-top: 0.5rem;
+    margin: 0;
 }
 
 /* Sitemap - Dark Green */
+body.page-sitemap {
+    background-color: var(--pillar-sitemap-primary);
+}
+
 body.page-sitemap .site-header {
     background-color: var(--pillar-sitemap-primary) !important;
-    border-radius: 0 0 12px 12px;
+    border-radius: 0;
     padding: 0.5rem 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+}
+
+body.page-sitemap .entry-hero-container,
+body.page-sitemap .entry-hero-container-inner,
+body.page-sitemap .site-container,
+body.page-sitemap .entry-hero {
+    background-color: var(--pillar-sitemap-primary) !important;
 }
 
 body.page-sitemap .entry-header {
     background-color: var(--pillar-sitemap-primary);
-    border-radius: 12px;
-    padding: 0.25rem 2rem;
-    margin-bottom: 0.5rem;
+    border-radius: 0;
+    padding: 2rem 1rem 1rem;
+    margin-bottom: 0;
+    color: #fff;
 }
 
 body.page-sitemap .site-content,
 body.page-sitemap .entry-content {
     background-color: var(--pillar-sitemap-secondary);
-    border-radius: 12px;
+    border-radius: 0;
     padding: 2rem;
     color: #fff;
     margin-top: 0.5rem;
 }
 
-/* General pillar page styling */
-body[class*="page-tuinen"],
-body[class*="page-geschiedenis"],
-body[class*="page-ontmoeting"],
-body[class*="page-educatie"],
-body[class*="page-verblijf"],
-body[class*="page-sitemap"] {
-    background-color: var(--bg-light);
-}
+/* General pillar page styling - removed as each page now has its own primary background color */
 
 /* Make sure text is readable on colored backgrounds */
 body[class*="page-tuinen"] .entry-content h1,
@@ -383,15 +453,51 @@ body[class*="page-sitemap"] .entry-content h3 {
     color: #fff;
 }
 
-/* Rounded edges for content blocks */
+/* No rounded edges for content blocks - full width layout like homepage */
 body[class*="page-tuinen"] .content-wrap,
 body[class*="page-geschiedenis"] .content-wrap,
 body[class*="page-ontmoeting"] .content-wrap,
 body[class*="page-educatie"] .content-wrap,
 body[class*="page-verblijf"] .content-wrap,
 body[class*="page-sitemap"] .content-wrap {
-    border-radius: 12px;
+    border-radius: 0;
     overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+/* Remove padding from content containers on pillar pages */
+body[class*="page-tuinen"] .content-area,
+body[class*="page-geschiedenis"] .content-area,
+body[class*="page-ontmoeting"] .content-area,
+body[class*="page-educatie"] .content-area,
+body[class*="page-verblijf"] .content-area,
+body[class*="page-sitemap"] .content-area,
+body[class*="page-tuinen"] .content-container,
+body[class*="page-geschiedenis"] .content-container,
+body[class*="page-ontmoeting"] .content-container,
+body[class*="page-educatie"] .content-container,
+body[class*="page-verblijf"] .content-container,
+body[class*="page-sitemap"] .content-container,
+body[class*="page-tuinen"] .site-main,
+body[class*="page-geschiedenis"] .site-main,
+body[class*="page-ontmoeting"] .site-main,
+body[class*="page-educatie"] .site-main,
+body[class*="page-verblijf"] .site-main,
+body[class*="page-sitemap"] .site-main {
+    padding: 0;
+    margin: 0;
+}
+
+/* Remove padding from article on pillar pages */
+body[class*="page-tuinen"] article.entry,
+body[class*="page-geschiedenis"] article.entry,
+body[class*="page-ontmoeting"] article.entry,
+body[class*="page-educatie"] article.entry,
+body[class*="page-verblijf"] article.entry,
+body[class*="page-sitemap"] article.entry {
+    padding: 0;
+    margin: 0;
 }
 
 /* ===================================
@@ -400,15 +506,16 @@ body[class*="page-sitemap"] .content-wrap {
 
 .pillars-container {
     background-color: var(--bg-light);
-    padding: 2rem;
+    padding: 0;
+    margin: 0;
 }
 
 .pillars-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 0;
+    max-width: 100%;
+    margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -487,6 +594,11 @@ body {
     background-color: var(--bg-light);
 }
 
+/* Homepage body background matches header */
+body.home {
+    background-color: var(--pillar-tuinen-primary);
+}
+
 .site-content {
     background-color: var(--bg-light);
 }
@@ -495,6 +607,22 @@ body {
 .home .entry-content,
 .page .entry-content {
     padding: 0;
+    margin: 0;
+}
+
+/* Remove padding from content containers on homepage */
+.home .content-area,
+.home .content-container,
+.home .site-main,
+.home .content-wrap {
+    padding: 0;
+    margin: 0;
+}
+
+/* Remove padding from article on homepage */
+.home article.entry {
+    padding: 0;
+    margin: 0;
 }
 
 /* ===================================

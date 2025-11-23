@@ -39,7 +39,7 @@ services:
     depends_on:
       - db
       - wordpress
-    entrypoint: sh -c "chown -R www-data:www-data /var/www/html && tail -f /dev/null"
+    entrypoint: tail -f /dev/null
 
   db:
     image: mysql:8.0

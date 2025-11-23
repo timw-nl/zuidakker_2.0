@@ -16,10 +16,7 @@ get_header();
 
 kadence()->print_styles( 'kadence-content' );
 
-/**
-* Hook for Hero Section
-*/
-do_action( 'kadence_hero_header' );
+// Hero section removed for homepage - we use custom hero in content
 ?>
 <div id="primary" class="content-area">
 	<div class="content-container site-container">
@@ -40,8 +37,14 @@ do_action( 'kadence_hero_header' );
 					$post = get_post( $homepage_id );
 					setup_postdata( $post );
 					
-					// Use Kadence's single content action to get proper styling
-					do_action( 'kadence_single_content' );
+					// Display only content without title
+					?>
+					<article class="entry content-bg single-content">
+						<div class="entry-content single-content">
+							<?php the_content(); ?>
+						</div>
+					</article>
+					<?php
 					
 					wp_reset_postdata();
 				} else {
@@ -65,9 +68,6 @@ do_action( 'kadence_hero_header' );
 			do_action( 'kadence_after_main_content' );
 			?>
 		</div><!-- #main -->
-		<?php
-		get_sidebar();
-		?>
 	</div>
 </div><!-- #primary -->
 
