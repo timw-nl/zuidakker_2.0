@@ -16,3 +16,4 @@ require_once get_stylesheet_directory() . '/inc/custom-post-types.php';
 require_once get_stylesheet_directory() . '/inc/woocommerce.php';
 require_once get_stylesheet_directory() . '/inc/footer-customization.php';
 require_once get_stylesheet_directory() . '/inc/sitemap-shortcode.php';
+require_once get_stylesheet_directory() . '/inc/contact-form.php';

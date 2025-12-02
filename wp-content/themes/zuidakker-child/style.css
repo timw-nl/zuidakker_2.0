@@ -18,38 +18,76 @@ Text Domain: zuidakker-child
     /* Tuinen bij de Zuidakker - Green */
     --pillar-tuinen-primary: #97bf85;
     --pillar-tuinen-secondary: #6f9357;
+    --pillar-tuinen-light: #b8d9a8;
+    --pillar-tuinen-dark: #4a6b3d;
     
     /* Geschiedenis van Zuidakker - Brown */
     --pillar-geschiedenis-primary: #c27d55;
     --pillar-geschiedenis-secondary: #b4412f;
+    --pillar-geschiedenis-light: #d9a68a;
+    --pillar-geschiedenis-dark: #8a3020;
     
     /* Ontmoeting aan de oever - Blue */
     --pillar-ontmoeting-primary: #6ba7b6;
     --pillar-ontmoeting-secondary: #2a677e;
+    --pillar-ontmoeting-light: #9cc8d4;
+    --pillar-ontmoeting-dark: #1a4d5e;
     
     /* Voedseleducatie - Orange */
     --pillar-educatie-primary: #f0a85f;
     --pillar-educatie-secondary: #d97225;
+    --pillar-educatie-light: #ffc88f;
+    --pillar-educatie-dark: #b85510;
     
     /* Verblijf bij de Zuidakker - Pink/Rose */
     --pillar-verblijf-primary: #d98c8c;
     --pillar-verblijf-secondary: #b35a5a;
+    --pillar-verblijf-light: #f0b3b3;
+    --pillar-verblijf-dark: #8a3a3a;
     
     /* Sitemap - Dark Green */
     --pillar-sitemap-primary: #2c5530;
     --pillar-sitemap-secondary: #4a7c59;
+    --pillar-sitemap-light: #5a9668;
+    --pillar-sitemap-dark: #1a3320;
     
     /* Header Green */
     --header-green: #3d5e41;
     --header-dark-green: #2c4730;
     
-    /* Background */
-    --bg-light: #f5f5f0;
+    /* Background & Neutrals */
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --bg-overlay: rgba(0, 0, 0, 0.02);
+    
+    /* Modern Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.12), 0 10px 20px rgba(0, 0, 0, 0.1);
+    
+    /* Modern Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Modern Spacing Scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    
+    /* Modern Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
 }
-
-/* ===================================
-   PILLAR CARD STYLES
-   =================================== */
 
 /* ===================================
    HEADER STYLING
@@ -57,8 +95,15 @@ Text Domain: zuidakker-child
 
 .site-header {
     background-color: var(--header-green) !important;
-    padding: 0.5rem 0;
-    margin-bottom: 0.5rem;
+    padding: var(--space-lg) 0;
+    margin-bottom: var(--space-sm);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-base);
+    backdrop-filter: blur(10px);
+}
+
+.site-header:hover {
+    box-shadow: var(--shadow-md);
 }
 
 /* Homepage uses Tuinen colors */
@@ -69,44 +114,136 @@ Text Domain: zuidakker-child
 .site-branding {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: var(--space-md);
 }
 
 .site-title {
     color: #fff !important;
-    font-size: 1.75rem;
-    font-weight: 600;
+    font-size: clamp(1.5rem, 3vw, 1.75rem);
+    font-weight: 700;
     margin: 0;
+    letter-spacing: -0.02em;
+    transition: opacity var(--transition-fast);
+}
+
+.site-title:hover {
+    opacity: 0.9;
 }
 
 .main-navigation a {
     color: #fff !important;
+    transition: opacity var(--transition-fast);
+}
+
+.main-navigation a:hover {
+    opacity: 0.85;
 }
 
 /* ===================================
    HERO SECTION
    =================================== */
 
+/* Homepage hero text styling */
+.home .entry-content > h1:first-of-type {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(15px);
+    padding: var(--space-xl, 2rem) var(--space-2xl, 3rem);
+    border-radius: var(--radius-xl, 1rem);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    margin-bottom: var(--space-lg, 1.5rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.home .entry-content > p:first-of-type {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+    backdrop-filter: blur(15px);
+    padding: var(--space-lg, 1.5rem) var(--space-xl, 2rem);
+    border-radius: var(--radius-lg, 0.75rem);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    max-width: 800px;
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    line-height: 1.6;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll indicator */
+.home .entry-content::after {
+    content: '↓';
+    position: fixed;
+    bottom: var(--space-xl, 2rem);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    z-index: 10;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
 .hero-section {
     background-color: var(--pillar-tuinen-primary);
-    padding: 2rem 1rem 1rem;
+    padding: var(--space-2xl) var(--space-md) var(--space-md);
     text-align: left;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+    pointer-events: none;
 }
 
 .hero-section h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
     color: #fff;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    position: relative;
 }
 
 .hero-section p {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-xl);
     max-width: 800px;
+    line-height: 1.6;
+    position: relative;
 }
 
 /* ===================================
@@ -114,9 +251,9 @@ Text Domain: zuidakker-child
    =================================== */
 
 .pillar-card {
-    border-radius: 0;
-    padding: 2.5rem 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl) var(--space-xl);
+    transition: all var(--transition-base);
     min-height: 320px;
     display: flex;
     flex-direction: column;
@@ -127,85 +264,110 @@ Text Domain: zuidakker-child
     text-decoration: none;
     position: relative;
     overflow: hidden;
-    box-shadow: none;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    opacity: 0.5;
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.pillar-card:nth-child(1) { animation-delay: 0.4s; }
+.pillar-card:nth-child(2) { animation-delay: 0.5s; }
+.pillar-card:nth-child(3) { animation-delay: 0.6s; }
+.pillar-card:nth-child(4) { animation-delay: 0.7s; }
+.pillar-card:nth-child(5) { animation-delay: 0.8s; }
+
+.pillar-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
 }
 
 .pillar-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(255, 255, 255, 0.3);
+    opacity: 1;
+}
+
+.pillar-card:hover::before {
+    opacity: 1;
 }
 
 .pillar-card-icon {
-    width: 70px;
-    height: 70px;
-    background-color: rgba(255, 255, 255, 0.25);
-    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.15));
+    border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
+    margin-bottom: var(--space-xl);
+    font-size: 2.25rem;
+    transition: transform var(--transition-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.pillar-card:hover .pillar-card-icon {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .pillar-card h2,
 .pillar-card h3 {
     color: #fff;
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .pillar-card .subtitle {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 1rem;
-    font-weight: 300;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: var(--space-md);
+    font-weight: 400;
+    letter-spacing: 0.01em;
 }
 
 .pillar-card p {
     color: rgba(255, 255, 255, 0.95);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9375rem;
+    line-height: 1.7;
 }
 
-/* Individual Pillar Colors */
+/* Individual Pillar Colors with Modern Gradients */
 .pillar-tuinen {
-    background: var(--pillar-tuinen-secondary);
-    border-radius: 0;
+    background: linear-gradient(135deg, var(--pillar-tuinen-secondary) 0%, var(--pillar-tuinen-dark) 100%);
 }
 
 .pillar-geschiedenis {
-    background: var(--pillar-geschiedenis-secondary);
-    border-radius: 0;
+    background: linear-gradient(135deg, var(--pillar-geschiedenis-secondary) 0%, var(--pillar-geschiedenis-dark) 100%);
 }
 
 .pillar-ontmoeting {
-    background: var(--pillar-ontmoeting-secondary);
-    border-radius: 0;
+    background: linear-gradient(135deg, var(--pillar-ontmoeting-secondary) 0%, var(--pillar-ontmoeting-dark) 100%);
 }
 
 .pillar-educatie {
-    background: var(--pillar-educatie-secondary);
-    border-radius: 0;
+    background: linear-gradient(135deg, var(--pillar-educatie-secondary) 0%, var(--pillar-educatie-dark) 100%);
 }
 
 .pillar-verblijf {
-    background: var(--pillar-verblijf-secondary);
-    border-radius: 0;
+    background: linear-gradient(135deg, var(--pillar-verblijf-secondary) 0%, var(--pillar-verblijf-dark) 100%);
 }
 
 .pillar-sitemap {
-    background: var(--pillar-sitemap-primary);
+    background: linear-gradient(135deg, var(--pillar-sitemap-primary) 0%, var(--pillar-sitemap-dark) 100%);
 }
 
 @media (max-width: 767px) {
-    .pillar-tuinen,
-    .pillar-geschiedenis,
-    .pillar-ontmoeting,
-    .pillar-educatie,
-    .pillar-verblijf {
-        border-radius: 0 !important;
+    .pillar-card {
+        border-radius: var(--radius-md);
+        margin-bottom: var(--space-md);
     }
 }
 
@@ -213,27 +375,24 @@ Text Domain: zuidakker-child
    PAGE-SPECIFIC STYLING - PILLAR PAGES
    =================================== */
 
-/* Tuinen (Gardens) - Green */
-body.page-tuinen {
-    background-color: var(--pillar-tuinen-primary);
-}
-
-body.page-tuinen .site-header {
-    background-color: var(--pillar-tuinen-primary) !important;
+/* Shared Pillar Page Styles - All pillar pages */
+body.page-tuinen .site-header,
+body.page-geschiedenis .site-header,
+body.page-ontmoeting .site-header,
+body.page-educatie .site-header,
+body.page-verblijf .site-header,
+body.page-sitemap .site-header {
     border-radius: 0;
     padding: 0.5rem 0;
     margin-bottom: 0;
 }
 
-body.page-tuinen .entry-hero-container,
-body.page-tuinen .entry-hero-container-inner,
-body.page-tuinen .site-container,
-body.page-tuinen .entry-hero {
-    background-color: var(--pillar-tuinen-primary) !important;
-}
-
-body.page-tuinen .entry-header {
-    background-color: var(--pillar-tuinen-primary);
+body.page-tuinen .entry-header,
+body.page-geschiedenis .entry-header,
+body.page-ontmoeting .entry-header,
+body.page-educatie .entry-header,
+body.page-verblijf .entry-header,
+body.page-sitemap .entry-header {
     border-radius: 0;
     padding: 2rem 1rem 1rem;
     margin-bottom: 0;
@@ -241,192 +400,124 @@ body.page-tuinen .entry-header {
 }
 
 body.page-tuinen .site-content,
+body.page-geschiedenis .site-content,
+body.page-ontmoeting .site-content,
+body.page-educatie .site-content,
+body.page-verblijf .site-content,
+body.page-sitemap .site-content {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+body.page-tuinen .entry-content,
+body.page-geschiedenis .entry-content,
+body.page-ontmoeting .entry-content,
+body.page-educatie .entry-content,
+body.page-verblijf .entry-content,
+body.page-sitemap .entry-content {
+    border-radius: var(--radius-xl, 1rem);
+    padding: var(--space-2xl, 3rem);
+    color: #fff;
+    margin: var(--space-lg, 1.5rem);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual Pillar Page Colors */
+/* Tuinen (Gardens) - Green */
+body.page-tuinen {
+    background-color: var(--pillar-tuinen-primary);
+}
+body.page-tuinen .site-header,
+body.page-tuinen .entry-hero-container,
+body.page-tuinen .entry-hero-container-inner,
+body.page-tuinen .site-container,
+body.page-tuinen .entry-hero,
+body.page-tuinen .entry-header {
+    background-color: var(--pillar-tuinen-primary) !important;
+}
 body.page-tuinen .entry-content {
     background-color: var(--pillar-tuinen-secondary);
-    border-radius: 0;
-    padding: 2rem;
-    color: #fff;
-    margin: 0;
 }
 
 /* Geschiedenis (History) - Brown */
 body.page-geschiedenis {
     background-color: var(--pillar-geschiedenis-primary);
 }
-
-body.page-geschiedenis .site-header {
-    background-color: var(--pillar-geschiedenis-primary) !important;
-    border-radius: 0;
-    padding: 0.5rem 0;
-    margin-bottom: 0;
-}
-
+body.page-geschiedenis .site-header,
 body.page-geschiedenis .entry-hero-container,
 body.page-geschiedenis .entry-hero-container-inner,
 body.page-geschiedenis .site-container,
-body.page-geschiedenis .entry-hero {
+body.page-geschiedenis .entry-hero,
+body.page-geschiedenis .entry-header {
     background-color: var(--pillar-geschiedenis-primary) !important;
 }
-
-body.page-geschiedenis .entry-header {
-    background-color: var(--pillar-geschiedenis-primary);
-    border-radius: 0;
-    padding: 2rem 1rem 1rem;
-    margin-bottom: 0;
-    color: #fff;
-}
-
-body.page-geschiedenis .site-content,
 body.page-geschiedenis .entry-content {
     background-color: var(--pillar-geschiedenis-secondary);
-    border-radius: 0;
-    padding: 2rem;
-    color: #fff;
-    margin: 0;
 }
 
 /* Ontmoeting (Meeting) - Blue */
 body.page-ontmoeting {
     background-color: var(--pillar-ontmoeting-primary);
 }
-
-body.page-ontmoeting .site-header {
-    background-color: var(--pillar-ontmoeting-primary) !important;
-    border-radius: 0;
-    padding: 0.5rem 0;
-    margin-bottom: 0;
-}
-
+body.page-ontmoeting .site-header,
 body.page-ontmoeting .entry-hero-container,
 body.page-ontmoeting .entry-hero-container-inner,
 body.page-ontmoeting .site-container,
-body.page-ontmoeting .entry-hero {
+body.page-ontmoeting .entry-hero,
+body.page-ontmoeting .entry-header {
     background-color: var(--pillar-ontmoeting-primary) !important;
 }
-
-body.page-ontmoeting .entry-header {
-    background-color: var(--pillar-ontmoeting-primary);
-    border-radius: 0;
-    padding: 2rem 1rem 1rem;
-    margin-bottom: 0;
-    color: #fff;
-}
-
-body.page-ontmoeting .site-content,
 body.page-ontmoeting .entry-content {
     background-color: var(--pillar-ontmoeting-secondary);
-    border-radius: 0;
-    padding: 2rem;
-    color: #fff;
-    margin: 0;
 }
 
 /* Educatie (Food Education) - Orange */
 body.page-educatie {
     background-color: var(--pillar-educatie-primary);
 }
-
-body.page-educatie .site-header {
-    background-color: var(--pillar-educatie-primary) !important;
-    border-radius: 0;
-    padding: 0.5rem 0;
-    margin-bottom: 0;
-}
-
+body.page-educatie .site-header,
 body.page-educatie .entry-hero-container,
 body.page-educatie .entry-hero-container-inner,
 body.page-educatie .site-container,
-body.page-educatie .entry-hero {
+body.page-educatie .entry-hero,
+body.page-educatie .entry-header {
     background-color: var(--pillar-educatie-primary) !important;
 }
-
-body.page-educatie .entry-header {
-    background-color: var(--pillar-educatie-primary);
-    border-radius: 0;
-    padding: 2rem 1rem 1rem;
-    margin-bottom: 0;
-    color: #fff;
-}
-
-body.page-educatie .site-content,
 body.page-educatie .entry-content {
     background-color: var(--pillar-educatie-secondary);
-    border-radius: 0;
-    padding: 2rem;
-    color: #fff;
-    margin: 0;
 }
 
 /* Verblijf (Accommodation) - Pink */
 body.page-verblijf {
     background-color: var(--pillar-verblijf-primary);
 }
-
-body.page-verblijf .site-header {
-    background-color: var(--pillar-verblijf-primary) !important;
-    border-radius: 0;
-    padding: 0.5rem 0;
-    margin-bottom: 0;
-}
-
+body.page-verblijf .site-header,
 body.page-verblijf .entry-hero-container,
 body.page-verblijf .entry-hero-container-inner,
 body.page-verblijf .site-container,
-body.page-verblijf .entry-hero {
+body.page-verblijf .entry-hero,
+body.page-verblijf .entry-header {
     background-color: var(--pillar-verblijf-primary) !important;
 }
-
-body.page-verblijf .entry-header {
-    background-color: var(--pillar-verblijf-primary);
-    border-radius: 0;
-    padding: 2rem 1rem 1rem;
-    margin-bottom: 0;
-    color: #fff;
-}
-
-body.page-verblijf .site-content,
 body.page-verblijf .entry-content {
     background-color: var(--pillar-verblijf-secondary);
-    border-radius: 0;
-    padding: 2rem;
-    color: #fff;
-    margin: 0;
 }
 
 /* Sitemap - Dark Green */
 body.page-sitemap {
     background-color: var(--pillar-sitemap-primary);
 }
-
-body.page-sitemap .site-header {
-    background-color: var(--pillar-sitemap-primary) !important;
-    border-radius: 0;
-    padding: 0.5rem 0;
-    margin-bottom: 0;
-}
-
+body.page-sitemap .site-header,
 body.page-sitemap .entry-hero-container,
 body.page-sitemap .entry-hero-container-inner,
 body.page-sitemap .site-container,
-body.page-sitemap .entry-hero {
+body.page-sitemap .entry-hero,
+body.page-sitemap .entry-header {
     background-color: var(--pillar-sitemap-primary) !important;
 }
-
-body.page-sitemap .entry-header {
-    background-color: var(--pillar-sitemap-primary);
-    border-radius: 0;
-    padding: 2rem 1rem 1rem;
-    margin-bottom: 0;
-    color: #fff;
-}
-
-body.page-sitemap .site-content,
 body.page-sitemap .entry-content {
     background-color: var(--pillar-sitemap-secondary);
-    border-radius: 0;
-    padding: 2rem;
-    color: #fff;
-    margin-top: 0.5rem;
 }
 
 /* General pillar page styling - removed as each page now has its own primary background color */
@@ -453,20 +544,25 @@ body[class*="page-sitemap"] .entry-content h3 {
     color: #fff;
 }
 
-/* No rounded edges for content blocks - full width layout like homepage */
+/* ===================================
+   CONTAINER RESETS - Pillar Pages & Homepage
+   =================================== */
+
+/* Reset content wrappers - Pillar pages and homepage */
 body[class*="page-tuinen"] .content-wrap,
 body[class*="page-geschiedenis"] .content-wrap,
 body[class*="page-ontmoeting"] .content-wrap,
 body[class*="page-educatie"] .content-wrap,
 body[class*="page-verblijf"] .content-wrap,
-body[class*="page-sitemap"] .content-wrap {
+body[class*="page-sitemap"] .content-wrap,
+.home .content-wrap {
     border-radius: 0;
     overflow: hidden;
     padding: 0;
     margin: 0;
 }
 
-/* Remove padding from content containers on pillar pages */
+/* Reset main containers - Pillar pages and homepage */
 body[class*="page-tuinen"] .content-area,
 body[class*="page-geschiedenis"] .content-area,
 body[class*="page-ontmoeting"] .content-area,
@@ -484,18 +580,44 @@ body[class*="page-geschiedenis"] .site-main,
 body[class*="page-ontmoeting"] .site-main,
 body[class*="page-educatie"] .site-main,
 body[class*="page-verblijf"] .site-main,
-body[class*="page-sitemap"] .site-main {
+body[class*="page-sitemap"] .site-main,
+.home .content-area,
+.home .content-container,
+.home .site-main {
     padding: 0;
     margin: 0;
 }
 
-/* Remove padding from article on pillar pages */
+/* Reset article and content elements - Pillar pages and homepage */
 body[class*="page-tuinen"] article.entry,
 body[class*="page-geschiedenis"] article.entry,
 body[class*="page-ontmoeting"] article.entry,
 body[class*="page-educatie"] article.entry,
 body[class*="page-verblijf"] article.entry,
-body[class*="page-sitemap"] article.entry {
+body[class*="page-sitemap"] article.entry,
+body[class*="page-tuinen"] .content-bg,
+body[class*="page-geschiedenis"] .content-bg,
+body[class*="page-ontmoeting"] .content-bg,
+body[class*="page-educatie"] .content-bg,
+body[class*="page-verblijf"] .content-bg,
+body[class*="page-sitemap"] .content-bg,
+body[class*="page-tuinen"] .single-content,
+body[class*="page-geschiedenis"] .single-content,
+body[class*="page-ontmoeting"] .single-content,
+body[class*="page-educatie"] .single-content,
+body[class*="page-verblijf"] .single-content,
+body[class*="page-sitemap"] .single-content,
+.home article.entry {
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Reset entry-content - Homepage and general pages */
+.home .entry-content,
+.page .entry-content {
     padding: 0;
     margin: 0;
 }
@@ -505,29 +627,50 @@ body[class*="page-sitemap"] article.entry {
    =================================== */
 
 .pillars-container {
-    background-color: var(--bg-light);
-    padding: 0;
+    background-color: transparent;
+    background-image: 
+        linear-gradient(135deg, rgba(151, 191, 133, 0.15), rgba(151, 191, 133, 0.05)),
+        url('assets/images/zuidakker-greenhouse.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: var(--space-2xl) var(--space-md);
     margin: 0;
+    border-radius: var(--radius-xl, 1rem);
+    position: relative;
 }
 
 .pillars-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0;
-    max-width: 100%;
-    margin: 0;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-lg);
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .pillars-grid {
         grid-template-columns: repeat(5, 1fr);
+        gap: var(--space-xl);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
     }
 }
 
 @media (max-width: 767px) {
     .pillars-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: var(--space-md);
+    }
+    
+    .pillars-container {
+        padding: var(--space-lg) var(--space-sm);
     }
 }
 
@@ -536,19 +679,33 @@ body[class*="page-sitemap"] article.entry {
    =================================== */
 
 .pillar-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: rgba(255, 255, 255, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
     color: #fff;
-    border-radius: 6px;
+    border-radius: var(--radius-lg);
     text-decoration: none;
-    transition: background-color 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.4);
+    transition: all var(--transition-base);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(8px);
 }
 
 .pillar-button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.25));
     color: #fff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.pillar-button:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
 }
 
 /* ===================================
@@ -556,11 +713,17 @@ body[class*="page-sitemap"] article.entry {
    =================================== */
 
 .woocommerce .button.alt {
-    background-color: var(--pillar-tuinen-primary);
+    background: linear-gradient(135deg, var(--pillar-tuinen-primary), var(--pillar-tuinen-secondary));
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
+    font-weight: 600;
 }
 
 .woocommerce .button.alt:hover {
-    background-color: var(--pillar-tuinen-secondary);
+    background: linear-gradient(135deg, var(--pillar-tuinen-secondary), var(--pillar-tuinen-dark));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 /* ===================================
@@ -569,8 +732,15 @@ body[class*="page-sitemap"] article.entry {
 
 .pillar-card:focus,
 .pillar-button:focus {
-    outline: 3px solid #000;
-    outline-offset: 3px;
+    outline: 3px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 4px;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2), var(--shadow-lg);
+}
+
+.pillar-card:focus-visible,
+.pillar-button:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 4px;
 }
 
 /* Screen reader only text */
@@ -590,8 +760,15 @@ body[class*="page-sitemap"] article.entry {
    GLOBAL STYLES
    =================================== */
 
+* {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--bg-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 /* Homepage body background matches header */
@@ -601,29 +778,9 @@ body.home {
 
 .site-content {
     background-color: var(--bg-light);
+    transition: background-color var(--transition-base);
 }
 
-/* Remove default WordPress block editor padding on homepage */
-.home .entry-content,
-.page .entry-content {
-    padding: 0;
-    margin: 0;
-}
-
-/* Remove padding from content containers on homepage */
-.home .content-area,
-.home .content-container,
-.home .site-main,
-.home .content-wrap {
-    padding: 0;
-    margin: 0;
-}
-
-/* Remove padding from article on homepage */
-.home article.entry {
-    padding: 0;
-    margin: 0;
-}
 
 /* ===================================
    HEADER NAVIGATION & LANGUAGE SWITCHER
@@ -666,59 +823,76 @@ body.home {
 .language-switcher {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     font-weight: 600;
-    background-color: var(--header-green);
-    margin-top: 0.5rem;
-    border-radius: 12px;
+    background: linear-gradient(135deg, var(--header-green), var(--header-dark-green));
+    margin-top: var(--space-sm);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(8px);
 }
 
 .language-switcher .lang-link {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
-    transition: color 0.3s ease;
-    padding: 0.25rem 0.5rem;
+    transition: all var(--transition-fast);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-md);
+    position: relative;
 }
 
 .language-switcher .lang-link:hover {
     color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .language-switcher .lang-link.active {
     color: #fff;
-    border-bottom: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.language-switcher .lang-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: var(--radius-full);
 }
 
 .language-switcher .lang-separator {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 /* Language switcher - Pillar page colors */
 body.page-tuinen .language-switcher {
-    background-color: var(--pillar-tuinen-primary);
+    background: linear-gradient(135deg, var(--pillar-tuinen-primary), var(--pillar-tuinen-secondary));
 }
 
 body.page-geschiedenis .language-switcher {
-    background-color: var(--pillar-geschiedenis-primary);
+    background: linear-gradient(135deg, var(--pillar-geschiedenis-primary), var(--pillar-geschiedenis-secondary));
 }
 
 body.page-ontmoeting .language-switcher {
-    background-color: var(--pillar-ontmoeting-primary);
+    background: linear-gradient(135deg, var(--pillar-ontmoeting-primary), var(--pillar-ontmoeting-secondary));
 }
 
 body.page-educatie .language-switcher {
-    background-color: var(--pillar-educatie-primary);
+    background: linear-gradient(135deg, var(--pillar-educatie-primary), var(--pillar-educatie-secondary));
 }
 
 body.page-verblijf .language-switcher {
-    background-color: var(--pillar-verblijf-primary);
+    background: linear-gradient(135deg, var(--pillar-verblijf-primary), var(--pillar-verblijf-secondary));
 }
 
 body.page-sitemap .language-switcher {
-    background-color: var(--pillar-sitemap-primary);
+    background: linear-gradient(135deg, var(--pillar-sitemap-primary), var(--pillar-sitemap-secondary));
 }
 
 /* ===================================
@@ -730,6 +904,12 @@ body.page-sitemap .language-switcher {
     max-height: 80px;
     width: auto;
     height: auto;
+    transition: transform var(--transition-base), opacity var(--transition-fast);
+}
+
+.site-branding .custom-logo:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
 }
 
 /* Ensure logo is responsive */
@@ -877,4 +1057,310 @@ body.page-sitemap .language-switcher {
     text-align: center !important;
     justify-content: center !important;
     align-items: center !important;
+}
+
+/* ===================================
+   MODERN UTILITY CLASSES
+   =================================== */
+
+/* Fade-in animation for content */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn var(--transition-slow) ease-out;
+}
+
+/* Pulse animation for interactive elements */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Smooth image loading */
+img {
+    transition: opacity var(--transition-base);
+}
+
+img[loading="lazy"] {
+    opacity: 0;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Modern link styles */
+a {
+    transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* Selection styling */
+::selection {
+    background-color: var(--pillar-tuinen-primary);
+    color: white;
+}
+
+::-moz-selection {
+    background-color: var(--pillar-tuinen-primary);
+    color: white;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===================================
+   CONTACT PAGE STYLES
+   =================================== */
+
+/* Contact page background */
+body.page-contact {
+    background-color: var(--header-green, #3d5e41);
+}
+
+body.page-contact .site-header {
+    background-color: var(--header-green, #3d5e41) !important;
+}
+
+body.page-contact .site-content {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+body.page-contact .entry-content {
+    background-color: transparent;
+    padding: var(--space-2xl, 3rem);
+    margin: 0;
+}
+
+.contact-info-section {
+    margin: var(--space-2xl, 3rem) 0;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg, 1.5rem);
+    margin-bottom: var(--space-3xl, 4rem);
+}
+
+.contact-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
+    padding: var(--space-xl, 2rem);
+    border-radius: var(--radius-xl, 1rem);
+    box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.07));
+    transition: all var(--transition-base, 250ms);
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg, 0 10px 25px rgba(0, 0, 0, 0.1));
+}
+
+.contact-card-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-md, 1rem);
+    display: inline-block;
+    transition: transform var(--transition-base, 250ms);
+}
+
+.contact-card:hover .contact-card-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.contact-card h3 {
+    color: var(--pillar-tuinen-secondary, #6f9357);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm, 0.5rem);
+    letter-spacing: -0.02em;
+}
+
+.contact-card p {
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.contact-card a {
+    color: var(--pillar-tuinen-primary, #97bf85);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-fast, 150ms);
+}
+
+.contact-card a:hover {
+    color: var(--pillar-tuinen-secondary, #6f9357);
+    text-decoration: underline;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
+    padding: var(--space-2xl, 3rem);
+    border-radius: var(--radius-xl, 1rem);
+    box-shadow: var(--shadow-lg, 0 10px 25px rgba(0, 0, 0, 0.1));
+    margin: var(--space-2xl, 3rem) 0;
+}
+
+.contact-form-section h2 {
+    color: var(--pillar-tuinen-secondary, #6f9357);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 800;
+    margin-bottom: var(--space-md, 1rem);
+    letter-spacing: -0.03em;
+}
+
+.contact-form-section > p {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-xl, 2rem);
+}
+
+.contact-form {
+    max-width: 800px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg, 1.5rem);
+}
+
+.form-group {
+    margin-bottom: var(--space-lg, 1.5rem);
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: var(--space-sm, 0.5rem);
+    font-size: 0.9375rem;
+    letter-spacing: -0.01em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: var(--space-md, 1rem);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-md, 0.5rem);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all var(--transition-fast, 150ms);
+    background-color: #fff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--pillar-tuinen-primary, #97bf85);
+    box-shadow: 0 0 0 3px rgba(151, 191, 133, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm, 0.5rem);
+    padding: var(--space-md, 1rem) var(--space-xl, 2rem);
+    background: linear-gradient(135deg, var(--pillar-tuinen-primary, #97bf85), var(--pillar-tuinen-secondary, #6f9357));
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-lg, 0.75rem);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-base, 250ms);
+    box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.07));
+    letter-spacing: -0.01em;
+}
+
+.contact-submit-btn:hover {
+    background: linear-gradient(135deg, var(--pillar-tuinen-secondary, #6f9357), var(--pillar-tuinen-dark, #4a6b3d));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg, 0 10px 25px rgba(0, 0, 0, 0.1));
+}
+
+.contact-submit-btn:active {
+    transform: translateY(0);
+}
+
+.contact-submit-btn .btn-icon {
+    font-size: 1.25rem;
+    transition: transform var(--transition-fast, 150ms);
+}
+
+.contact-submit-btn:hover .btn-icon {
+    transform: translateX(4px);
+}
+
+/* Contact Messages */
+.contact-message {
+    padding: var(--space-md, 1rem) var(--space-lg, 1.5rem);
+    border-radius: var(--radius-md, 0.5rem);
+    margin-bottom: var(--space-lg, 1.5rem);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.contact-success {
+    background-color: rgba(151, 191, 133, 0.1);
+    border-left: 4px solid var(--pillar-tuinen-primary, #97bf85);
+    color: var(--pillar-tuinen-dark, #4a6b3d);
+}
+
+.contact-error {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-left: 4px solid #dc3545;
+    color: #721c24;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md, 1rem);
+    }
+    
+    .contact-form-section {
+        padding: var(--space-lg, 1.5rem);
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
 }

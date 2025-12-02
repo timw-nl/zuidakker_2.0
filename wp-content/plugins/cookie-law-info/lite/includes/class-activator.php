@@ -43,6 +43,9 @@ class Activator {
 		),
 		'3.2.1' => array(
 			'update_db_321',
+		),
+		'3.3.7' => array(
+			'update_db_337',
 		)
 	);
 	/**
@@ -193,6 +196,34 @@ class Activator {
 			$banner->set_contents( $contents );
 			$banner->set_settings( $settings );
 			$banner->save();
+		}
+	}
+
+	/**
+	 * Fix MySQL schema compatibility for TEXT/LONGTEXT columns.
+	 * Remove DEFAULT values from TEXT/LONGTEXT columns to prevent MySQL errors.
+	 *
+	 * @since 3.3.7
+	 * @return void
+	 */
+	public static function update_db_337() {
+		// Reset table version options to force schema update with corrected definitions
+		delete_option( 'cky_banners_table_version' );
+		delete_option( 'cky_cookie_table_version' );
+		delete_option( 'cky_cookie_category_table_version' );
+
+		// Reinstall tables with the corrected schema (without DEFAULT on TEXT/LONGTEXT columns)
+		$controllers = array(
+			'CookieYes\Lite\Admin\Modules\Banners\Includes\Controller',
+			'CookieYes\Lite\Admin\Modules\Cookies\Includes\Cookie_Controller',
+			'CookieYes\Lite\Admin\Modules\Cookies\Includes\Category_Controller',
+		);
+
+		foreach ( $controllers as $controller_class ) {
+			if ( class_exists( $controller_class ) ) {
+				$controller = $controller_class::get_instance();
+				$controller->install_tables();
+			}
 		}
 	}
 }
