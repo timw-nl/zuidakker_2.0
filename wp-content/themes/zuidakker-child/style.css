@@ -5,7 +5,7 @@ Description: Custom child theme for Zuidakker community platform with 5-pillar d
 Author: Zuidakker
 Author URI: https://zuidakker.nl
 Template: kadence
-Version: 1.0.12
+Version: 1.0.13
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: zuidakker-child
@@ -1597,18 +1597,28 @@ body.page-id-12 .site-main {
 }
 
 /* Map container styling */
-#contact-map {
+.contact-map {
+    height: 250px;
+    width: 100%;
+    border-radius: var(--radius-lg, 0.5rem);
+    margin-top: var(--space-md, 1rem);
     border: 2px solid rgba(151, 191, 133, 0.3);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 /* Leaflet popup styling */
 .leaflet-popup-content-wrapper {
-    border-radius: 0.5rem;
+    border-radius: var(--radius-lg, 0.5rem);
 }
 
 .leaflet-popup-content {
     font-family: inherit;
+    line-height: 1.5;
+}
+
+.leaflet-popup-content b {
+    color: var(--pillar-tuinen-primary);
 }
 
 .contact-card-icon {

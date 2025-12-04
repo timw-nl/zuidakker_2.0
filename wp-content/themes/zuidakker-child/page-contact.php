@@ -46,7 +46,7 @@ kadence()->print_styles( 'kadence-content' );
                                         2371BZ Roelofarendsveen<br>
                                         Nederland
                                     </p>
-                                    <div id="contact-map" style="height: 250px; width: 100%; border-radius: 0.5rem; margin-top: 1rem;"></div>
+                                    <?php zuidakker_display_contact_map(); ?>
                                 </div>
 
                                 <!-- Email Card -->
@@ -139,30 +139,6 @@ kadence()->print_styles( 'kadence-content' );
         </main>
     </div>
 </div>
-
-<!-- Leaflet CSS and JS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize map centered on Zuidakker location
-    // Coordinates for Zuideinde 112 e, 2371BZ Roelofarendsveen
-    var map = L.map('contact-map').setView([52.2029, 4.6382], 15);
-    
-    // Add OpenStreetMap tiles
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 19
-    }).addTo(map);
-    
-    // Add marker for Zuidakker
-    var marker = L.marker([52.2029, 4.6382]).addTo(map);
-    
-    // Add popup to marker
-    marker.bindPopup('<b>Zuidakker</b><br>Zuideinde 112 e<br>2371BZ Roelofarendsveen').openPopup();
-});
-</script>
 
 <?php
 get_footer();
