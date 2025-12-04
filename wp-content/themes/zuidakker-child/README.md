@@ -239,20 +239,34 @@ zuidakker-child/
 
 ## Customization
 
-### 🎨 Managing Pillars via WordPress Admin (Recommended)
+### 🎨 Managing Site via WordPress Admin (Recommended)
 
-All 5 pillars can now be managed directly from **wp-admin > Appearance > Customize > 🌿 Zuidakker Pijlers**
+The entire site design is now manageable from **wp-admin > Appearance > Customize > 🌿 Zuidakker Pijlers**
 
-For each pillar you can configure:
-- **Naam** - Display name (e.g., "Tuinen")
-- **Ondertitel** - English subtitle (e.g., "Gardens")
-- **Icoon** - Emoji icon (e.g., 🌱)
+#### 🌱 Pillar Sections (5x)
+For each pillar (Tuinen, Geschiedenis, Ontmoeting, Educatie, Verblijf):
+- **Naam** - Display name
+- **Ondertitel** - English subtitle
+- **Icoon** - Emoji icon
 - **Beschrijving** - Description text
 - **Kleuren** - Primary, Secondary, Light, and Dark colors
 
-General settings available:
-- Header colors
-- Sitemap colors
+#### ⚙️ Algemene Instellingen
+- **Header kleuren** - Header color scheme
+- **Sitemap kleuren** - Sitemap page colors
+- **Footer tekst** - Copyright text at bottom of pages
+
+#### 📱 Social Media
+- **Facebook URL** - Leave empty to hide
+- **Instagram URL** - Leave empty to hide
+- **LinkedIn URL** - Leave empty to hide
+- **YouTube URL** - Leave empty to hide
+
+#### 📍 Contact & Kaart
+- **Adres** - Address shown on contact page and map popup
+- **Kaart Latitude** - Map marker latitude
+- **Kaart Longitude** - Map marker longitude
+- **Kaart Zoom niveau** - Map zoom level (1-18)
 
 Changes are previewed live and saved to the database - no code editing required!
 
@@ -350,15 +364,17 @@ sudo find /path/to/zuidakker-child/ -type f -exec chmod 644 {} \;
 ## Changelog
 
 ### Version 1.1.0 (Current)
-- **NEW: WordPress Customizer integration for 5-pillar design**
-  - Manage pillar names, icons, descriptions via wp-admin
-  - Color picker for all pillar colors (primary, secondary, light, dark)
-  - Live preview of changes
-  - No code editing required
-- Added `inc/customizer-pillars.php` for Customizer settings
+- **NEW: 100% WordPress Admin manageable** (excluding Docker)
+- **WordPress Customizer integration:**
+  - 🌱 5 Pillar sections: names, icons, descriptions, colors
+  - ⚙️ General settings: header colors, sitemap colors, footer text
+  - 📱 Social Media: Facebook, Instagram, LinkedIn, YouTube URLs
+  - 📍 Contact & Map: address, coordinates, zoom level
+- Live preview of all changes
+- Added `inc/customizer-pillars.php` for all Customizer settings
 - Added `assets/js/customizer-preview.js` for live preview
 - Dynamic CSS generation from Customizer settings
-- Updated sitemap shortcode to use dynamic icons
+- Updated all theme files to read from Customizer
 
 ### Version 1.0.9
 - Implemented greenhouse photo backgrounds across all pages

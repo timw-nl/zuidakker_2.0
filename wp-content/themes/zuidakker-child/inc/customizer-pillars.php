@@ -242,6 +242,132 @@ function zuidakker_customize_register_pillars( $wp_customize ) {
         'label'   => __( 'Sitemap secundaire kleur', 'zuidakker-child' ),
         'section' => 'zuidakker_general_settings',
     ) ) );
+    
+    // Footer Text
+    $wp_customize->add_setting( 'zuidakker_footer_text', array(
+        'default'           => '© ' . date('Y') . ' De Zuidakker',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage',
+    ) );
+    $wp_customize->add_control( 'zuidakker_footer_text', array(
+        'label'       => __( 'Footer tekst', 'zuidakker-child' ),
+        'description' => __( 'Tekst onderaan elke pagina', 'zuidakker-child' ),
+        'section'     => 'zuidakker_general_settings',
+        'type'        => 'text',
+    ) );
+    
+    // === SOCIAL MEDIA SECTION ===
+    $wp_customize->add_section( 'zuidakker_social_media', array(
+        'title'    => __( '📱 Social Media', 'zuidakker-child' ),
+        'panel'    => 'zuidakker_pillars_panel',
+        'priority' => 110,
+    ) );
+    
+    // Facebook
+    $wp_customize->add_setting( 'zuidakker_social_facebook', array(
+        'default'           => 'https://facebook.com/zuidakker',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'zuidakker_social_facebook', array(
+        'label'       => __( 'Facebook URL', 'zuidakker-child' ),
+        'description' => __( 'Laat leeg om te verbergen', 'zuidakker-child' ),
+        'section'     => 'zuidakker_social_media',
+        'type'        => 'url',
+    ) );
+    
+    // Instagram
+    $wp_customize->add_setting( 'zuidakker_social_instagram', array(
+        'default'           => 'https://instagram.com/zuidakker',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'zuidakker_social_instagram', array(
+        'label'       => __( 'Instagram URL', 'zuidakker-child' ),
+        'description' => __( 'Laat leeg om te verbergen', 'zuidakker-child' ),
+        'section'     => 'zuidakker_social_media',
+        'type'        => 'url',
+    ) );
+    
+    // LinkedIn
+    $wp_customize->add_setting( 'zuidakker_social_linkedin', array(
+        'default'           => 'https://linkedin.com/company/zuidakker',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'zuidakker_social_linkedin', array(
+        'label'       => __( 'LinkedIn URL', 'zuidakker-child' ),
+        'description' => __( 'Laat leeg om te verbergen', 'zuidakker-child' ),
+        'section'     => 'zuidakker_social_media',
+        'type'        => 'url',
+    ) );
+    
+    // YouTube
+    $wp_customize->add_setting( 'zuidakker_social_youtube', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'zuidakker_social_youtube', array(
+        'label'       => __( 'YouTube URL', 'zuidakker-child' ),
+        'description' => __( 'Laat leeg om te verbergen', 'zuidakker-child' ),
+        'section'     => 'zuidakker_social_media',
+        'type'        => 'url',
+    ) );
+    
+    // === CONTACT & MAP SECTION ===
+    $wp_customize->add_section( 'zuidakker_contact_settings', array(
+        'title'    => __( '📍 Contact & Kaart', 'zuidakker-child' ),
+        'panel'    => 'zuidakker_pillars_panel',
+        'priority' => 120,
+    ) );
+    
+    // Address
+    $wp_customize->add_setting( 'zuidakker_address', array(
+        'default'           => "Zuidakker\nZuideinde 112 e\n2371BZ Roelofarendsveen",
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ) );
+    $wp_customize->add_control( 'zuidakker_address', array(
+        'label'   => __( 'Adres', 'zuidakker-child' ),
+        'section' => 'zuidakker_contact_settings',
+        'type'    => 'textarea',
+    ) );
+    
+    // Map Latitude
+    $wp_customize->add_setting( 'zuidakker_map_lat', array(
+        'default'           => '52.2029',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'zuidakker_map_lat', array(
+        'label'       => __( 'Kaart Latitude', 'zuidakker-child' ),
+        'description' => __( 'Breedtegraad voor de kaart marker', 'zuidakker-child' ),
+        'section'     => 'zuidakker_contact_settings',
+        'type'        => 'text',
+    ) );
+    
+    // Map Longitude
+    $wp_customize->add_setting( 'zuidakker_map_lng', array(
+        'default'           => '4.6382',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'zuidakker_map_lng', array(
+        'label'       => __( 'Kaart Longitude', 'zuidakker-child' ),
+        'description' => __( 'Lengtegraad voor de kaart marker', 'zuidakker-child' ),
+        'section'     => 'zuidakker_contact_settings',
+        'type'        => 'text',
+    ) );
+    
+    // Map Zoom
+    $wp_customize->add_setting( 'zuidakker_map_zoom', array(
+        'default'           => '15',
+        'sanitize_callback' => 'absint',
+    ) );
+    $wp_customize->add_control( 'zuidakker_map_zoom', array(
+        'label'       => __( 'Kaart Zoom niveau', 'zuidakker-child' ),
+        'description' => __( '1-18, hoger = meer ingezoomd', 'zuidakker-child' ),
+        'section'     => 'zuidakker_contact_settings',
+        'type'        => 'number',
+        'input_attrs' => array(
+            'min' => 1,
+            'max' => 18,
+        ),
+    ) );
 }
 add_action( 'customize_register', 'zuidakker_customize_register_pillars' );
 

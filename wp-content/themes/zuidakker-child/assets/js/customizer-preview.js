@@ -74,4 +74,11 @@
         });
     });
 
+    // Footer text
+    wp.customize('zuidakker_footer_text', function(value) {
+        value.bind(function(newval) {
+            $('.site-footer .footer-html, .site-info').text(newval);
+        });
+    });
+
 })(jQuery);

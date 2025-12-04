@@ -42,12 +42,16 @@ add_action( 'wp_enqueue_scripts', 'zuidakker_enqueue_contact_map_assets' );
 
 /**
  * Get map initialization script
+ * Settings manageable via wp-admin > Appearance > Customize > 📍 Contact & Kaart
  */
 function zuidakker_get_map_init_script() {
-    $lat = 52.2029;
-    $lng = 4.6382;
-    $zoom = 15;
-    $address = esc_js( 'Zuidakker<br>Zuideinde 112 e<br>2371BZ Roelofarendsveen' );
+    $lat = floatval( get_theme_mod( 'zuidakker_map_lat', '52.2029' ) );
+    $lng = floatval( get_theme_mod( 'zuidakker_map_lng', '4.6382' ) );
+    $zoom = intval( get_theme_mod( 'zuidakker_map_zoom', '15' ) );
+    
+    // Get address from Customizer and format for popup
+    $address_raw = get_theme_mod( 'zuidakker_address', "Zuidakker\nZuideinde 112 e\n2371BZ Roelofarendsveen" );
+    $address = esc_js( nl2br( esc_html( $address_raw ) ) );
     
     return "
     document.addEventListener('DOMContentLoaded', function() {

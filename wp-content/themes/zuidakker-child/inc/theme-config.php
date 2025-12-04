@@ -114,9 +114,10 @@ add_action( 'admin_head', 'zuidakker_add_favicon' );
 
 /**
  * Customize footer credits - Remove Kadence links
+ * Manageable via wp-admin > Appearance > Customize > ⚙️ Algemene Instellingen
  */
 function zuidakker_custom_footer_credits() {
-    return '© ' . date('Y') . ' De Zuidakker';
+    return get_theme_mod( 'zuidakker_footer_text', '© ' . date('Y') . ' De Zuidakker' );
 }
 add_filter( 'kadence_footer_credit', 'zuidakker_custom_footer_credits' );
 
@@ -124,7 +125,7 @@ add_filter( 'kadence_footer_credit', 'zuidakker_custom_footer_credits' );
  * Remove Kadence theme attribution completely
  */
 add_filter( 'kadence_footer_html', function() {
-    return '© ' . date('Y') . ' De Zuidakker';
+    return get_theme_mod( 'zuidakker_footer_text', '© ' . date('Y') . ' De Zuidakker' );
 }, 20 );
 
 /**
