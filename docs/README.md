@@ -1,6 +1,6 @@
-# Zuidakker 2.0 Documentation
+# Zuidakker Documentation
 
-Complete documentation for rebuilding and maintaining the Zuidakker WordPress platform.
+Complete documentation for the Zuidakker WordPress community platform.
 
 ---
 
@@ -12,28 +12,30 @@ docker-compose up -d
 
 # Access
 # Site: http://localhost:8080
-# Admin: http://localhost:8080/wp-admin
+# Admin: http://localhost:8080/wp-admin (admin/admin)
 # phpMyAdmin: http://localhost:8081
-
-# Run tests
-npm install
-npx playwright install chromium
-npm test
 ```
 
 ---
 
-## 📚 Documentation
+## 📚 Documentation Structure
 
-### Essential Guides
+### Theme Documentation (Primary)
+**[Theme README](../wp-content/themes/zuidakker-child/README.md)** - Complete theme documentation
+- Design system (colors, typography, spacing)
+- Page types (homepage, pillar pages, sitemap, contact, agenda)
+- Theme structure and files
+- Features (responsive design, pillar cards, navigation)
+- Customization guide
+- Development notes
 
-**[Rebuild Guide](./REBUILD_GUIDE.md)** - Complete platform rebuild instructions
-- Architecture overview
-- Step-by-step setup
-- Required pages
-- Language configuration
-- WooCommerce setup
-- Testing
+**[Images README](../wp-content/themes/zuidakker-child/assets/images/README.md)** - Image assets
+- Current assets (logo, greenhouse photo)
+- Usage in theme
+- Image requirements
+- Adding new images
+
+### Project Documentation (This Folder)
 
 **[Setup Guide](./SETUP_GUIDE.md)** - Development environment setup
 - Docker configuration
@@ -44,37 +46,7 @@ npm test
 **[Quick Reference](./QUICK_REFERENCE.md)** - Common commands and tasks
 - Docker commands
 - WordPress CLI
-- Testing commands
 - Troubleshooting
-
-### Feature Documentation
-
-**[Polylang](./POLYLANG.md)** - Multilingual setup (NL/EN)
-- Language configuration
-- URL structure
-- Translation workflow
-- Language switcher
-
-**[Testing](./TESTING.md)** - Automated testing
-- E2E tests
-- Visual regression
-- Running tests
-- Writing new tests
-
-**[Theme Documentation](./THEME.md)** - Zuidakker child theme
-- Theme structure (KISS modular)
-- 5-pillar color scheme
-- Custom post types
-- Shortcodes
-- Customization guide
-
-**[Pillar Page Styling](./PILLAR_PAGE_STYLING.md)** - Color scheme reference
-- Color definitions
-- CSS variables
-- Body classes
-- Responsive design
-
-### Deployment
 
 **[Deployment Checklist](./DEPLOYMENT_CHECKLIST.md)** - Production deployment
 - Pre-deployment tasks
@@ -82,18 +54,17 @@ npm test
 - Performance optimization
 - Backup strategy
 
-### Project Planning
+### Additional Documentation
 
-**[Improvements Needed](./IMPROVEMENTS_NEEDED.md)** - Gap analysis & roadmap
-- Current status vs. PRD
-- Missing features
-- Priority roadmap (6 weeks)
-- Implementation guide
+**[Theme (Legacy)](./THEME.md)** - Original theme documentation
+- Theme structure overview
+- Custom post types
+- Shortcodes
 
-**[Product Requirements](./zuidakker_en.md)** - Original PRD
-- Project scope
-- Feature requirements
-- Technical specifications
+**[Pillar Page Styling](./PILLAR_PAGE_STYLING.md)** - Color scheme reference
+- Color definitions
+- CSS variables
+- Body classes
 
 ---
 
@@ -113,11 +84,12 @@ npm test
 
 ### Key Features
 
+- ✅ **Greenhouse Photo Backgrounds** - Full-page backgrounds on all pages
+- ✅ **5-Pillar Design System** - Consistent color-coded sections
 - ✅ **Multilingual** - Dutch (default) and English
 - ✅ **WooCommerce** - E-commerce integration
 - ✅ **Custom Post Types** - Geschiedenis & Activiteiten
 - ✅ **Responsive Design** - Mobile-first approach
-- ✅ **Automated Testing** - E2E tests with Playwright
 - ✅ **Modular Code** - KISS principles applied
 
 ---
@@ -126,30 +98,25 @@ npm test
 
 ### Theme Structure
 
+See [Theme README](../wp-content/themes/zuidakker-child/README.md) for complete theme documentation.
+
 ```
 zuidakker-child/
 ├── functions.php          # Main loader
-├── style.css              # Pillar colors & styles
+├── style.css              # Styles with CSS variables
+├── front-page.php         # Homepage template
+├── page-contact.php       # Contact page template
+├── assets/
+│   ├── images/           # Logo and greenhouse photo
+│   └── logo/             # Logo variations
 └── inc/                   # Modular functions
-    ├── theme-config.php       # Configuration & pillars
-    ├── pillar-pages.php       # Body classes & shortcode
+    ├── theme-config.php       # Core configuration
+    ├── pillar-pages.php       # Pillar functionality
     ├── custom-post-types.php  # CPT registration
     ├── woocommerce.php        # WooCommerce support
-    └── language-switcher.php  # NL|EN switcher
-```
-
-### Test Structure
-
-```
-tests/
-├── helpers/
-│   ├── test-data.js      # Centralized test data
-│   └── page-helpers.js   # Reusable functions
-└── e2e/
-    ├── pillar-pages.spec.js
-    ├── homepage.spec.js
-    ├── language-switcher.spec.js
-    └── custom-post-types.spec.js
+    ├── footer-customization.php # Header sitemap link
+    ├── sitemap-shortcode.php  # Sitemap grid
+    └── contact-form.php       # Contact form
 ```
 
 ---
@@ -167,91 +134,39 @@ tests/
 
 ---
 
-## 📖 Documentation Index
-
-### By Role
-
-**For Developers:**
-- [Rebuild Guide](./REBUILD_GUIDE.md) - Complete rebuild instructions
-- [Setup Guide](./SETUP_GUIDE.md) - Development environment
-- [Testing](./TESTING.md) - Automated tests
-- [Quick Reference](./QUICK_REFERENCE.md) - Commands
-
-**For Content Managers:**
-- [Polylang](./POLYLANG.md) - Language setup
-- [Theme](./THEME.md) - Theme features & customization
-- [Pillar Styling](./PILLAR_PAGE_STYLING.md) - Color scheme
-
-**For Project Planning:**
-- [Improvements Needed](./IMPROVEMENTS_NEEDED.md) - Gap analysis & roadmap
-
-**For Deployment:**
-- [Deployment Checklist](./DEPLOYMENT_CHECKLIST.md) - Production setup
-
-### By Topic
-
-**Setup & Configuration:**
-- Rebuild Guide - Complete platform setup
-- Setup Guide - Development environment
-- Polylang - Language configuration
-
-**Development:**
-- Testing - Automated tests
-- Pillar Styling - Color scheme
-- Quick Reference - Commands
-
-**Deployment:**
-- Deployment Checklist - Production tasks
-
----
-
 ## 🎯 Common Tasks
 
-### Create Homepage
+### Customizing the Theme
 
-1. Create page in WordPress
-2. Add hero section (Custom HTML block)
-3. Add pillar grid (Shortcode: `[pillars_grid]`)
-4. Set as homepage (Settings → Reading)
+See [Theme README](../wp-content/themes/zuidakker-child/README.md) for:
+- Changing pillar icons
+- Updating colors
+- Replacing background image
+- Customizing footer text
 
-### Add New Language
+### Development Setup
 
-1. Go to Languages → Languages
-2. Add language (NL or EN)
-3. Configure URL structure
-4. Flush permalinks
+1. Start Docker: `docker-compose up -d`
+2. Access site: http://localhost:8080
+3. Login: admin/admin
+4. See [Setup Guide](./SETUP_GUIDE.md) for details
 
-### Run Tests
-
-```bash
-npm test              # All tests
-npm run test:ui       # Interactive mode
-npm run test:pillar   # Pillar pages only
-```
-
-### Deploy to Production
+### Deployment
 
 1. Review [Deployment Checklist](./DEPLOYMENT_CHECKLIST.md)
-2. Run tests (`npm test`)
-3. Update configuration
-4. Deploy files
-5. Flush cache
+2. Update configuration
+3. Deploy files
+4. Flush cache
 
 ---
 
 ## 🔍 Finding Information
 
-**Need to rebuild the platform?**
-→ [Rebuild Guide](./REBUILD_GUIDE.md)
+**Understanding the theme design?**
+→ [Theme README](../wp-content/themes/zuidakker-child/README.md) - Complete theme documentation
 
 **Setting up development environment?**
 → [Setup Guide](./SETUP_GUIDE.md)
-
-**Configuring languages?**
-→ [Polylang](./POLYLANG.md)
-
-**Running tests?**
-→ [Testing](./TESTING.md)
 
 **Deploying to production?**
 → [Deployment Checklist](./DEPLOYMENT_CHECKLIST.md)
@@ -259,45 +174,22 @@ npm run test:pillar   # Pillar pages only
 **Quick command reference?**
 → [Quick Reference](./QUICK_REFERENCE.md)
 
-**Understanding the theme?**
-→ [Theme Documentation](./THEME.md)
-
 **Understanding pillar colors?**
 → [Pillar Styling](./PILLAR_PAGE_STYLING.md)
-
-**What's missing from the platform?**
-→ [Improvements Needed](./IMPROVEMENTS_NEEDED.md)
-
----
-
-## 📝 Contributing
-
-When updating documentation:
-
-1. Keep files focused on one topic
-2. Use clear headings and structure
-3. Include code examples
-4. Update this README if adding new docs
-5. Follow existing formatting style
 
 ---
 
 ## 🆘 Support
 
-**For issues:**
-1. Check relevant documentation
-2. Review troubleshooting sections
-3. Check test results
-4. Verify Docker is running
-
 **Common Issues:**
+- Background photo not showing → Check file path in style.css
 - Pillar colors not showing → Check body classes
-- Language switcher not working → Configure Polylang
-- Tests failing → Check Docker & site accessibility
-- 404 errors → Flush permalinks
+- Sitemap link not in header → Check inc/footer-customization.php
+- 404 errors → Flush permalinks (Settings → Permalinks → Save)
+- Permission errors → Run `sudo chmod -R 755` on theme folder
 
 ---
 
-**Last Updated:** October 12, 2024  
-**Version:** 2.0  
-**Platform:** Zuidakker Community Platform
+**Last Updated:** December 3, 2025  
+**Version:** 1.0.9  
+**Platform:** De Zuidakker Community Platform

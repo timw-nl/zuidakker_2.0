@@ -1,11 +1,11 @@
 /*
 Theme Name: Zuidakker Child Theme
 Theme URI: https://zuidakker.nl
-Description: Custom child theme for Zuidakker community platform with 5-pillar design
+Description: Custom child theme for Zuidakker community platform with 5-pillar design (Performance Optimized)
 Author: Zuidakker
 Author URI: https://zuidakker.nl
 Template: kadence
-Version: 1.0.9
+Version: 1.0.12
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: zuidakker-child
@@ -95,11 +95,12 @@ Text Domain: zuidakker-child
 
 .site-header {
     background-color: var(--header-green) !important;
-    padding: var(--space-lg) 0;
-    margin-bottom: var(--space-sm);
+    padding: 0.5rem 0;
+    margin-bottom: 0;
     box-shadow: var(--shadow-sm);
     transition: box-shadow var(--transition-base);
     backdrop-filter: blur(10px);
+    border-radius: 0;
 }
 
 .site-header:hover {
@@ -109,12 +110,125 @@ Text Domain: zuidakker-child
 /* Homepage uses Tuinen colors */
 .home .site-header {
     background-color: var(--pillar-tuinen-primary) !important;
+    padding: 0.5rem 0;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.site-header .site-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 
 .site-branding {
     display: flex;
     align-items: center;
     gap: var(--space-md);
+}
+
+/* Header Sitemap Link */
+.header-sitemap-link {
+    position: fixed;
+    right: 1rem;
+    top: 3.5rem;
+    z-index: 1000;
+}
+
+.header-sitemap-link .sitemap-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    color: #fff;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-sitemap-link .sitemap-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.header-sitemap-link .sitemap-link svg {
+    width: 20px;
+    height: 20px;
+    transition: transform var(--transition-fast);
+}
+
+.header-sitemap-link .sitemap-link:hover svg {
+    transform: scale(1.1);
+}
+
+/* Header Social Links */
+.social-links-wrapper {
+    position: fixed;
+    top: 0.5rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+.header-social-links {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: center;
+}
+
+.header-social-links .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    color: #fff;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-social-links .social-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.header-social-links .social-link svg {
+    width: 20px;
+    height: 20px;
+    transition: transform var(--transition-fast);
+}
+
+.header-social-links .social-link:hover svg {
+    transform: scale(1.1);
+}
+
+/* Social link specific colors on hover */
+.header-social-links .social-facebook:hover {
+    background: rgba(24, 119, 242, 0.2);
+}
+
+.header-social-links .social-instagram:hover {
+    background: rgba(225, 48, 108, 0.2);
+}
+
+.header-social-links .social-linkedin:hover {
+    background: rgba(10, 102, 194, 0.2);
+}
+
+.header-social-links .social-youtube:hover {
+    background: rgba(255, 0, 0, 0.2);
 }
 
 .site-title {
@@ -211,7 +325,7 @@ Text Domain: zuidakker-child
 }
 
 .hero-section {
-    background-color: var(--pillar-tuinen-primary);
+    background-color: transparent;
     padding: var(--space-2xl) var(--space-md) var(--space-md);
     text-align: left;
     max-width: 1200px;
@@ -320,9 +434,15 @@ Text Domain: zuidakker-child
 .pillar-card h3 {
     color: #fff;
     margin-bottom: var(--space-sm);
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
     font-weight: 700;
     letter-spacing: -0.02em;
+    word-break: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    overflow-wrap: break-word;
+    line-height: 1.3;
 }
 
 .pillar-card .subtitle {
@@ -399,6 +519,21 @@ body.page-sitemap .entry-header {
     color: #fff;
 }
 
+/* Hide page titles on pillar pages */
+body.page-tuinen .entry-title,
+body.page-geschiedenis .entry-title,
+body.page-ontmoeting .entry-title,
+body.page-educatie .entry-title,
+body.page-verblijf .entry-title,
+body.page-sitemap .entry-title,
+body.page-contact .entry-title,
+body.page-agenda .entry-title,
+body[class*="page-contact"] .entry-title,
+body[class*="page-agenda"] .entry-title,
+body.page-id-12 .entry-title {
+    display: none !important;
+}
+
 body.page-tuinen .site-content,
 body.page-geschiedenis .site-content,
 body.page-ontmoeting .site-content,
@@ -415,7 +550,12 @@ body.page-geschiedenis .entry-content,
 body.page-ontmoeting .entry-content,
 body.page-educatie .entry-content,
 body.page-verblijf .entry-content,
-body.page-sitemap .entry-content {
+body.page-sitemap .entry-content,
+body.page-agenda .entry-content,
+body.page-contact .entry-content,
+body[class*="page-agenda"] .entry-content,
+body[class*="page-contact"] .entry-content,
+body.page-id-12 .entry-content {
     border-radius: var(--radius-xl, 1rem);
     padding: var(--space-2xl, 3rem);
     color: #fff;
@@ -426,98 +566,281 @@ body.page-sitemap .entry-content {
 /* Individual Pillar Page Colors */
 /* Tuinen (Gardens) - Green */
 body.page-tuinen {
-    background-color: var(--pillar-tuinen-primary);
+    background-image: url('assets/images/zuidakker-greenhouse.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
 }
-body.page-tuinen .site-header,
+body.page-tuinen::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(151, 191, 133, 0.3);
+    pointer-events: none;
+    z-index: 0;
+}
+body.page-tuinen .site-header {
+    background-color: rgba(151, 191, 133, 0.85) !important;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
 body.page-tuinen .entry-hero-container,
 body.page-tuinen .entry-hero-container-inner,
 body.page-tuinen .site-container,
 body.page-tuinen .entry-hero,
 body.page-tuinen .entry-header {
-    background-color: var(--pillar-tuinen-primary) !important;
+    background-color: transparent !important;
+    position: relative;
+    z-index: 1;
 }
 body.page-tuinen .entry-content {
-    background-color: var(--pillar-tuinen-secondary);
+    background-color: rgba(111, 147, 87, 0.9);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+    border-radius: var(--radius-xl, 1rem);
+}
+body.page-tuinen .site-content {
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
 }
 
 /* Geschiedenis (History) - Brown */
 body.page-geschiedenis {
-    background-color: var(--pillar-geschiedenis-primary);
+    background-image: url('assets/images/zuidakker-greenhouse.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
 }
-body.page-geschiedenis .site-header,
+body.page-geschiedenis::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(194, 125, 85, 0.3);
+    pointer-events: none;
+    z-index: 0;
+}
+body.page-geschiedenis .site-header {
+    background-color: rgba(194, 125, 85, 0.85) !important;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
 body.page-geschiedenis .entry-hero-container,
 body.page-geschiedenis .entry-hero-container-inner,
 body.page-geschiedenis .site-container,
 body.page-geschiedenis .entry-hero,
 body.page-geschiedenis .entry-header {
-    background-color: var(--pillar-geschiedenis-primary) !important;
+    background-color: transparent !important;
+    position: relative;
+    z-index: 1;
 }
 body.page-geschiedenis .entry-content {
-    background-color: var(--pillar-geschiedenis-secondary);
+    background-color: rgba(180, 65, 47, 0.9);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+    border-radius: var(--radius-xl, 1rem);
+}
+body.page-geschiedenis .site-content {
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
 }
 
 /* Ontmoeting (Meeting) - Blue */
 body.page-ontmoeting {
-    background-color: var(--pillar-ontmoeting-primary);
+    background-image: url('assets/images/zuidakker-greenhouse.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
 }
-body.page-ontmoeting .site-header,
+body.page-ontmoeting::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(107, 167, 182, 0.3);
+    pointer-events: none;
+    z-index: 0;
+}
+body.page-ontmoeting .site-header {
+    background-color: rgba(107, 167, 182, 0.85) !important;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
 body.page-ontmoeting .entry-hero-container,
 body.page-ontmoeting .entry-hero-container-inner,
 body.page-ontmoeting .site-container,
 body.page-ontmoeting .entry-hero,
 body.page-ontmoeting .entry-header {
-    background-color: var(--pillar-ontmoeting-primary) !important;
+    background-color: transparent !important;
+    position: relative;
+    z-index: 1;
 }
 body.page-ontmoeting .entry-content {
-    background-color: var(--pillar-ontmoeting-secondary);
+    background-color: rgba(42, 103, 126, 0.9);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+    border-radius: var(--radius-xl, 1rem);
+}
+body.page-ontmoeting .site-content {
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
 }
 
 /* Educatie (Food Education) - Orange */
 body.page-educatie {
-    background-color: var(--pillar-educatie-primary);
+    background-image: url('assets/images/zuidakker-greenhouse.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
 }
-body.page-educatie .site-header,
+body.page-educatie::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(240, 168, 95, 0.3);
+    pointer-events: none;
+    z-index: 0;
+}
+body.page-educatie .site-header {
+    background-color: rgba(240, 168, 95, 0.85) !important;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
 body.page-educatie .entry-hero-container,
 body.page-educatie .entry-hero-container-inner,
 body.page-educatie .site-container,
 body.page-educatie .entry-hero,
 body.page-educatie .entry-header {
-    background-color: var(--pillar-educatie-primary) !important;
+    background-color: transparent !important;
+    position: relative;
+    z-index: 1;
 }
 body.page-educatie .entry-content {
-    background-color: var(--pillar-educatie-secondary);
+    background-color: rgba(217, 114, 37, 0.9);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+    border-radius: var(--radius-xl, 1rem);
+}
+body.page-educatie .site-content {
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
 }
 
 /* Verblijf (Accommodation) - Pink */
 body.page-verblijf {
-    background-color: var(--pillar-verblijf-primary);
+    background-image: url('assets/images/zuidakker-greenhouse.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
 }
-body.page-verblijf .site-header,
+body.page-verblijf::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(217, 140, 140, 0.3);
+    pointer-events: none;
+    z-index: 0;
+}
+body.page-verblijf .site-header {
+    background-color: rgba(217, 140, 140, 0.85) !important;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
 body.page-verblijf .entry-hero-container,
 body.page-verblijf .entry-hero-container-inner,
 body.page-verblijf .site-container,
 body.page-verblijf .entry-hero,
 body.page-verblijf .entry-header {
-    background-color: var(--pillar-verblijf-primary) !important;
+    background-color: transparent !important;
+    position: relative;
+    z-index: 1;
 }
 body.page-verblijf .entry-content {
-    background-color: var(--pillar-verblijf-secondary);
+    background-color: rgba(179, 90, 90, 0.9);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+    border-radius: var(--radius-xl, 1rem);
+}
+body.page-verblijf .site-content {
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
 }
 
-/* Sitemap - Dark Green */
+/* Sitemap - Uses greenhouse photo background like homepage */
 body.page-sitemap {
-    background-color: var(--pillar-sitemap-primary);
+    background-image: url('assets/images/zuidakker-greenhouse.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
-body.page-sitemap .site-header,
+body.page-sitemap .site-header {
+    background-color: rgba(44, 85, 48, 0.85) !important;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
 body.page-sitemap .entry-hero-container,
 body.page-sitemap .entry-hero-container-inner,
 body.page-sitemap .site-container,
 body.page-sitemap .entry-hero,
 body.page-sitemap .entry-header {
-    background-color: var(--pillar-sitemap-primary) !important;
+    background-color: transparent !important;
+    position: relative;
+    z-index: 1;
 }
 body.page-sitemap .entry-content {
-    background-color: var(--pillar-sitemap-secondary);
+    background-color: rgba(44, 85, 48, 0.9);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+body.page-sitemap .site-content {
+    background-color: transparent;
 }
 
 /* General pillar page styling - removed as each page now has its own primary background color */
@@ -628,16 +951,9 @@ body[class*="page-sitemap"] .single-content,
 
 .pillars-container {
     background-color: transparent;
-    background-image: 
-        linear-gradient(135deg, rgba(151, 191, 133, 0.15), rgba(151, 191, 133, 0.05)),
-        url('assets/images/zuidakker-greenhouse.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     padding: var(--space-2xl) var(--space-md);
     margin: 0;
-    border-radius: var(--radius-xl, 1rem);
+    border-radius: 0;
     position: relative;
 }
 
@@ -771,9 +1087,14 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-/* Homepage body background matches header */
+/* Homepage body background uses photo */
 body.home {
-    background-color: var(--pillar-tuinen-primary);
+    background-image: url('assets/images/zuidakker-greenhouse.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 .site-content {
@@ -1131,28 +1452,116 @@ a {
 }
 
 /* ===================================
-   CONTACT PAGE STYLES
+   CONTACT & AGENDA PAGE STYLES
    =================================== */
 
-/* Contact page background */
-body.page-contact {
-    background-color: var(--header-green, #3d5e41);
+/* Contact and Agenda page background */
+body.page-contact,
+body.page-agenda,
+body[class*="page-contact"],
+body[class*="page-agenda"],
+body.page-id-contact,
+body.page-id-agenda,
+body.page-id-12 {
+    background-image: url('assets/images/zuidakker-greenhouse.jpg') !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
-body.page-contact .site-header {
-    background-color: var(--header-green, #3d5e41) !important;
+body.page-contact .site-header,
+body.page-agenda .site-header,
+body[class*="page-contact"] .site-header,
+body[class*="page-agenda"] .site-header,
+body.page-id-12 .site-header {
+    background-color: rgba(61, 94, 65, 0.85) !important;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+    padding: 0.5rem 0 !important;
+    margin-bottom: 0 !important;
+    border-radius: 0 !important;
 }
 
-body.page-contact .site-content {
+body.page-contact .entry-hero-container,
+body.page-contact .entry-hero-container-inner,
+body.page-contact .entry-hero,
+body.page-contact .entry-header,
+body.page-agenda .entry-hero-container,
+body.page-agenda .entry-hero-container-inner,
+body.page-agenda .entry-hero,
+body.page-agenda .entry-header,
+body[class*="page-contact"] .entry-hero-container,
+body[class*="page-contact"] .entry-hero-container-inner,
+body[class*="page-contact"] .entry-hero,
+body[class*="page-contact"] .entry-header,
+body[class*="page-agenda"] .entry-hero-container,
+body[class*="page-agenda"] .entry-hero-container-inner,
+body[class*="page-agenda"] .entry-hero,
+body[class*="page-agenda"] .entry-header,
+body.page-id-12 .entry-hero-container,
+body.page-id-12 .entry-hero-container-inner,
+body.page-id-12 .entry-hero,
+body.page-id-12 .entry-header {
+    background-color: transparent !important;
+    position: relative;
+    z-index: 1;
+}
+
+body.page-contact .site-content,
+body.page-agenda .site-content,
+body[class*="page-contact"] .site-content,
+body[class*="page-agenda"] .site-content,
+body.page-id-12 .site-content {
     background-color: transparent;
     padding: 0;
     margin: 0;
+    position: relative;
+    z-index: 1;
 }
 
-body.page-contact .entry-content {
-    background-color: transparent;
-    padding: var(--space-2xl, 3rem);
-    margin: 0;
+body.page-contact .entry-content,
+body[class*="page-contact"] .entry-content {
+    background-color: rgba(151, 191, 133, 0.9);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+body.page-agenda .entry-content,
+body[class*="page-agenda"] .entry-content,
+body.page-id-12 .entry-content {
+    background-color: rgba(151, 191, 133, 0.9);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+/* Remove backgrounds from child elements inside entry-content */
+body.page-agenda .entry-content > *,
+body[class*="page-agenda"] .entry-content > *,
+body.page-id-12 .entry-content > * {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Remove white backgrounds from parent containers */
+body.page-agenda article,
+body.page-agenda .content-area,
+body.page-agenda .content-wrap,
+body.page-agenda .site-main,
+body[class*="page-agenda"] article,
+body[class*="page-agenda"] .content-area,
+body[class*="page-agenda"] .content-wrap,
+body[class*="page-agenda"] .site-main,
+body.page-id-12 article,
+body.page-id-12 .content-area,
+body.page-id-12 .content-wrap,
+body.page-id-12 .site-main {
+    background-color: transparent !important;
+    background: transparent !important;
 }
 
 .contact-info-section {
@@ -1178,7 +1587,28 @@ body.page-contact .entry-content {
 
 .contact-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-lg, 0 10px 25px rgba(0, 0, 0, 0.1));
+    box-shadow: var(--shadow-lg, 0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+/* Map card takes full width */
+.contact-card-map {
+    grid-column: 1 / -1;
+    text-align: left;
+}
+
+/* Map container styling */
+#contact-map {
+    border: 2px solid rgba(151, 191, 133, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Leaflet popup styling */
+.leaflet-popup-content-wrapper {
+    border-radius: 0.5rem;
+}
+
+.leaflet-popup-content {
+    font-family: inherit;
 }
 
 .contact-card-icon {
@@ -1348,8 +1778,45 @@ body.page-contact .entry-content {
     color: #721c24;
 }
 
+/* Footer Credits Override */
+.site-footer .footer-html,
+.site-footer .site-info,
+.site-footer a[href*="kadencewp.com"],
+.site-footer a[href*="wordpress.org"] {
+    display: none !important;
+}
+
+.site-footer::after {
+    content: "© 2025 De Zuidakker";
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+    .social-links-wrapper {
+        right: 50%;
+        transform: translateX(50%);
+        top: 0.25rem;
+    }
+    
+    .header-sitemap-link {
+        right: 50%;
+        transform: translateX(50%);
+        top: 3rem;
+    }
+    
+    .header-social-links {
+        justify-content: center;
+    }
+    
+    .site-header .site-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
     .contact-info-grid {
         grid-template-columns: 1fr;
         gap: var(--space-md, 1rem);
@@ -1363,4 +1830,23 @@ body.page-contact .entry-content {
         grid-template-columns: 1fr;
         gap: 0;
     }
+}
+
+@media (max-width: 1024px) {
+    .header-social-links {
+        margin-right: 6rem;
+    }
+}
+
+/* Performance Optimizations */
+.pillar-card,
+.contact-card,
+.contact-submit-btn {
+    will-change: transform;
+}
+
+.pillar-card:not(:hover),
+.contact-card:not(:hover),
+.contact-submit-btn:not(:hover) {
+    will-change: auto;
 }

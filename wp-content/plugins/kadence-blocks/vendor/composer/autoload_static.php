@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInit6e3141dc35a5efed55bf0b472cccdf31
 {
     public static $prefixLengthsPsr4 = array (
-        'K' => 
+        'K' =>
         array (
             'KadenceWP\\KadenceBlocks\\' => 24,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'KadenceWP\\KadenceBlocks\\' => 
+        'KadenceWP\\KadenceBlocks\\' =>
         array (
             0 => __DIR__ . '/../..' . '/includes/resources',
         ),

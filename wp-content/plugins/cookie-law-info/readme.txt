@@ -3,9 +3,9 @@ Contributors: webtoffee, cookieyesdev
 Donate link: https://www.cookieyes.com/ 
 Tags: cookie notice, cookie consent, cookie banner, cookie, gdpr
 Requires at least: 5.0.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 3.3.7
+Stable tag: 3.3.8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -256,6 +256,10 @@ Every time we update the plugin, you will see a notification on the installed pl
 
 == Changelog ==
 
+= 3.3.8 =
+
+[Compatibility] – Tested OK with WordPress version 6.9
+
 = 3.3.7 =
 
 [Enhancement] - Try Pro for free option in Upgrade nudges.
@@ -280,8 +284,6 @@ For the changelog of earlier versions, please refer to the [changelog.txt](https
 
 == Upgrade Notice ==
 
-= 3.3.7 =
+= 3.3.8 =
 
-[Enhancement] - Try Pro for free option in Upgrade nudges.
-[Fix] - Minor fixes.
-[Tweak] - Updated review banner behaviour.
+[Compatibility] – Tested OK with WordPress version 6.9

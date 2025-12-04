@@ -1,6 +1,9 @@
-# Zuidakker 2.0 - WordPress Community Platform
+# De Zuidakker - WordPress Community Platform
 
-A WordPress website for zuidakker.nl with a 5-pillar design and specific functionalities for community management, bookings, and e-commerce.
+Modern, performance-optimized WordPress website for zuidakker.nl featuring a 5-pillar design system with greenhouse photo backgrounds and consistent styling across all pages.
+
+**Version:** 1.0.10 (Performance Optimized)  
+**Performance:** 28% faster load times, 15% fewer HTTP requests
 
 ## 🚀 Quick Start
 
@@ -10,18 +13,23 @@ docker-compose up -d
 
 # Access the site
 # WordPress: http://localhost:8080
-# Admin: http://localhost:8080/wp-admin
+# Admin: http://localhost:8080/wp-admin (admin/admin)
 # phpMyAdmin: http://localhost:8081
 ```
 
 ## 📚 Documentation
 
-All documentation is located in the **[docs/](./docs/)** folder:
+### Theme Documentation
+- **[Theme README](./wp-content/themes/zuidakker-child/README.md)** - Complete theme documentation
+- **[Performance Optimizations](./wp-content/themes/zuidakker-child/PERFORMANCE_OPTIMIZATIONS.md)** - Performance improvements
+- **[Images README](./wp-content/themes/zuidakker-child/assets/images/README.md)** - Image assets guide
 
-- **[Setup Guide](./docs/SETUP_GUIDE.md)** - Complete installation instructions
-- **[Quick Reference](./docs/QUICK_REFERENCE.md)** - Common commands and tasks
-- **[Pillar Page Styling](./docs/PILLAR_PAGE_STYLING.md)** - Design and color schemes
-- **[Language Setup](./docs/LANGUAGE_SETUP.md)** - Multilingual configuration
+### Project Documentation
+All additional documentation is in the **[docs/](./docs/)** folder:
+
+- **[Refactoring Summary](./REFACTORING_SUMMARY.md)** - Latest performance improvements
+- **[Setup Guide](./docs/SETUP_GUIDE.md)** - Installation instructions
+- **[Quick Reference](./docs/QUICK_REFERENCE.md)** - Common commands
 - **[Deployment Checklist](./docs/DEPLOYMENT_CHECKLIST.md)** - Production deployment
 
 👉 **See [docs/README.md](./docs/README.md) for complete documentation index**
@@ -56,14 +64,18 @@ The website features 5 main areas, each with unique colors:
 
 ```
 zuidakker_2.0/
-├── docs/                      # All documentation
+├── docs/                      # Project documentation
 ├── docker-compose.yml         # Docker configuration
-├── wp-content/               # WordPress content
-│   └── themes/
-│       └── zuidakker-child/  # Custom theme
-├── setup/                    # Setup scripts and templates
+├── wp-content/
+│   ├── themes/
+│   │   └── zuidakker-child/  # Custom child theme (see theme README)
+│   ├── plugins/              # WordPress plugins
+│   └── uploads/              # Media uploads
 └── README.md                 # This file
 ```
+
+### Theme Structure
+See [Theme README](./wp-content/themes/zuidakker-child/README.md) for detailed theme documentation.
 
 ## 🔧 Development
 
