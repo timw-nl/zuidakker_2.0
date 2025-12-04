@@ -3,7 +3,7 @@
 ## Overview
 Custom WordPress child theme for De Zuidakker community platform, built on the Kadence theme. Features a modern 5-pillar design system with greenhouse photo backgrounds and consistent styling across all pages.
 
-**Version:** 1.0.9  
+**Version:** 1.1.0  
 **Parent Theme:** Kadence  
 **Language:** Dutch (nl_NL)
 
@@ -239,8 +239,29 @@ zuidakker-child/
 
 ## Customization
 
-### Changing Pillar Icons
-Edit `inc/theme-config.php`, function `zuidakker_get_pillars()`:
+### 🎨 Managing Pillars via WordPress Admin (Recommended)
+
+All 5 pillars can now be managed directly from **wp-admin > Appearance > Customize > 🌿 Zuidakker Pijlers**
+
+For each pillar you can configure:
+- **Naam** - Display name (e.g., "Tuinen")
+- **Ondertitel** - English subtitle (e.g., "Gardens")
+- **Icoon** - Emoji icon (e.g., 🌱)
+- **Beschrijving** - Description text
+- **Kleuren** - Primary, Secondary, Light, and Dark colors
+
+General settings available:
+- Header colors
+- Sitemap colors
+
+Changes are previewed live and saved to the database - no code editing required!
+
+**Icon Resources:**
+- [Emojipedia](https://emojipedia.org/)
+- [Unicode Emoji List](https://unicode.org/emoji/charts/full-emoji-list.html)
+
+### Changing Pillar Icons (Legacy - Code)
+If you prefer editing code, modify `inc/theme-config.php`, function `zuidakker_get_pillars()`:
 
 ```php
 'tuinen' => array(
@@ -249,19 +270,8 @@ Edit `inc/theme-config.php`, function `zuidakker_get_pillars()`:
 ),
 ```
 
-**Icon Resources:**
-- [Emojipedia](https://emojipedia.org/)
-- [Unicode Emoji List](https://unicode.org/emoji/charts/full-emoji-list.html)
-
-### Changing Colors
-Edit CSS variables in `style.css` (lines 17-90):
-
-```css
-:root {
-    --pillar-tuinen-primary: #97bf85;
-    /* Update color values here */
-}
-```
+### Changing Colors (Legacy - Code)
+Colors are now managed via Customizer, but CSS variables in `style.css` serve as fallbacks:
 
 ### Changing Background Image
 Replace `assets/images/zuidakker-greenhouse.jpg` with your image, or update the URL in `style.css`:
@@ -339,7 +349,18 @@ sudo find /path/to/zuidakker-child/ -type f -exec chmod 644 {} \;
 
 ## Changelog
 
-### Version 1.0.9 (Current)
+### Version 1.1.0 (Current)
+- **NEW: WordPress Customizer integration for 5-pillar design**
+  - Manage pillar names, icons, descriptions via wp-admin
+  - Color picker for all pillar colors (primary, secondary, light, dark)
+  - Live preview of changes
+  - No code editing required
+- Added `inc/customizer-pillars.php` for Customizer settings
+- Added `assets/js/customizer-preview.js` for live preview
+- Dynamic CSS generation from Customizer settings
+- Updated sitemap shortcode to use dynamic icons
+
+### Version 1.0.9
 - Implemented greenhouse photo backgrounds across all pages
 - Added semi-transparent headers with backdrop blur
 - Created consistent pillar page design

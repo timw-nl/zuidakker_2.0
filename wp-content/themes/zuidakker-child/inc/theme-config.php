@@ -8,8 +8,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * Pillar pages configuration (cached for performance)
+ * Now reads from Customizer settings - manageable via wp-admin > Appearance > Customize
  */
 function zuidakker_get_pillars() {
+    // Use Customizer-based function if available
+    if ( function_exists( 'zuidakker_get_pillars_from_customizer' ) ) {
+        return zuidakker_get_pillars_from_customizer();
+    }
+    
+    // Fallback to defaults (only used if customizer-pillars.php not loaded)
     static $pillars = null;
     
     if ( $pillars === null ) {

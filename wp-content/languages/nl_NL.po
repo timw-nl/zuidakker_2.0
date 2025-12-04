@@ -3531,19 +3531,19 @@ msgstr "Controleer of de %s PHP extensie is geïnstalleerd en ingeschakeld."
 msgid "When using the %1$s constant, make sure to set these globals to an array: %2$s."
 msgstr "Als je de constante %1$s gebruikt, zorg er dan voor dat je deze globals instelt op een array: %2$s."
 
-#: wp-includes/html-api/class-wp-html-tag-processor.php:4343
+#: wp-includes/html-api/class-wp-html-tag-processor.php:4345
 msgid "The query argument must be an array or a tag name."
 msgstr "Het query argument moet een array of een tag-naam zijn."
 
-#: wp-includes/html-api/class-wp-html-tag-processor.php:3961
+#: wp-includes/html-api/class-wp-html-tag-processor.php:3963
 msgid "Invalid attribute name."
 msgstr "Ongeldige attribuut naam."
 
-#: wp-includes/html-api/class-wp-html-tag-processor.php:2629
+#: wp-includes/html-api/class-wp-html-tag-processor.php:2631
 msgid "Too many calls to seek() - this can lead to performance issues."
 msgstr "Te veel aanroepen van seek() - dit kan leiden tot prestatieproblemen."
 
-#: wp-includes/html-api/class-wp-html-tag-processor.php:2611
+#: wp-includes/html-api/class-wp-html-tag-processor.php:2613
 msgid "Unknown bookmark name."
 msgstr "Onbekende bladwijzernaam."
 

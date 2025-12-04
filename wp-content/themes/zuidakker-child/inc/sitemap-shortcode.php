@@ -189,59 +189,39 @@ function zuidakker_sitemap_tree_shortcode() {
         font-weight: 400;
     }
     
-    /* Pillar pages - simple and clean */
-    .sitemap-list .pillar-tuinen::before {
-        content: "🌱";
-        color: var(--pillar-tuinen-primary, #97bf85);
+    /* Pillar icon styling */
+    .sitemap-list .pillar-icon {
         font-size: 1.25rem;
+        margin-right: var(--space-sm, 0.5rem);
+    }
+    
+    /* Pillar pages - hide default bullet, use dynamic colors */
+    .sitemap-list [class*="pillar-"]::before {
+        content: none;
     }
     
     .sitemap-list .pillar-tuinen a {
-        color: var(--pillar-tuinen-secondary, #6f9357);
+        color: var(--pillar-tuinen-secondary);
         font-weight: 600;
-    }
-    
-    .sitemap-list .pillar-geschiedenis::before {
-        content: "📚";
-        color: var(--pillar-geschiedenis-primary, #c27d55);
-        font-size: 1.25rem;
     }
     
     .sitemap-list .pillar-geschiedenis a {
-        color: var(--pillar-geschiedenis-secondary, #b4412f);
+        color: var(--pillar-geschiedenis-secondary);
         font-weight: 600;
-    }
-    
-    .sitemap-list .pillar-ontmoeting::before {
-        content: "🤝";
-        color: var(--pillar-ontmoeting-primary, #6ba7b6);
-        font-size: 1.25rem;
     }
     
     .sitemap-list .pillar-ontmoeting a {
-        color: var(--pillar-ontmoeting-secondary, #2a677e);
+        color: var(--pillar-ontmoeting-secondary);
         font-weight: 600;
-    }
-    
-    .sitemap-list .pillar-educatie::before {
-        content: "🍎";
-        color: var(--pillar-educatie-primary, #f0a85f);
-        font-size: 1.25rem;
     }
     
     .sitemap-list .pillar-educatie a {
-        color: var(--pillar-educatie-secondary, #d97225);
+        color: var(--pillar-educatie-secondary);
         font-weight: 600;
     }
     
-    .sitemap-list .pillar-verblijf::before {
-        content: "�";
-        color: var(--pillar-verblijf-primary, #d98c8c);
-        font-size: 1.25rem;
-    }
-    
     .sitemap-list .pillar-verblijf a {
-        color: var(--pillar-verblijf-secondary, #b35a5a);
+        color: var(--pillar-verblijf-secondary);
         font-weight: 600;
     }
     
@@ -265,11 +245,20 @@ add_shortcode( 'sitemap_tree', 'zuidakker_sitemap_tree_shortcode' );
  * Display grouped pages
  */
 function zuidakker_display_grouped_pages( $pages, $pillar_slugs = array() ) {
+    $pillars = zuidakker_get_pillars();
+    
     foreach ( $pages as $page ) {
         $page_slug = $page->post_name;
-        $pillar_class = in_array( $page_slug, $pillar_slugs ) ? 'pillar-' . $page_slug : '';
+        $is_pillar = in_array( $page_slug, $pillar_slugs );
+        $pillar_class = $is_pillar ? 'pillar-' . $page_slug : '';
         
         echo '<li class="' . esc_attr( $pillar_class ) . '">';
+        
+        // Add dynamic icon for pillar pages
+        if ( $is_pillar && isset( $pillars[ $page_slug ]['icon'] ) ) {
+            echo '<span class="pillar-icon">' . esc_html( $pillars[ $page_slug ]['icon'] ) . '</span> ';
+        }
+        
         echo '<a href="' . esc_url( get_permalink( $page->ID ) ) . '">';
         echo esc_html( $page->post_title );
         echo '</a>';
