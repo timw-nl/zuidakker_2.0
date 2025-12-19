@@ -69,8 +69,15 @@ function zuidakker_output_social_links() {
  * Add social links to page (will be positioned in header via CSS)
  */
 function zuidakker_add_social_to_page() {
+    $sitemap_url = esc_url( home_url( '/sitemap' ) );
+    $sitemap_label = esc_attr__( 'Sitemap', 'zuidakker-child' );
     ?>
     <div class="social-links-wrapper" style="position: fixed; top: 0.5rem; right: 1rem; z-index: 1000;">
+        <div class="header-sitemap-link">
+            <a href="<?php echo $sitemap_url; ?>" class="sitemap-link" aria-label="<?php echo $sitemap_label; ?>">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><rect x="2" y="18" width="6" height="4" rx="1"/><rect x="9" y="18" width="6" height="4" rx="1"/><rect x="16" y="18" width="6" height="4" rx="1"/><path d="M12 6v6"/><path d="M5 18v-4h14v4"/></svg>
+            </a>
+        </div>
         <?php zuidakker_output_social_links(); ?>
     </div>
     <?php

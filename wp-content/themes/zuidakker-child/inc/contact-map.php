@@ -45,8 +45,8 @@ add_action( 'wp_enqueue_scripts', 'zuidakker_enqueue_contact_map_assets' );
  * Settings manageable via wp-admin > Appearance > Customize > 📍 Contact & Kaart
  */
 function zuidakker_get_map_init_script() {
-    $lat = floatval( get_theme_mod( 'zuidakker_map_lat', '52.2029' ) );
-    $lng = floatval( get_theme_mod( 'zuidakker_map_lng', '4.6382' ) );
+    $lat = floatval( get_theme_mod( 'zuidakker_map_lat', '52.186619' ) );
+    $lng = floatval( get_theme_mod( 'zuidakker_map_lng', '4.627356' ) );
     $zoom = intval( get_theme_mod( 'zuidakker_map_zoom', '15' ) );
     
     // Get address from Customizer and format for popup

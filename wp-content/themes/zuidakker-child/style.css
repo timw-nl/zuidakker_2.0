@@ -94,7 +94,7 @@ Text Domain: zuidakker-child
    =================================== */
 
 .site-header {
-    background-color: var(--header-green) !important;
+    background-color: var(--pillar-tuinen-primary) !important;
     padding: 0.5rem 0;
     margin-bottom: 0;
     box-shadow: var(--shadow-sm);
@@ -105,14 +105,6 @@ Text Domain: zuidakker-child
 
 .site-header:hover {
     box-shadow: var(--shadow-md);
-}
-
-/* Homepage uses Tuinen colors */
-.home .site-header {
-    background-color: var(--pillar-tuinen-primary) !important;
-    padding: 0.5rem 0;
-    margin-bottom: 0;
-    border-radius: 0;
 }
 
 .site-header .site-container {
@@ -128,12 +120,21 @@ Text Domain: zuidakker-child
     gap: var(--space-md);
 }
 
+/* Header Social Links Wrapper */
+.social-links-wrapper {
+    position: fixed;
+    top: 0.5rem;
+    right: 1rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 /* Header Sitemap Link */
 .header-sitemap-link {
-    position: fixed;
-    right: 1rem;
-    top: 3.5rem;
-    z-index: 1000;
+    display: flex;
+    align-items: center;
 }
 
 .header-sitemap-link .sitemap-link {
@@ -169,13 +170,6 @@ Text Domain: zuidakker-child
 }
 
 /* Header Social Links */
-.social-links-wrapper {
-    position: fixed;
-    top: 0.5rem;
-    right: 1rem;
-    z-index: 1000;
-}
-
 .header-social-links {
     display: flex;
     gap: var(--space-sm);
@@ -500,8 +494,7 @@ body.page-tuinen .site-header,
 body.page-geschiedenis .site-header,
 body.page-ontmoeting .site-header,
 body.page-educatie .site-header,
-body.page-verblijf .site-header,
-body.page-sitemap .site-header {
+body.page-verblijf .site-header {
     border-radius: 0;
     padding: 0.5rem 0;
     margin-bottom: 0;
@@ -511,8 +504,7 @@ body.page-tuinen .entry-header,
 body.page-geschiedenis .entry-header,
 body.page-ontmoeting .entry-header,
 body.page-educatie .entry-header,
-body.page-verblijf .entry-header,
-body.page-sitemap .entry-header {
+body.page-verblijf .entry-header {
     border-radius: 0;
     padding: 2rem 1rem 1rem;
     margin-bottom: 0;
@@ -525,7 +517,6 @@ body.page-geschiedenis .entry-title,
 body.page-ontmoeting .entry-title,
 body.page-educatie .entry-title,
 body.page-verblijf .entry-title,
-body.page-sitemap .entry-title,
 body.page-contact .entry-title,
 body.page-agenda .entry-title,
 body[class*="page-contact"] .entry-title,
@@ -538,8 +529,7 @@ body.page-tuinen .site-content,
 body.page-geschiedenis .site-content,
 body.page-ontmoeting .site-content,
 body.page-educatie .site-content,
-body.page-verblijf .site-content,
-body.page-sitemap .site-content {
+body.page-verblijf .site-content {
     background-color: transparent;
     padding: 0;
     margin: 0;
@@ -549,13 +539,7 @@ body.page-tuinen .entry-content,
 body.page-geschiedenis .entry-content,
 body.page-ontmoeting .entry-content,
 body.page-educatie .entry-content,
-body.page-verblijf .entry-content,
-body.page-sitemap .entry-content,
-body.page-agenda .entry-content,
-body.page-contact .entry-content,
-body[class*="page-agenda"] .entry-content,
-body[class*="page-contact"] .entry-content,
-body.page-id-12 .entry-content {
+body.page-verblijf .entry-content {
     border-radius: var(--radius-xl, 1rem);
     padding: var(--space-2xl, 3rem);
     color: #fff;
@@ -809,39 +793,6 @@ body.page-verblijf .site-content {
     z-index: 1;
 }
 
-/* Sitemap - Uses greenhouse photo background like homepage */
-body.page-sitemap {
-    background-image: url('assets/images/zuidakker-greenhouse.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100vh;
-}
-body.page-sitemap .site-header {
-    background-color: rgba(44, 85, 48, 0.85) !important;
-    backdrop-filter: blur(10px);
-    position: relative;
-    z-index: 1;
-}
-body.page-sitemap .entry-hero-container,
-body.page-sitemap .entry-hero-container-inner,
-body.page-sitemap .site-container,
-body.page-sitemap .entry-hero,
-body.page-sitemap .entry-header {
-    background-color: transparent !important;
-    position: relative;
-    z-index: 1;
-}
-body.page-sitemap .entry-content {
-    background-color: rgba(44, 85, 48, 0.9);
-    backdrop-filter: blur(10px);
-    position: relative;
-    z-index: 1;
-}
-body.page-sitemap .site-content {
-    background-color: transparent;
-}
 
 /* General pillar page styling - removed as each page now has its own primary background color */
 
@@ -860,10 +811,7 @@ body[class*="page-educatie"] .entry-content h2,
 body[class*="page-educatie"] .entry-content h3,
 body[class*="page-verblijf"] .entry-content h1,
 body[class*="page-verblijf"] .entry-content h2,
-body[class*="page-verblijf"] .entry-content h3,
-body[class*="page-sitemap"] .entry-content h1,
-body[class*="page-sitemap"] .entry-content h2,
-body[class*="page-sitemap"] .entry-content h3 {
+body[class*="page-verblijf"] .entry-content h3 {
     color: #fff;
 }
 
@@ -877,7 +825,6 @@ body[class*="page-geschiedenis"] .content-wrap,
 body[class*="page-ontmoeting"] .content-wrap,
 body[class*="page-educatie"] .content-wrap,
 body[class*="page-verblijf"] .content-wrap,
-body[class*="page-sitemap"] .content-wrap,
 .home .content-wrap {
     border-radius: 0;
     overflow: hidden;
@@ -891,19 +838,16 @@ body[class*="page-geschiedenis"] .content-area,
 body[class*="page-ontmoeting"] .content-area,
 body[class*="page-educatie"] .content-area,
 body[class*="page-verblijf"] .content-area,
-body[class*="page-sitemap"] .content-area,
 body[class*="page-tuinen"] .content-container,
 body[class*="page-geschiedenis"] .content-container,
 body[class*="page-ontmoeting"] .content-container,
 body[class*="page-educatie"] .content-container,
 body[class*="page-verblijf"] .content-container,
-body[class*="page-sitemap"] .content-container,
 body[class*="page-tuinen"] .site-main,
 body[class*="page-geschiedenis"] .site-main,
 body[class*="page-ontmoeting"] .site-main,
 body[class*="page-educatie"] .site-main,
 body[class*="page-verblijf"] .site-main,
-body[class*="page-sitemap"] .site-main,
 .home .content-area,
 .home .content-container,
 .home .site-main {
@@ -917,19 +861,16 @@ body[class*="page-geschiedenis"] article.entry,
 body[class*="page-ontmoeting"] article.entry,
 body[class*="page-educatie"] article.entry,
 body[class*="page-verblijf"] article.entry,
-body[class*="page-sitemap"] article.entry,
 body[class*="page-tuinen"] .content-bg,
 body[class*="page-geschiedenis"] .content-bg,
 body[class*="page-ontmoeting"] .content-bg,
 body[class*="page-educatie"] .content-bg,
 body[class*="page-verblijf"] .content-bg,
-body[class*="page-sitemap"] .content-bg,
 body[class*="page-tuinen"] .single-content,
 body[class*="page-geschiedenis"] .single-content,
 body[class*="page-ontmoeting"] .single-content,
 body[class*="page-educatie"] .single-content,
 body[class*="page-verblijf"] .single-content,
-body[class*="page-sitemap"] .single-content,
 .home article.entry {
     padding: 0 !important;
     margin: 0 !important;
@@ -1107,6 +1048,16 @@ body.home {
    HEADER NAVIGATION & LANGUAGE SWITCHER
    =================================== */
 
+/* Hide entry-hero section on sitemap page */
+body.page-sitemap .entry-hero-container,
+body.page-sitemap .entry-hero-container-inner,
+body.page-sitemap .entry-hero,
+body.page-sitemap .entry-header,
+body.page-sitemap .page-hero-section,
+body.page-sitemap .hero-section {
+    display: none !important;
+}
+
 /* Hide all menu items by default */
 #primary-menu > li {
     display: none !important;
@@ -1212,9 +1163,6 @@ body.page-verblijf .language-switcher {
     background: linear-gradient(135deg, var(--pillar-verblijf-primary), var(--pillar-verblijf-secondary));
 }
 
-body.page-sitemap .language-switcher {
-    background: linear-gradient(135deg, var(--pillar-sitemap-primary), var(--pillar-sitemap-secondary));
-}
 
 /* ===================================
    LOGO STYLING
@@ -1455,8 +1403,9 @@ a {
    CONTACT & AGENDA PAGE STYLES
    =================================== */
 
-/* Contact and Agenda page background */
+/* Contact, Sitemap and Agenda page background */
 body.page-contact,
+body.page-sitemap,
 body.page-agenda,
 body[class*="page-contact"],
 body[class*="page-agenda"],
@@ -1469,14 +1418,31 @@ body.page-id-12 {
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
+    position: relative;
+}
+
+/* Color overlay for contact, sitemap, agenda pages */
+body.page-contact::before,
+body.page-sitemap::before,
+body.page-agenda::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(151, 191, 133, 0.2);
+    pointer-events: none;
+    z-index: 0;
 }
 
 body.page-contact .site-header,
+body.page-sitemap .site-header,
 body.page-agenda .site-header,
 body[class*="page-contact"] .site-header,
 body[class*="page-agenda"] .site-header,
 body.page-id-12 .site-header {
-    background-color: rgba(61, 94, 65, 0.85) !important;
+    background-color: var(--pillar-tuinen-primary) !important;
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 1;
@@ -1489,6 +1455,10 @@ body.page-contact .entry-hero-container,
 body.page-contact .entry-hero-container-inner,
 body.page-contact .entry-hero,
 body.page-contact .entry-header,
+body.page-sitemap .entry-hero-container,
+body.page-sitemap .entry-hero-container-inner,
+body.page-sitemap .entry-hero,
+body.page-sitemap .entry-header,
 body.page-agenda .entry-hero-container,
 body.page-agenda .entry-hero-container-inner,
 body.page-agenda .entry-hero,
@@ -1511,11 +1481,13 @@ body.page-id-12 .entry-header {
 }
 
 body.page-contact .site-content,
+body.page-sitemap .site-content,
 body.page-agenda .site-content,
 body[class*="page-contact"] .site-content,
 body[class*="page-agenda"] .site-content,
 body.page-id-12 .site-content {
-    background-color: transparent;
+    background-color: transparent !important;
+    background: transparent !important;
     padding: 0;
     margin: 0;
     position: relative;
@@ -1523,45 +1495,109 @@ body.page-id-12 .site-content {
 }
 
 body.page-contact .entry-content,
-body[class*="page-contact"] .entry-content {
-    background-color: rgba(151, 191, 133, 0.9);
-    backdrop-filter: blur(10px);
-    position: relative;
-    z-index: 1;
-}
-
+body.page-sitemap .entry-content,
 body.page-agenda .entry-content,
+body[class*="page-contact"] .entry-content,
 body[class*="page-agenda"] .entry-content,
 body.page-id-12 .entry-content {
-    background-color: rgba(151, 191, 133, 0.9);
-    backdrop-filter: blur(10px);
+    background-color: rgba(151, 191, 133, 0.65) !important;
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
     position: relative;
     z-index: 1;
+    border-radius: var(--radius-xl, 1rem);
+    margin: var(--space-lg, 1.5rem) !important;
+    padding: var(--space-2xl, 3rem) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    isolation: isolate;
+    color: #fff !important;
+}
+
+body.page-contact .entry-content p,
+body.page-contact .entry-content h1,
+body.page-contact .entry-content h2,
+body.page-contact .entry-content h3,
+body.page-contact .entry-content > a,
+body.page-sitemap .entry-content p,
+body.page-sitemap .entry-content h1,
+body.page-sitemap .entry-content h2,
+body.page-sitemap .entry-content h3,
+body.page-sitemap .entry-content > a,
+body.page-agenda .entry-content p,
+body.page-agenda .entry-content h1,
+body.page-agenda .entry-content h2,
+body.page-agenda .entry-content h3,
+body.page-agenda .entry-content > a {
+    color: #fff !important;
+}
+
+/* Preserve Leaflet map control colors */
+body.page-contact .leaflet-control a,
+body.page-contact .leaflet-control-zoom a,
+body.page-contact .contact-map a {
+    color: #000 !important;
+    background-color: #fff !important;
 }
 
 /* Remove backgrounds from child elements inside entry-content */
+body.page-contact .entry-content > *,
+body.page-sitemap .entry-content > *,
 body.page-agenda .entry-content > *,
+body[class*="page-contact"] .entry-content > *,
 body[class*="page-agenda"] .entry-content > *,
 body.page-id-12 .entry-content > * {
     background-color: transparent !important;
     background: transparent !important;
 }
 
-/* Remove white backgrounds from parent containers */
+/* Remove white backgrounds from parent containers for backdrop-filter to work */
+body.page-contact #primary,
+body.page-contact article,
+body.page-contact article.entry,
+body.page-contact .content-area,
+body.page-contact .content-wrap,
+body.page-contact .content-bg,
+body.page-contact .content-container,
+body.page-contact .site-main,
+body.page-contact .single-content,
+body.page-contact .hentry,
+body.page-sitemap #primary,
+body.page-sitemap article,
+body.page-sitemap article.entry,
+body.page-sitemap .content-area,
+body.page-sitemap .content-wrap,
+body.page-sitemap .content-bg,
+body.page-sitemap .content-container,
+body.page-sitemap .site-main,
+body.page-sitemap .single-content,
+body.page-sitemap .hentry,
+body.page-agenda #primary,
 body.page-agenda article,
+body.page-agenda article.entry,
 body.page-agenda .content-area,
 body.page-agenda .content-wrap,
+body.page-agenda .content-bg,
+body.page-agenda .content-container,
 body.page-agenda .site-main,
-body[class*="page-agenda"] article,
-body[class*="page-agenda"] .content-area,
-body[class*="page-agenda"] .content-wrap,
-body[class*="page-agenda"] .site-main,
-body.page-id-12 article,
-body.page-id-12 .content-area,
-body.page-id-12 .content-wrap,
-body.page-id-12 .site-main {
+body.page-agenda .single-content,
+body.page-agenda .hentry {
     background-color: transparent !important;
     background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Override Kadence boxed content style */
+body.page-contact.content-style-boxed .content-bg,
+body.page-contact.content-style-boxed .entry-content-wrap,
+body.page-sitemap.content-style-boxed .content-bg,
+body.page-sitemap.content-style-boxed .entry-content-wrap,
+body.page-agenda.content-style-boxed .content-bg,
+body.page-agenda.content-style-boxed .entry-content-wrap {
+    background-color: transparent !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
 }
 
 .contact-info-section {
@@ -1576,13 +1612,13 @@ body.page-id-12 .site-main {
 }
 
 .contact-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
+    background: transparent;
     padding: var(--space-xl, 2rem);
     border-radius: var(--radius-xl, 1rem);
-    box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.07));
+    box-shadow: none;
     transition: all var(--transition-base, 250ms);
     text-align: center;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: none;
 }
 
 .contact-card:hover {
@@ -1633,7 +1669,7 @@ body.page-id-12 .site-main {
 }
 
 .contact-card h3 {
-    color: var(--pillar-tuinen-secondary, #6f9357);
+    color: #fff;
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: var(--space-sm, 0.5rem);
@@ -1641,13 +1677,13 @@ body.page-id-12 .site-main {
 }
 
 .contact-card p {
-    color: rgba(0, 0, 0, 0.7);
+    color: #fff;
     line-height: 1.6;
     margin: 0;
 }
 
 .contact-card a {
-    color: var(--pillar-tuinen-primary, #97bf85);
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
     transition: color var(--transition-fast, 150ms);
@@ -1660,15 +1696,15 @@ body.page-id-12 .site-main {
 
 /* Contact Form Section */
 .contact-form-section {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
+    background: transparent;
     padding: var(--space-2xl, 3rem);
     border-radius: var(--radius-xl, 1rem);
-    box-shadow: var(--shadow-lg, 0 10px 25px rgba(0, 0, 0, 0.1));
+    box-shadow: none;
     margin: var(--space-2xl, 3rem) 0;
 }
 
 .contact-form-section h2 {
-    color: var(--pillar-tuinen-secondary, #6f9357);
+    color: #fff;
     font-size: clamp(1.75rem, 3vw, 2.25rem);
     font-weight: 800;
     margin-bottom: var(--space-md, 1rem);
@@ -1676,7 +1712,7 @@ body.page-id-12 .site-main {
 }
 
 .contact-form-section > p {
-    color: rgba(0, 0, 0, 0.7);
+    color: #fff;
     font-size: 1.0625rem;
     line-height: 1.6;
     margin-bottom: var(--space-xl, 2rem);

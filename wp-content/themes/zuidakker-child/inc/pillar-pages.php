@@ -16,9 +16,14 @@ function zuidakker_pillar_body_class( $classes ) {
     
     global $post;
     $pillars = array_keys( zuidakker_get_pillars() );
-    $pillars[] = 'sitemap'; // Add sitemap
     
     if ( in_array( $post->post_name, $pillars ) ) {
+        $classes[] = 'page-' . $post->post_name;
+    }
+    
+    // Add body classes for special pages (not pillars, but need classes for styling)
+    $special_pages = array( 'sitemap', 'contact', 'agenda' );
+    if ( in_array( $post->post_name, $special_pages ) ) {
         $classes[] = 'page-' . $post->post_name;
     }
     
