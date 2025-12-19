@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-11-06 15:22:52+0000\n"
+"PO-Revision-Date: 2025-12-11 17:57:55+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -219,17 +219,17 @@ msgstr "Wijs aangepaste begrippen toe aan formulier waardes."
 msgid "Custom Meta"
 msgstr "Aangepaste meta"
 
-#: src/Requirements/Requirements.php:1134
+#: src/Requirements/Requirements.php:1137
 msgid "Read more"
 msgstr "Lees verder"
 
 #. translators: %1$s - Read More link.
-#: src/Requirements/Requirements.php:1107
+#: src/Requirements/Requirements.php:1110
 msgid "%1$s for additional information on PHP extensions."
 msgstr "%1$s voor aanvullende informatie over PHP extensies."
 
 #. translators: %1$s - Read More link.
-#: src/Requirements/Requirements.php:1101
+#: src/Requirements/Requirements.php:1104
 msgid "%1$s for additional information on PHP version."
 msgstr "%1$s voor aanvullende informatie over de PHP versie."
 
@@ -1072,7 +1072,7 @@ msgstr "Je hebt geen toestemming om deze template te verwijderen."
 msgid "Copy webhook URL"
 msgstr "Kopieer webhook URL"
 
-#: includes/admin/class-menu.php:93 src/Admin/AdminBarMenu.php:519
+#: includes/admin/class-menu.php:95 src/Admin/AdminBarMenu.php:519
 msgid "Add New Form"
 msgstr "Nieuw formulier toevoegen"
 
@@ -1102,7 +1102,7 @@ msgstr "Ze zullen niet aanwezig zijn in de gepubliceerde vorm. <a href=\"%s\" ta
 msgid "Your Form Contains Pro Fields"
 msgstr "Je formulier bevat Pro velden"
 
-#: src/Integrations/Divi/Divi.php:272
+#: src/Integrations/Divi/Divi.php:274
 msgid "You do not have permission to preview form."
 msgstr "Je hebt geen toestemming om formulier voorbeeld weer te geven."
 
@@ -2250,7 +2250,7 @@ msgid "Qty"
 msgstr "Hoeveelheid"
 
 #. translators: %1$s - requirements message.
-#: src/Requirements/Requirements.php:1019
+#: src/Requirements/Requirements.php:1022
 msgid "It requires %1$s."
 msgstr "Het vereist %1$s."
 
@@ -2696,43 +2696,43 @@ msgstr "Charitable"
 #. translators: %1$s - What is being checked (PHP, WPForms, etc.), %2$s -
 #. required version. This is used as the completion of the sentence "The {addon
 #. name} addon requires {here goes this string}".
-#: src/Requirements/Requirements.php:1395
+#: src/Requirements/Requirements.php:1398
 msgid "an older version of %1$s than %2$s"
 msgstr "een oudere versie van %1$s dan %2$s"
 
 #. translators: %1$s - What is being checked (PHP, WPForms, etc.), %2$s -
 #. required version. This is used as the completion of the sentence "The {addon
 #. name} addon requires {here goes this string}".
-#: src/Requirements/Requirements.php:1393
+#: src/Requirements/Requirements.php:1396
 msgid "a newer version of %1$s than %2$s"
 msgstr "een nieuwere versie van %1$s dan %2$s"
 
 #. translators: %1$s - What is being checked (PHP, WPForms, etc.), %2$s -
 #. required version. This is used as the completion of the sentence "The {addon
 #. name} addon requires {here goes this string}".
-#: src/Requirements/Requirements.php:1390
+#: src/Requirements/Requirements.php:1393
 msgid "%1$s %2$s or below"
 msgstr "%1$s %2$s of lager"
 
 #. translators: %1$s - What is being checked (PHP, WPForms, etc.), %2$s -
 #. required version. This is used as the completion of the sentence "The {addon
 #. name} addon requires {here goes this string}".
-#: src/Requirements/Requirements.php:1388
+#: src/Requirements/Requirements.php:1391
 msgid "%1$s %2$s or above"
 msgstr "%1$s %2$s of hoger"
 
 #. translators: %1$s - WPForms plugin or addon name, %2$d - requirements
 #. message.
-#: src/Requirements/Requirements.php:1065
+#: src/Requirements/Requirements.php:1068
 msgid "The %1$s requires %2$s."
 msgstr "De %1$s vereist %2$s."
 
 #. translators: %1$s - WPForms addon name.
-#: src/Requirements/Requirements.php:1058
+#: src/Requirements/Requirements.php:1061
 msgid "%1$s addon"
 msgstr "%1$s add-on"
 
-#: src/Requirements/Requirements.php:1054
+#: src/Requirements/Requirements.php:1057
 msgid "WPForms plugin"
 msgstr "WPForms plugin"
 
@@ -2959,7 +2959,7 @@ msgid "Explore Entries & Learn More"
 msgstr "Ontdek vermeldingen & leer meer"
 
 #. translators: %d - choice number.
-#: includes/fields/class-base.php:4133
+#: includes/fields/class-base.php:4191
 msgid "Item %d"
 msgstr "Item %d"
 
@@ -3662,24 +3662,24 @@ msgstr "WPForms aankondigingen"
 msgid "%1$s &times; %2$d"
 msgstr "%1$s &times; %2$d"
 
-#: includes/fields/class-base.php:2668
+#: includes/fields/class-base.php:2700
 #: src/Forms/Fields/Traits/NumberField.php:169
 msgid "Range"
 msgstr "Bereik"
 
-#: includes/fields/class-base.php:2634
+#: includes/fields/class-base.php:2666
 msgid "Enable Quantity"
 msgstr "Inschakelen hoeveelheid"
 
-#: includes/fields/class-base.php:2628
+#: includes/fields/class-base.php:2660
 msgid "Set the minimum and maximum quantity for this product."
 msgstr "Stel de minimum en maximum hoeveelheden voor dit product in."
 
-#: includes/fields/class-base.php:2627
+#: includes/fields/class-base.php:2659
 msgid "Enable quantity for this product to allow customers to purchase more than one."
 msgstr "Schakel de hoeveelheid in voor dit product om klanten in staat te stellen meer dan één te kopen."
 
-#: includes/admin/class-review.php:203
+#: includes/admin/class-review.php:232
 msgid "Hey, there! It looks like you enjoy creating forms with WPForms. Would you do us a favor and take a few seconds to give us a 5-star review? We’d love to hear from you."
 msgstr "Het lijkt erop dat je graag formulieren maakt met WPForms. Zou je ons een plezier willen doen en even de tijd willen nemen om ons een 5-sterren beoordeling te geven? We zijn benieuwd naar je ervaring."
 
@@ -3734,11 +3734,11 @@ msgstr "Selecteer het veld dat de naam van de klant bevat. Dit is optioneel, maa
 msgid "--- Select Name ---"
 msgstr "--- Selecteer naam ---"
 
-#: src/Integrations/Divi/Divi.php:227
+#: src/Integrations/Divi/Divi.php:229
 msgid "Need some help? Check out our"
 msgstr "Hulp nodig? Bekijk onze"
 
-#: src/Integrations/Divi/Divi.php:226
+#: src/Integrations/Divi/Divi.php:228
 msgid "comprehensive guide"
 msgstr "uitgebreide handleiding"
 
@@ -3847,7 +3847,7 @@ msgid "Plugin installation is disabled for this site."
 msgstr "Plugin installatie is uitgeschakeld voor deze site."
 
 #. translators: %s - total number of choices.
-#: includes/fields/class-base.php:3224
+#: includes/fields/class-base.php:3274
 msgid "Showing the first %1$s choices.<br> All %2$s choices will be displayed when viewing the form."
 msgstr "Toont de eerste %1$s opties.<br> Alle %2$s opties worden getoond bij het bekijken van het formulier."
 
@@ -4142,11 +4142,11 @@ msgstr "Tabel geschiedenis vernieuwing abonnement"
 
 #. translators: %1$d - number of minutes, %2$s - singular or plural form of
 #. 'minute'.
-#: templates/admin/challenge/embed.php:99
+#: templates/admin/challenge/embed.php:103
 msgid "We're sorry that it took longer than %1$d %2$s to publish your form. Our goal is to create the most beginner-friendly WordPress form plugin.<br>How can we help you to be successful? Please send us your feedback. Our support team is standing by to help."
 msgstr "Het spijt ons dat het langer dan %1$d %2$s heeft geduurd om je formulier te publiceren. Ons doel is om de meest beginner vriendelijke WordPress formulier plugin te maken.<br>Hoe kunnen we je helpen om succesvol te zijn? Verzend ons je feedback. Ons ondersteuningsteam staat klaar om je te helpen."
 
-#: templates/admin/challenge/embed.php:93
+#: templates/admin/challenge/embed.php:97
 msgid "Do you need more help?"
 msgstr "Heb je meer hulp nodig?"
 
@@ -4844,19 +4844,19 @@ msgstr "Maximale gebruik limiet"
 msgid "Custom Coupon Codes"
 msgstr "Aangepaste waardebon codes"
 
-#: includes/functions/utilities.php:356
+#: includes/functions/utilities.php:375
 #: src/Integrations/AI/Admin/Builder/Forms.php:205
 #: templates/admin/payments/reset-filter-notice.php:57
 msgid "and"
 msgstr "en"
 
 #. translators: %s - license name(s).
-#: src/Requirements/Requirements.php:1279
+#: src/Requirements/Requirements.php:1282
 msgid "%s license"
 msgstr "%s licentie"
 
 #. translators: %s - PHP extension name(s).
-#: src/Requirements/Requirements.php:1208
+#: src/Requirements/Requirements.php:1211
 msgid "%s PHP extension"
 msgid_plural "%s PHP extensions"
 msgstr[0] "%s PHP extensie"
@@ -5895,11 +5895,11 @@ msgstr "Britse pond"
 msgid "U.S. Dollar"
 msgstr "Amerikaanse dollar"
 
-#: includes/fields/class-base.php:4069
+#: includes/fields/class-base.php:4127
 msgid "items"
 msgstr "items"
 
-#: includes/fields/class-base.php:4068
+#: includes/fields/class-base.php:4126
 msgid "Dynamic choices"
 msgstr "Dynamische keuzes"
 
@@ -5922,12 +5922,12 @@ msgid "Standard and Payment Fields"
 msgstr "Standaard- en betaalvelden"
 
 #: includes/admin/builder/class-builder.php:781
-#: includes/fields/class-base.php:4079
+#: includes/fields/class-base.php:4137
 msgid "terms"
 msgstr "termen"
 
 #: includes/admin/builder/class-builder.php:780
-#: includes/fields/class-base.php:4074
+#: includes/fields/class-base.php:4132
 msgid "posts"
 msgstr "berichten"
 
@@ -5936,7 +5936,7 @@ msgstr "berichten"
 #. translators: %1$s - data source name (e.g., Categories, Posts), %2$s - data
 #. source type (e.g., post type, taxonomy).
 #: includes/admin/builder/class-builder.php:775
-#: includes/fields/class-base.php:4088
+#: includes/fields/class-base.php:4146
 msgid "This field will not be displayed in your form since there are no %2$s belonging to %1$s."
 msgstr "Dit veld wordt niet weergegeven in je formulier omdat er geen %2$s is die behoort tot %1$s."
 
@@ -5992,7 +5992,7 @@ msgid "Easily add your contact form"
 msgstr "Voeg eenvoudig je contact formulier toe"
 
 #: src/Admin/Education/Admin/EditPost.php:173
-#: src/Admin/Splash/SplashTrait.php:129 src/Integrations/Divi/Divi.php:224
+#: src/Admin/Splash/SplashTrait.php:129 src/Integrations/Divi/Divi.php:226
 #: templates/admin/empty-states/payments/get-started.php:34
 #: templates/integrations/elementor/no-forms.php:26
 #: assets/js/integrations/gutenberg/formselector-legacy.es5.js:261
@@ -6001,8 +6001,8 @@ msgstr "Voeg eenvoudig je contact formulier toe"
 #: assets/js/integrations/gutenberg/formselector-legacy.js:275
 #: assets/js/integrations/gutenberg/modules/common.js:786
 #: assets/js/integrations/gutenberg/modules/common.js:1014
-#: assets/lite/js/integrations/gutenberg/formselector.es5.js:3122
-#: assets/lite/js/integrations/gutenberg/formselector.es5.js:3321
+#: assets/lite/js/integrations/gutenberg/formselector.es5.js:3123
+#: assets/lite/js/integrations/gutenberg/formselector.es5.js:3322
 msgid "Get Started"
 msgstr "Ga aan de slag"
 
@@ -6243,15 +6243,15 @@ msgstr "Inschakelen van gratis CAPTCHA achtige spambescherming in die gegevens p
 msgid "Enable Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile inschakelen"
 
-#: includes/admin/class-review.php:314
+#: includes/admin/class-review.php:338
 msgid "Made with ♥ by the WPForms Team"
 msgstr "Gemaakt met ♥ door het WPForms Team"
 
-#: includes/admin/class-review.php:307
+#: includes/admin/class-review.php:331
 msgid "Free Plugins"
 msgstr "Gratis plugins"
 
-#: includes/admin/class-review.php:302
+#: includes/admin/class-review.php:326
 msgid "VIP Circle"
 msgstr "VIP Circle"
 
@@ -6268,7 +6268,7 @@ msgstr "Basisbescherming, reCAPTCHA, hCaptcha, Cloudflare Turnstile en Akismet"
 msgid "Leading WordPress backup & site migration plugin. Over 1,500,000+ smart website owners use Duplicator to make reliable and secure WordPress backups to protect their websites. It also makes website migration really easy."
 msgstr "Toonaangevende WordPress back-up & site migratie plugin. Meer dan 1.500.000+ slimme site-eigenaren gebruiken Duplicator om betrouwbare en veilige WordPress back-ups te maken om hun sites te beschermen. Het maakt ook site migratie echt gemakkelijk."
 
-#: includes/admin/class-about.php:1136
+#: includes/admin/class-about.php:1136 src/Admin/Pages/Duplicator.php:389
 msgid "Duplicator"
 msgstr "Duplicator"
 
@@ -6343,35 +6343,35 @@ msgstr "Je kunt geen formulieren importeren omdat je geen ongefilterde HTML mach
 msgid "Enter the email address or email address with recipient's name in \"First Last %s\" format."
 msgstr "Voer het e-mailadres of de e-mailadressen in met de naam van de geadresseerde in het \"Voor- Achternaam %s\" format."
 
-#: includes/fields/class-base.php:2128
+#: includes/fields/class-base.php:2160
 msgid "Select the style for the icon choices."
 msgstr "Selecteer de stijl voor de pictogram keuzes."
 
-#: includes/fields/class-base.php:2127
+#: includes/fields/class-base.php:2159
 msgid "Icon Choice Style"
 msgstr "Pictogram keuze stijl"
 
-#: includes/fields/class-base.php:2080
+#: includes/fields/class-base.php:2112
 msgid "Select icon size."
 msgstr "Selecteer de grootte van het pictogram."
 
-#: includes/fields/class-base.php:2079 src/Forms/Fields/Rating/Field.php:219
+#: includes/fields/class-base.php:2111 src/Forms/Fields/Rating/Field.php:219
 msgid "Icon Size"
 msgstr "Icoon grootte"
 
-#: includes/fields/class-base.php:2040
+#: includes/fields/class-base.php:2072
 msgid "Select an accent color for the icon choices."
 msgstr "Selecteer een accentkleur voor de pictogram keuzes."
 
-#: includes/fields/class-base.php:2039 src/Forms/Fields/Rating/Field.php:256
+#: includes/fields/class-base.php:2071 src/Forms/Fields/Rating/Field.php:256
 msgid "Icon Color"
 msgstr "Pictogram kleur"
 
-#: includes/fields/class-base.php:2014
+#: includes/fields/class-base.php:2046
 msgid "Enable this option to use icons with the choices."
 msgstr "Ingeschakeld deze optie om pictogrammen te gebruiken bij de keuzes."
 
-#: includes/fields/class-base.php:2013
+#: includes/fields/class-base.php:2045
 msgid "Use Icon Choices"
 msgstr "Gebruik icoon keuzes"
 
@@ -6610,7 +6610,7 @@ msgstr "Nooit meer opnieuw beginnen! Met WPForms Lite kun je elk type formulier 
 msgid "Get Access to Our Library of %d+ Pre-Made Form Templates"
 msgstr "Verkrijg toegang tot onze bibliotheek van %d+ kant-en-klare formulier templates"
 
-#: includes/admin/class-menu.php:138
+#: includes/admin/class-menu.php:140
 msgid "WPForms Templates"
 msgstr "WPForms templates"
 
@@ -7296,11 +7296,11 @@ msgstr "WPForms biedt nu offsite back-ups voor je formulierinvoer. Als je beslui
 msgid "One More Thing"
 msgstr "Nog een ding"
 
-#: includes/admin/class-menu.php:411
+#: includes/admin/class-menu.php:418
 msgid "Read the documentation"
 msgstr "Lees de documentatie"
 
-#: includes/admin/class-menu.php:383
+#: includes/admin/class-menu.php:390
 msgid "Get WPForms Pro"
 msgstr "Download WPForms Pro"
 
@@ -7546,7 +7546,7 @@ msgstr "Sugar Calendar Pro"
 msgid "A simple & powerful event calendar plugin for WordPress that comes with all the event management features including payments, scheduling, timezones, ticketing, recurring events, and more."
 msgstr "Een eenvoudige & krachtige evenement kalender plugin voor WordPress die wordt geleverd met alle functies voor evenementenbeheer, waaronder betalingen, planning, tijdzones, ticketing, terugkerende evenementen en meer."
 
-#: includes/admin/class-about.php:1107
+#: includes/admin/class-about.php:1107 src/Admin/Pages/SugarCalendar.php:394
 msgid "Sugar Calendar"
 msgstr "Sugar Calendar"
 
@@ -7632,8 +7632,8 @@ msgid "Free mailers: SendLayer, SMTP.com, Brevo, Google Workspace / Gmail, Mailg
 msgstr "Gratis maildiensten: SendLayer, SMTP.com, Brevo, Google Workspace/Gmail, Mailgun, Postmark, SendGrid."
 
 #: src/Admin/Pages/SMTP.php:265
-msgid "Used by 2+ million websites."
-msgstr "Gebruikt door 2+ miljoen sites."
+msgid "Used by 4+ million websites."
+msgstr "Gebruikt door 4+ miljoen sites."
 
 #: src/Admin/Pages/SMTP.php:264
 msgid "Improves email deliverability in WordPress."
@@ -7652,17 +7652,17 @@ msgstr "Taiwan, Republiek China"
 msgid "Selected Value: %s"
 msgstr "Geselecteerde waarde: %s"
 
-#: includes/fields/class-base.php:2902
+#: includes/fields/class-base.php:2952
 msgid "To ensure your form is accessible, every field should have a descriptive label. If you'd like to hide the label, you can do so by enabling Hide Label in the Advanced Field Options tab."
 msgstr "Om ervoor te zorgen dat je formulier toegankelijk is, moet elk veld een beschrijvend label hebben. Als je het label wil verbergen, kun je dit doen door Label verbergen in te schakelen op de tab Geavanceerde veldopties."
 
-#: includes/fields/class-base.php:2901
+#: includes/fields/class-base.php:2951
 msgid "Label Hidden"
 msgstr "Label verborgen"
 
 #. translators: %1$.3f - total size of the selected files in megabytes, %2$.3f
 #. - allowed file upload limit in megabytes.
-#: includes/class-process.php:1709
+#: includes/class-process.php:1723
 msgid "The total size of the selected files %1$.3f MB exceeds the allowed limit %2$.3f MB."
 msgstr "De totale grootte van de geselecteerde bestanden %1$.3f MB overschrijdt de toegestane limiet %2$.3f MB."
 
@@ -7692,12 +7692,12 @@ msgid "Did you mean %s?"
 msgstr "Bedoelde je %s?"
 
 #: includes/admin/builder/panels/class-fields.php:493
-#: includes/fields/class-base.php:3377
+#: includes/fields/class-base.php:3435
 msgid "Hide Helper"
 msgstr "Helper verbergen"
 
 #: includes/admin/builder/class-builder.php:897
-#: includes/fields/class-base.php:2900
+#: includes/fields/class-base.php:2950
 msgid "Empty Label"
 msgstr "Leeg label"
 
@@ -7722,12 +7722,13 @@ msgstr "Zet je WordPress site op de automatische piloot"
 msgid "%s plugin"
 msgstr "%s plugin"
 
+#: src/Admin/Pages/UncannyAutomator.php:368
 #: src/Integrations/UncannyAutomator/UncannyAutomator.php:69
 msgid "Uncanny Automator"
 msgstr "Uncanny Automator"
 
 #. translators: %s - Lite plugin download URL.
-#: src/Admin/Pages/PrivacyCompliance.php:162 src/Admin/Pages/SMTP.php:160
+#: src/Admin/Pages/SMTP.php:160
 msgid "Could not install the plugin automatically. Please <a href=\"%s\">download</a> it and install it manually."
 msgstr "Kon de plugin niet automatisch installeren. Download <a href=\"%s\"></a> het en installeer het handmatig."
 
@@ -7874,12 +7875,12 @@ msgid "Addon Templates"
 msgstr "Add-on templates"
 
 #: includes/admin/builder/panels/class-fields.php:492
-#: includes/fields/class-base.php:3376
+#: includes/fields/class-base.php:3434
 msgid "Drag to Reorder"
 msgstr "Sleep om de volgorde te wijzigen"
 
 #: includes/admin/builder/panels/class-fields.php:491
-#: includes/fields/class-base.php:3375
+#: includes/fields/class-base.php:3433
 msgid "Click to Edit"
 msgstr "Klik om te bewerken"
 
@@ -7933,11 +7934,11 @@ msgid "Learn more about the power of email marketing."
 msgstr "Meer informatie over de kracht van e-mailmarketing."
 
 #. translators: %1$s - source name, %2$s - type name.
-#: includes/fields/class-base.php:1650
+#: includes/fields/class-base.php:1681
 msgid "Choices are dynamically populated from the %1$s %2$s. Go to the Advanced tab to change this."
 msgstr "Keuzes worden dynamisch ingevuld vanuit de %1$s %2$s. Ga naar de tab Geavanceerd om dit te wijzigen."
 
-#: includes/fields/class-base.php:1646
+#: includes/fields/class-base.php:1677
 msgid "Dynamic Choices Active"
 msgstr "Dynamische keuzes actief"
 
@@ -7954,7 +7955,7 @@ msgid "Search Templates"
 msgstr "Zoek templates"
 
 #: includes/admin/builder/panels/class-settings.php:379
-#: includes/fields/class-base.php:2276
+#: includes/fields/class-base.php:2308
 #: src/Admin/Builder/Settings/Themes.php:408
 #: src/Integrations/Elementor/WidgetModern.php:744
 #: src/Integrations/Gutenberg/FormSelector.php:481
@@ -8450,13 +8451,13 @@ msgstr "hCaptcha inschakelen"
 
 #. translators: %s - number of addons.
 #: includes/admin/class-about.php:1788
-msgid "PDF, Calculations, Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Google Sheets, Coupons, Dropbox, Google Calendar, Google Drive, Airtable, and more (%1$s+ total)"
-msgstr "PDF, berekeningen, formulierverlating, conversatieformulieren, lead formulieren, front-end bericht indienen, gebruiker registratie, geolocatie, Google Sheets, waardebonnen, Dropbox, Google Calendar, Google Drive en meer (%1$s+ totaal)"
+msgid "PDF, Calculations, Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Google Sheets, Coupons, Dropbox, Google Calendar, Google Drive, Airtable, Notion, and more (%1$s+ total)"
+msgstr "PDF, Berekeningen, Formulier verlating, Gespreks formulieren, Lead formulieren, Front-end bericht indiening, Gebruikersregistratie, Geolocatie, Google Sheets, Waardebonnen, Dropbox, Google Calendar, Google Drive, Airtable, Notion en meer (%1$s+ totaal)"
 
 #. translators: %s - number of addons.
 #: includes/admin/class-about.php:1811
-msgid "PDF, Calculations, Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Webhooks, Google Sheets, Coupons, Dropbox, Google Calendar, Google Drive, Entry Automation, Airtable, and more (%1$s+ total)"
-msgstr "PDF, berekeningen, formulierverlating, conversatieformulieren, lead formulieren, front-end bericht indienen, gebruiker registratie, geolocatie, webhooks, Google Sheets, waardebonnen, Dropbox, Google Calendar, Google Drive, invoer automatisering en meer (%1$s+ totaal)"
+msgid "PDF, Calculations, Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Webhooks, Google Sheets, Coupons, Dropbox, Google Calendar, Google Drive, Entry Automation, Airtable, Notion, and more (%1$s+ total)"
+msgstr "PDF, berekeningen, formulier verlating, gesprek formulieren, lead formulieren, front-end bericht indienen, gebruikersregistratie, geolocatie, webhooks, Google Sheets, waardebonnen, Dropbox, Google Calendar, Google Drive, invoer automatisering, Airtable, Notion en meer (%1$s+ totaal)"
 
 #: includes/admin/admin.php:265
 msgid "Could not disconnect this account."
@@ -8583,7 +8584,7 @@ msgid "Something went wrong while performing this action."
 msgstr "Er is iets misgegaan tijdens het uitvoeren van deze actie."
 
 #: includes/admin/ajax-actions.php:28 includes/admin/ajax-actions.php:286
-#: includes/fields/class-base.php:3276
+#: includes/fields/class-base.php:3326
 #: src/Admin/Builder/Ajax/PanelLoader.php:134 src/Admin/FormEmbedWizard.php:279
 #: src/Admin/FormEmbedWizard.php:455 src/Admin/Forms/Ajax/Tags.php:200
 #: src/Admin/Forms/Ajax/Tags.php:240
@@ -8596,7 +8597,7 @@ msgid "You are not allowed to perform this action."
 msgstr "Je mag deze actie niet uitvoeren."
 
 #: includes/admin/ajax-actions.php:23 includes/admin/ajax-actions.php:925
-#: includes/fields/class-base.php:3271 src/Admin/FormEmbedWizard.php:448
+#: includes/fields/class-base.php:3321 src/Admin/FormEmbedWizard.php:448
 #: src/Integrations/AI/Admin/Ajax/Choices.php:57
 #: src/Integrations/AI/Admin/Ajax/Forms.php:84
 #: src/Integrations/AI/Admin/Ajax/Forms.php:123
@@ -8661,7 +8662,7 @@ msgstr "E-mail beperkt"
 msgid "Unfortunately the error occurred while downloading help data."
 msgstr "Helaas is de fout opgetreden tijdens het downloaden van helpgegevens."
 
-#: includes/admin/class-menu.php:412 includes/admin/class-review.php:297
+#: includes/admin/class-menu.php:419 includes/admin/class-review.php:321
 #: src/Admin/Blocks/Links.php:91 templates/builder/help.php:122
 msgid "Docs"
 msgstr "Docs"
@@ -8839,7 +8840,7 @@ msgstr "Wordt weergegeven voor gebruikers die het verificatieproces niet doorsta
 #. translators: %d - choice number.
 #. translators: %d - Choice ID.
 #: includes/fields/class-base.php:593 includes/fields/class-base.php:631
-#: includes/fields/class-base.php:4133 src/Integrations/Square/Process.php:803
+#: includes/fields/class-base.php:4191 src/Integrations/Square/Process.php:803
 msgid "Choice %d"
 msgstr "Keuze %d"
 
@@ -8848,10 +8849,10 @@ msgstr "Keuze %d"
 msgid "Need some help? Check out our <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">comprehensive guide</a>."
 msgstr "Hulp nodig? Bekijk onze <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">uitgebreide gids</a>."
 
-#: src/Integrations/Divi/Divi.php:218
+#: src/Integrations/Divi/Divi.php:220
 #: templates/integrations/elementor/no-forms.php:20
 #: assets/js/integrations/gutenberg/modules/common.js:997
-#: assets/lite/js/integrations/gutenberg/formselector.es5.js:3313
+#: assets/lite/js/integrations/gutenberg/formselector.es5.js:3314
 msgid "You can use <b>WPForms</b> to build contact forms, surveys, payment forms, and more with just a few clicks."
 msgstr "Je kan <b>WPForms</b> gebruiken om contactformulieren, enquêtes, betalingsformulieren en meer te maken met slechts een paar klikken."
 
@@ -8953,11 +8954,11 @@ msgstr "Bestand uploads"
 msgid "Advanced Fields"
 msgstr "Geavanceerde velden"
 
-#: includes/fields/class-base.php:3883
+#: includes/fields/class-base.php:3941
 msgid "Only values matching specific conditions can be added"
 msgstr "Alleen waarden die voldoen aan specifieke voorwaarden kunnen worden toegevoegd"
 
-#: includes/fields/class-base.php:3882
+#: includes/fields/class-base.php:3940
 msgid "Only unique values can be added"
 msgstr "Alleen unieke waarden kunnen worden toegevoegd"
 
@@ -9005,7 +9006,7 @@ msgstr "Om de %s integratie van uw formulier te voltooien, moet je controleren o
 msgid "Are you sure you want to leave? You have unsaved changes"
 msgstr "Weet je zeker dat je wil stoppen? Je hebt niet opgeslagen wijzigingen"
 
-#: includes/admin/class-review.php:288 src/Admin/Blocks/Links.php:107
+#: includes/admin/class-review.php:312 src/Admin/Blocks/Links.php:107
 msgid "Support"
 msgstr "Ondersteuning"
 
@@ -9046,7 +9047,7 @@ msgstr "Bekijk inzendingen"
 msgid "Edit Form"
 msgstr "Formulier bewerken"
 
-#: includes/admin/class-menu.php:394
+#: includes/admin/class-menu.php:401
 msgid "Go to WPForms Settings page"
 msgstr "Ga naar de WPForms instellingenpagina"
 
@@ -9060,7 +9061,7 @@ msgstr "Het formulier kan niet worden weergegeven."
 msgid "Did You Know?"
 msgstr "Wist je dat?"
 
-#: includes/admin/class-menu.php:227 includes/admin/class-menu.php:228
+#: includes/admin/class-menu.php:234 includes/admin/class-menu.php:235
 #: lite/templates/education/builder/did-you-know.php:30
 #: lite/wpforms-lite.php:1020 src/Admin/Builder/AntiSpam.php:350
 #: src/Admin/Builder/Templates.php:1037 src/Admin/Education/Builder/PDF.php:224
@@ -9228,7 +9229,7 @@ msgstr "%1$s vs %2$s"
 msgid "Number of Sites"
 msgstr "Aantal sites"
 
-#: includes/admin/class-menu.php:197 includes/admin/class-menu.php:198
+#: includes/admin/class-menu.php:204 includes/admin/class-menu.php:205
 msgid "SMTP"
 msgstr "SMTP"
 
@@ -9282,12 +9283,12 @@ msgstr "%1$s (%2$s min / %3$s max)"
 msgid "Number Slider"
 msgstr "Getal slider"
 
-#: includes/fields/class-base.php:2701
+#: includes/fields/class-base.php:2733
 #: src/Forms/Fields/Traits/NumberField.php:226
 msgid "Maximum"
 msgstr "Maximum"
 
-#: includes/fields/class-base.php:2682
+#: includes/fields/class-base.php:2714
 #: src/Forms/Fields/Traits/NumberField.php:223
 msgid "Minimum"
 msgstr "Minimum"
@@ -9340,35 +9341,37 @@ msgstr "WPForms ♥ WP Mail SMTP"
 msgid "WP Mail SMTP Installed & Activated"
 msgstr "WP Mail SMTP geïnstalleerd en geactiveerd"
 
-#: src/Admin/Pages/PrivacyCompliance.php:579 src/Admin/Pages/SMTP.php:476
+#: src/Admin/Pages/Page.php:386 src/Admin/Pages/SMTP.php:476
 msgid "Plugin unavailable."
 msgstr "Plugin niet beschikbaar."
 
-#: src/Admin/Pages/PrivacyCompliance.php:494
+#: src/Admin/Pages/PrivacyCompliance.php:467
 msgid "Setup Complete"
 msgstr "Installatie afgerond"
 
-#: src/Admin/Pages/PrivacyCompliance.php:488
+#: src/Admin/Pages/PrivacyCompliance.php:455
 msgid "Run Setup Wizard"
 msgstr "Voer de installatiewizard uit"
 
-#: src/Admin/Pages/PrivacyCompliance.php:409
+#: src/Admin/Pages/Duplicator.php:161 src/Admin/Pages/PrivacyCompliance.php:173
+#: src/Admin/Pages/SugarCalendar.php:162
+#: src/Admin/Pages/UncannyAutomator.php:149
 msgid "Step 3"
 msgstr "Stap 3"
 
-#: src/Admin/Pages/PrivacyCompliance.php:371 src/Admin/Pages/SMTP.php:365
+#: src/Admin/Pages/Page.php:259 src/Admin/Pages/SMTP.php:365
 msgid "Step 2"
 msgstr "Stap 2"
 
-#: src/Admin/Pages/PrivacyCompliance.php:335 src/Admin/Pages/SMTP.php:331
+#: src/Admin/Pages/Page.php:223 src/Admin/Pages/SMTP.php:331
 msgid "Step 1"
 msgstr "Stap 1"
 
-#: src/Admin/Pages/PrivacyCompliance.php:192 src/Admin/Pages/SMTP.php:189
+#: src/Admin/Pages/Page.php:467 src/Admin/Pages/SMTP.php:189
 msgid "Go to Plugins page"
 msgstr "Ga naar de plugin pagina"
 
-#: src/Admin/Pages/PrivacyCompliance.php:191 src/Admin/Pages/SMTP.php:188
+#: src/Admin/Pages/Page.php:466 src/Admin/Pages/SMTP.php:188
 msgid "Download Now"
 msgstr "Nu downloaden"
 
@@ -9378,25 +9381,26 @@ msgstr "Nu downloaden"
 #: src/Admin/Notifications/EventDriven.php:696
 #: src/Admin/Notifications/EventDriven.php:700
 #: src/Admin/Notifications/EventDriven.php:763
-#: src/Admin/Notifications/EventDriven.php:767
-#: src/Admin/Pages/PrivacyCompliance.php:189
-#: src/Admin/Pages/PrivacyCompliance.php:546 src/Admin/Pages/SMTP.php:186
+#: src/Admin/Notifications/EventDriven.php:767 src/Admin/Pages/Page.php:464
+#: src/Admin/Pages/PrivacyCompliance.php:213 src/Admin/Pages/SMTP.php:186
+#: src/Admin/Pages/SugarCalendar.php:285
+#: src/Admin/Pages/UncannyAutomator.php:188
 #: src/Integrations/UncannyAutomator/UncannyAutomator.php:116
 msgid "Install Now"
 msgstr "Nu installeren"
 
-#: src/Admin/Pages/PrivacyCompliance.php:186 src/Admin/Pages/SMTP.php:184
+#: src/Admin/Pages/Page.php:461 src/Admin/Pages/SMTP.php:184
 #: src/Integrations/AI/Admin/Builder/Forms.php:194
 msgid "Activating..."
 msgstr "Aan het activeren..."
 
-#: src/Admin/Pages/PrivacyCompliance.php:185 src/Admin/Pages/SMTP.php:183
+#: src/Admin/Pages/Page.php:460 src/Admin/Pages/SMTP.php:183
 #: src/Integrations/AI/Admin/Builder/Forms.php:193
 msgid "Installing..."
 msgstr "Aan het installeren..."
 
 #. translators: %s - Lite plugin download URL.
-#: src/Admin/Pages/PrivacyCompliance.php:174 src/Admin/Pages/SMTP.php:172
+#: src/Admin/Pages/SMTP.php:172
 msgid "Could not activate the plugin. Please activate it on the <a href=\"%s\">Plugins page</a>."
 msgstr "Kon plugin niet activeren. Activeer het vanaf de <a href=\"%s\">Plugin pagina</a>."
 
@@ -9494,7 +9498,7 @@ msgstr "Vink deze optie aan om de tekstlengte te beperken door het aantal tekens
 msgid "Limit Length"
 msgstr "Limiet lengte"
 
-#: includes/admin/class-menu.php:217 includes/admin/class-menu.php:218
+#: includes/admin/class-menu.php:224 includes/admin/class-menu.php:225
 #: src/Admin/AdminBarMenu.php:576 src/Admin/Pages/Community.php:137
 msgid "Community"
 msgstr "Community"
@@ -9580,7 +9584,7 @@ msgstr "Geen code opgegeven."
 msgid "Please enter your license key to connect."
 msgstr "Voer je licentiecode in om verbinding te maken."
 
-#: src/Admin/Pages/PrivacyCompliance.php:190 src/Admin/Pages/SMTP.php:187
+#: src/Admin/Pages/Page.php:465 src/Admin/Pages/SMTP.php:187
 #: src/Integrations/UncannyAutomator/UncannyAutomator.php:116
 msgid "Activate Now"
 msgstr "Activeer nu"
@@ -9689,7 +9693,7 @@ msgstr "De ingevulde e-mailadressen komen niet overeen."
 msgid "The provided email is not valid."
 msgstr "Het ingevulde e-mailadres is niet geldig."
 
-#: includes/class-process.php:1478
+#: includes/class-process.php:1492
 msgid "Redirecting…"
 msgstr "Omleiden..."
 
@@ -9779,15 +9783,15 @@ msgstr "E-mail suggestie"
 msgid "MonsterInsights Pro"
 msgstr "MonsterInsights Pro"
 
-#: includes/fields/class-base.php:2856
+#: includes/fields/class-base.php:2906
 msgid "Limit the number of checkboxes a user can select. Leave empty for unlimited."
 msgstr "Beperk het aantal selectievakjes dat een gebruiker kan selecteren. Leeg laten voor onbeperkt."
 
-#: includes/fields/class-base.php:2855
+#: includes/fields/class-base.php:2905
 msgid "Choice Limit"
 msgstr "Keuze limiet"
 
-#: includes/admin/class-settings.php:521 includes/fields/class-base.php:4329
+#: includes/admin/class-settings.php:521 includes/fields/class-base.php:4387
 #: src/Frontend/Frontend.php:1863
 msgid "You have exceeded the number of allowed selections: {#}."
 msgstr "Je hebt het aantal toegestane selecties overschreden: {#}."
@@ -10256,7 +10260,7 @@ msgstr "Site sleutel"
 msgid "Invisible reCAPTCHA v2"
 msgstr "Onzichtbare reCAPTCHA v2"
 
-#: includes/fields/class-base.php:1408
+#: includes/fields/class-base.php:1411
 #: src/Admin/Payments/Views/Overview/Table.php:92
 #: src/Admin/Payments/Views/Single.php:358
 #: src/Admin/Settings/Captcha/ReCaptcha.php:58
@@ -10695,44 +10699,44 @@ msgstr "Fout bij het maken van het formulier"
 msgid "No Form Name Provided"
 msgstr "Geen formuliernaam opgegeven"
 
-#: includes/admin/class-about.php:113 includes/admin/class-menu.php:208
+#: includes/admin/class-about.php:113 includes/admin/class-menu.php:215
 msgid "About Us"
 msgstr "Over ons"
 
-#: includes/admin/class-menu.php:207
+#: includes/admin/class-menu.php:214
 msgid "About WPForms"
 msgstr "Over WPForms"
 
-#: includes/admin/class-menu.php:179
+#: includes/admin/class-menu.php:181
 #: src/Integrations/AI/Admin/Builder/Forms.php:218
 msgid "Addons"
 msgstr "Add-ons"
 
-#: includes/admin/class-menu.php:169 templates/emails/summary-body.php:280
+#: includes/admin/class-menu.php:171 templates/emails/summary-body.php:280
 msgid "Info"
 msgstr "Info"
 
-#: includes/admin/class-menu.php:159 src/Admin/AdminBarMenu.php:557
+#: includes/admin/class-menu.php:161 src/Admin/AdminBarMenu.php:557
 msgid "Tools"
 msgstr "Gereedschap"
 
-#: includes/admin/class-menu.php:158
+#: includes/admin/class-menu.php:160
 msgid "WPForms Tools"
 msgstr "WPForms gereedschap"
 
-#: includes/admin/class-menu.php:148
+#: includes/admin/class-menu.php:150
 msgid "WPForms Settings"
 msgstr "WPForms instellingen"
 
-#: includes/admin/class-about.php:1756 includes/admin/class-menu.php:102
+#: includes/admin/class-about.php:1756 includes/admin/class-menu.php:104
 msgid "Form Entries"
 msgstr "Formulier inzendingen"
 
-#: includes/admin/class-menu.php:92
+#: includes/admin/class-menu.php:94
 msgid "WPForms Builder"
 msgstr "WPForms Builder"
 
-#: includes/admin/class-menu.php:83 src/Admin/AdminBarMenu.php:476
+#: includes/admin/class-menu.php:85 src/Admin/AdminBarMenu.php:476
 msgid "All Forms"
 msgstr "Alle formulieren"
 
@@ -10784,13 +10788,13 @@ msgstr "Je moet je <a href=\"#\" class=\"wpforms-panel-switch\" data-panel=\"set
 #: includes/admin/builder/panels/class-settings.php:58
 #: includes/admin/builder/panels/class-settings.php:155
 #: includes/admin/class-settings.php:302 includes/admin/class-settings.php:379
-#: includes/fields/class-base.php:1282 src/Admin/AdminBarMenu.php:209
+#: includes/fields/class-base.php:1285 src/Admin/AdminBarMenu.php:209
 #: src/Admin/Builder/Settings/Themes.php:406
 msgid "General"
 msgstr "Algemeen"
 
 #: includes/admin/builder/panels/class-settings.php:29
-#: includes/admin/class-menu.php:149 includes/admin/class-menu.php:395
+#: includes/admin/class-menu.php:151 includes/admin/class-menu.php:402
 #: src/Admin/AdminBarMenu.php:538
 msgid "Settings"
 msgstr "Instellingen"
@@ -10807,12 +10811,12 @@ msgstr "Installeer je betaling integratie"
 
 #: includes/admin/builder/panels/class-payments.php:41
 #: includes/admin/builder/panels/class-providers.php:81
-#: includes/fields/class-base.php:2141
+#: includes/fields/class-base.php:2173
 msgid "Default"
 msgstr "Standaard"
 
 #: includes/admin/builder/panels/class-payments.php:22
-#: includes/admin/class-menu.php:112 includes/admin/class-menu.php:113
+#: includes/admin/class-menu.php:114 includes/admin/class-menu.php:115
 #: src/Admin/AdminBarMenu.php:225 src/Admin/AdminBarMenu.php:495
 #: src/Admin/Forms/Views.php:592 src/Admin/Payments/Payments.php:173
 #: src/Admin/Payments/Views/Overview/Page.php:151
@@ -11020,7 +11024,7 @@ msgid "is"
 msgstr "is"
 
 #: includes/admin/builder/class-builder.php:842
-#: includes/functions/utilities.php:357
+#: includes/functions/utilities.php:376
 msgid "or"
 msgstr "of"
 
@@ -11190,19 +11194,19 @@ msgstr "Toevoegen van nieuwe keuzes"
 
 #. translators: $1$s - WPForms plugin name, $2$s - WP.org review link, $3$s -
 #. WP.org review link.
-#: includes/admin/class-review.php:231
+#: includes/admin/class-review.php:272
 msgid "Please rate %1$s <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href=\"%3$s\" target=\"_blank\" rel=\"noopener\">WordPress.org</a> to help us spread the word."
 msgstr "Waardeer %1$s <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> op <a href=\"%3$s\" target=\"_blank\" rel=\"noopener\">WordPress.org</a> om ons te helpen bekend te worden."
 
-#: includes/admin/class-review.php:207
+#: includes/admin/class-review.php:245
 msgid "I already did"
 msgstr "Heb ik al gedaan"
 
-#: includes/admin/class-review.php:206
+#: includes/admin/class-review.php:241
 msgid "Nope, maybe later"
 msgstr "Nee, misschien later"
 
-#: includes/admin/class-review.php:205
+#: includes/admin/class-review.php:237
 msgid "Ok, you deserve it"
 msgstr "Ok, je verdient het"
 
@@ -11553,17 +11557,17 @@ msgstr "<strong>Houd er rekening mee dat:</strong> ondersteuning voor PHP 7.3 bi
 msgid "Your site is running an outdated version of PHP that is no longer supported and may cause issues with %1$s. <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Read more</a> for additional information."
 msgstr "Je site gebruikt een verouderde versie van PHP die niet langer wordt ondersteund en problemen met %1$s kan veroorzaken. <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Lees meer</a> voor meer informatie."
 
-#: includes/admin/admin.php:181 includes/fields/class-base.php:3881
+#: includes/admin/admin.php:181 includes/fields/class-base.php:3939
 msgid "No choices to choose from"
 msgstr "Geen keuzes om uit te kiezen"
 
 #: includes/admin/admin.php:180 includes/admin/builder/class-builder.php:905
-#: includes/fields/class-base.php:3880 src/Admin/Forms/Tags.php:180
+#: includes/fields/class-base.php:3938 src/Admin/Forms/Tags.php:180
 msgid "No results found"
 msgstr "Geen resultaten gevonden"
 
 #: includes/admin/admin.php:179 includes/admin/admin.php:315
-#: includes/fields/class-base.php:3879 src/Admin/Forms/Tags.php:179
+#: includes/fields/class-base.php:3937 src/Admin/Forms/Tags.php:179
 msgid "Loading..."
 msgstr "Aan het laden..."
 
@@ -11874,7 +11878,7 @@ msgstr "Responsive mobiel vriendelijk"
 msgid "Start with pre-built form templates to save even more time."
 msgstr "Begin met vooraf gebouwde formulier templates om nog meer tijd te besparen."
 
-#: includes/admin/class-about.php:1758 includes/admin/class-menu.php:139
+#: includes/admin/class-about.php:1758 includes/admin/class-menu.php:141
 #: includes/admin/class-welcome.php:235 src/Admin/Pages/Templates.php:114
 msgid "Form Templates"
 msgstr "Formulier templates"
@@ -13501,26 +13505,26 @@ msgid "Checkboxes"
 msgstr "Selectievakjes"
 
 #: includes/admin/builder/panels/class-fields.php:479
-#: includes/fields/class-base.php:3364
+#: includes/fields/class-base.php:3422
 msgid "Delete Field"
 msgstr "Veld verwijderen"
 
 #: includes/admin/builder/panels/class-fields.php:473
-#: includes/fields/class-base.php:3361
+#: includes/fields/class-base.php:3419
 msgid "Duplicate Field"
 msgstr "Veld dupliceren"
 
-#: includes/fields/class-base.php:3286
+#: includes/fields/class-base.php:3336
 msgid "No field type found"
 msgstr "Veld type niet gevonden"
 
-#: includes/fields/class-base.php:3281
+#: includes/fields/class-base.php:3331
 msgid "No form ID found"
 msgstr "Formulier ID niet gevonden"
 
-#: src/Admin/Education/Builder/Captcha.php:68
-#: src/Admin/Pages/PrivacyCompliance.php:571 src/Admin/Pages/SMTP.php:466
-#: src/Lite/Admin/Education/LiteConnect.php:418 src/Logger/Log.php:200
+#: src/Admin/Education/Builder/Captcha.php:68 src/Admin/Pages/Page.php:378
+#: src/Admin/Pages/SMTP.php:466 src/Lite/Admin/Education/LiteConnect.php:418
+#: src/Logger/Log.php:200
 #: src/Providers/Provider/Settings/PageIntegrations.php:323
 msgid "You do not have permission."
 msgstr "Je hebt geen toestemming."
@@ -13537,100 +13541,100 @@ msgid "(empty)"
 msgstr "(leeg)"
 
 #. translators: %s - dynamic source type name.
-#: includes/fields/class-base.php:2566
+#: includes/fields/class-base.php:2598
 msgid "Dynamic %s Source"
 msgstr "Dynamische %s bron"
 
 #. translators: %s - dynamic source type name.
-#: includes/fields/class-base.php:2563
+#: includes/fields/class-base.php:2595
 msgid "Select %s to use for auto-populating field choices."
 msgstr "Selecteer %s om te gebruiken voor automatisch invullen van veldkeuzes."
 
-#: includes/fields/class-base.php:2499
+#: includes/fields/class-base.php:2531
 msgid "Dynamic Choices"
 msgstr "Dynamische keuzes"
 
-#: includes/fields/class-base.php:2491 includes/fields/class-base.php:2550
+#: includes/fields/class-base.php:2523 includes/fields/class-base.php:2582
 msgid "Taxonomy"
 msgstr "Taxonomie"
 
-#: includes/fields/class-base.php:2490 includes/fields/class-base.php:2540
+#: includes/fields/class-base.php:2522 includes/fields/class-base.php:2572
 msgid "Post Type"
 msgstr "Berichttype"
 
-#: includes/fields/class-base.php:2487
+#: includes/fields/class-base.php:2519
 msgid "Select auto-populate method to use."
 msgstr "Selecteer de methode voor automatisch invullen die moet worden gebruikt."
 
-#: includes/fields/class-base.php:2454
+#: includes/fields/class-base.php:2486
 msgid "Choice Layout"
 msgstr "Keuze lay-out"
 
-#: includes/fields/class-base.php:2446
+#: includes/fields/class-base.php:2478
 msgid "Inline"
 msgstr "Inline"
 
-#: includes/fields/class-base.php:2445
+#: includes/fields/class-base.php:2477
 msgid "Three Columns"
 msgstr "Drie kolommen"
 
-#: includes/fields/class-base.php:2444
+#: includes/fields/class-base.php:2476
 msgid "Two Columns"
 msgstr "Twee kolommen"
 
-#: includes/fields/class-base.php:2443
+#: includes/fields/class-base.php:2475
 msgid "One Column"
 msgstr "Een kolom"
 
-#: includes/fields/class-base.php:2441
+#: includes/fields/class-base.php:2473
 msgid "Select the layout for displaying field choices."
 msgstr "Selecteer de lay-out voor het weergeven van veld keuzes."
 
-#: includes/fields/class-base.php:2418
+#: includes/fields/class-base.php:2450
 msgid "Hide Sublabels"
 msgstr "Verberg sub-labels"
 
-#: includes/fields/class-base.php:2409
+#: includes/fields/class-base.php:2441
 msgid "Check this option to hide the form field sublabel."
 msgstr "Vink deze optie aan om het sub-label van het formulierveld te verbergen."
 
-#: includes/fields/class-base.php:2386
+#: includes/fields/class-base.php:2418
 #: templates/builder/field-context-menu.php:66
 msgid "Hide Label"
 msgstr "Verberg label"
 
-#: includes/fields/class-base.php:2377
+#: includes/fields/class-base.php:2409
 msgid "Check this option to hide the form field label."
 msgstr "Vink deze optie aan om het formulier veldlabel te verbergen."
 
-#: includes/fields/class-base.php:2344
+#: includes/fields/class-base.php:2376
 msgid "CSS Classes"
 msgstr "CSS klassen"
 
 #: includes/admin/builder/class-builder.php:817
-#: includes/fields/class-base.php:2335
+#: includes/fields/class-base.php:2367
 msgid "Show Layouts"
 msgstr "Lay-outs weergeven"
 
-#: includes/fields/class-base.php:2332
+#: includes/fields/class-base.php:2364
 msgid "Enter CSS class names for the form field container. Class names should be separated with spaces."
 msgstr "Voer CSS klasse namen in voor de formulierveld container. Klasse namen moeten worden gescheiden door spaties."
 
-#: includes/fields/class-base.php:1832 includes/fields/class-base.php:2298
+#: includes/fields/class-base.php:1864 includes/fields/class-base.php:2330
 msgid "Placeholder Text"
 msgstr "Plaatshouder tekst"
 
-#: includes/fields/class-base.php:2291
+#: includes/fields/class-base.php:2323
 msgid "Enter text for the form field placeholder."
 msgstr "Voer tekst in voor de plaatshouder voor het formulierveld."
 
-#: includes/fields/class-base.php:1877 includes/fields/class-base.php:2230
+#: includes/fields/class-base.php:1909 includes/fields/class-base.php:2262
 #: templates/builder/field-context-menu.php:76
 msgid "Field Size"
 msgstr "Veldgrootte"
 
-#: includes/admin/builder/functions.php:852 includes/fields/class-base.php:1869
-#: includes/fields/class-base.php:2218
+#: includes/admin/builder/functions.php:852 includes/fields/class-base.php:1901
+#: includes/fields/class-base.php:2250
 #: src/Admin/Builder/Settings/Themes.php:104
 #: src/Admin/Builder/Settings/Themes.php:966 src/Admin/Settings/Email.php:369
 #: src/Forms/Fields/Rating/Field.php:233 src/Forms/IconChoices.php:133
@@ -13641,8 +13645,8 @@ msgstr "Veldgrootte"
 msgid "Large"
 msgstr "Groot"
 
-#: includes/admin/builder/functions.php:853 includes/fields/class-base.php:1868
-#: includes/fields/class-base.php:2217
+#: includes/admin/builder/functions.php:853 includes/fields/class-base.php:1900
+#: includes/fields/class-base.php:2249
 #: src/Admin/Builder/Settings/Themes.php:103
 #: src/Admin/Builder/Settings/Themes.php:965 src/Admin/Settings/Email.php:368
 #: src/Forms/Fields/Password/Field.php:132
@@ -13654,8 +13658,8 @@ msgstr "Groot"
 msgid "Medium"
 msgstr "Gemiddeld"
 
-#: includes/admin/builder/functions.php:854 includes/fields/class-base.php:1867
-#: includes/fields/class-base.php:2216
+#: includes/admin/builder/functions.php:854 includes/fields/class-base.php:1899
+#: includes/fields/class-base.php:2248
 #: src/Admin/Builder/Settings/Themes.php:102
 #: src/Admin/Builder/Settings/Themes.php:964 src/Admin/Settings/Email.php:367
 #: src/Forms/Fields/Rating/Field.php:231 src/Forms/IconChoices.php:141
@@ -13666,11 +13670,11 @@ msgstr "Gemiddeld"
 msgid "Small"
 msgstr "Klein"
 
-#: includes/fields/class-base.php:2214
+#: includes/fields/class-base.php:2246
 msgid "Select the default form field size."
 msgstr "Selecteer de standaard formulierveldgrootte."
 
-#: includes/fields/class-base.php:2177 includes/fields/class-name.php:333
+#: includes/fields/class-base.php:2209 includes/fields/class-name.php:333
 #: includes/fields/class-name.php:359 includes/fields/class-name.php:385
 #: includes/fields/class-name.php:411 src/Forms/Fields/Address/Field.php:219
 #: src/Forms/Fields/Address/Field.php:274
@@ -13686,11 +13690,11 @@ msgstr "Standaard waarde"
 msgid "Show Smart Tags"
 msgstr "Toon smart tags"
 
-#: includes/fields/class-base.php:2171
+#: includes/fields/class-base.php:2203
 msgid "Enter text for the default form field value."
 msgstr "Voer tekst in voor de standaardwaarde van het formulierveld."
 
-#: includes/fields/class-base.php:1983 includes/fields/class-base.php:2144
+#: includes/fields/class-base.php:2015 includes/fields/class-base.php:2176
 #: includes/fields/class-email.php:395
 #: src/Admin/Builder/Settings/Themes.php:108
 #: src/Admin/Builder/Settings/Themes.php:963
@@ -13705,7 +13709,7 @@ msgstr "Voer tekst in voor de standaardwaarde van het formulierveld."
 msgid "None"
 msgstr "Geen"
 
-#: includes/fields/class-base.php:1982 includes/fields/class-base.php:2143
+#: includes/fields/class-base.php:2014 includes/fields/class-base.php:2175
 #: includes/fields/class-select.php:328 src/Emails/Notifications.php:1309
 #: src/Forms/Fields/Addons/LikertScale/Field.php:248
 #: src/Forms/Fields/Addons/NetPromoterScore/Field.php:124
@@ -13714,7 +13718,7 @@ msgstr "Geen"
 msgid "Classic"
 msgstr "Klassiek"
 
-#: includes/fields/class-base.php:1981 includes/fields/class-base.php:2142
+#: includes/fields/class-base.php:2013 includes/fields/class-base.php:2174
 #: includes/fields/class-select.php:329 src/Emails/Notifications.php:1319
 #: src/Forms/Fields/Addons/LikertScale/Field.php:247
 #: src/Forms/Fields/Addons/NetPromoterScore/Field.php:123
@@ -13723,92 +13727,92 @@ msgstr "Klassiek"
 msgid "Modern"
 msgstr "Modern"
 
-#: includes/fields/class-base.php:1968
+#: includes/fields/class-base.php:2000
 msgid "Select the style for the image choices."
 msgstr "Selecteer de stijl voor de afbeeldingskeuzes."
 
-#: includes/fields/class-base.php:1967
+#: includes/fields/class-base.php:1999
 msgid "Image Choice Style"
 msgstr "Afbeelding keuze stijl"
 
-#: includes/fields/class-base.php:1931
+#: includes/fields/class-base.php:1963
 msgid "Use Image Choices"
 msgstr "Afbeelding keuzes gebruiken"
 
-#: includes/fields/class-base.php:1916
+#: includes/fields/class-base.php:1948
 msgid "<h4>Images are not cropped or resized.</h4><p>For best results, they should be the same size and 250x250 pixels or smaller.</p>"
 msgstr "<h4>Afbeeldingen worden niet bijgesneden of het aantal afbeeldingen wordt gewijzigd.</h4><p>Voor de beste resultaten moeten ze even groot en 250x250 pixels of kleiner zijn.</p>"
 
-#: includes/fields/class-base.php:1694
+#: includes/fields/class-base.php:1725
 msgid "Items"
 msgstr "Items"
 
-#: includes/admin/ajax-actions.php:556 includes/fields/class-base.php:1633
+#: includes/admin/ajax-actions.php:556 includes/fields/class-base.php:1664
 msgid "taxonomy"
 msgstr "taxonomie"
 
-#: includes/admin/ajax-actions.php:525 includes/fields/class-base.php:1626
+#: includes/admin/ajax-actions.php:525 includes/fields/class-base.php:1657
 msgid "post type"
 msgstr "berichttype"
 
 #: includes/admin/builder/functions.php:913 includes/admin/settings-api.php:535
-#: includes/fields/class-base.php:1590 includes/fields/class-base.php:1755
+#: includes/fields/class-base.php:1621 includes/fields/class-base.php:1787
 msgid "Upload Image"
 msgstr "Upload afbeelding"
 
 #: includes/admin/builder/class-builder.php:873
 #: includes/admin/builder/functions.php:919 includes/admin/settings-api.php:532
-#: includes/fields/class-base.php:1580 includes/fields/class-base.php:1745
+#: includes/fields/class-base.php:1611 includes/fields/class-base.php:1777
 #: src/Admin/Builder/Settings/Themes.php:1162
 #: src/Integrations/Gutenberg/FormSelector.php:460
 msgid "Remove Image"
 msgstr "Verwijder afbeelding"
 
 #: includes/admin/builder/class-builder.php:755
-#: includes/fields/class-base.php:1519
+#: includes/fields/class-base.php:1522
 msgid "Bulk Add"
 msgstr "Tegelijk toevoegen"
 
-#: includes/fields/class-base.php:1516 includes/fields/class-base.php:1695
+#: includes/fields/class-base.php:1519 includes/fields/class-base.php:1726
 msgid "Add choices for the form field."
 msgstr "Voeg keuzes toe voor het formulierveld."
 
-#: includes/fields/class-base.php:1471
+#: includes/fields/class-base.php:1474
 msgid "Choices"
 msgstr "Keuzes"
 
-#: includes/fields/class-base.php:1439
+#: includes/fields/class-base.php:1442
 msgid "Code"
 msgstr "Code"
 
-#: includes/fields/class-base.php:1432
+#: includes/fields/class-base.php:1435
 msgid "Enter code for the form field."
 msgstr "Voer code in voor het formulierveld."
 
-#: includes/admin/class-settings.php:462 includes/fields/class-base.php:1385
+#: includes/admin/class-settings.php:462 includes/fields/class-base.php:1388
 msgid "Required"
 msgstr "Vereist"
 
-#: includes/fields/class-base.php:1377
+#: includes/fields/class-base.php:1380
 msgid "Check this option to mark the field required. A form will not submit unless all required fields are provided."
 msgstr "Vink deze optie aan om het gewenste veld te markeren. Een formulier wordt niet verzonden tenzij alle verplichte velden zijn opgegeven."
 
-#: includes/fields/class-base.php:1344
+#: includes/fields/class-base.php:1347
 msgid "Description"
 msgstr "Beschrijving"
 
-#: includes/fields/class-base.php:1337
+#: includes/fields/class-base.php:1340
 msgid "Enter text for the form field description."
 msgstr "Voer tekst in voor de beschrijving van het formulierveld."
 
-#: includes/fields/class-base.php:1305
+#: includes/fields/class-base.php:1308
 #: src/Admin/Builder/Settings/Themes.php:681 src/Forms/Fields/Html/Field.php:74
 #: src/Integrations/Elementor/WidgetModern.php:343
 #: src/Integrations/Gutenberg/FormSelector.php:521
 msgid "Label"
 msgstr "Label"
 
-#: includes/fields/class-base.php:1298
+#: includes/fields/class-base.php:1301
 msgid "Enter text for the form field label. Field labels are recommended and can be hidden in the Advanced Settings."
 msgstr "Voer tekst in voor het formulierveldlabel. Veldlabels worden aanbevolen en kunnen worden verborgen in de geavanceerde instellingen."
 
@@ -13885,7 +13889,7 @@ msgid "WPForms honeypot field triggered."
 msgstr "WPForms honeypot veld geactiveerd."
 
 #: includes/class-process.php:440 includes/class-process.php:602
-#: includes/class-process.php:1707
+#: includes/class-process.php:1721
 msgid "Form has not been submitted, please see the errors below."
 msgstr "Formulier is niet verzonden, zie onderstaande fouten."
 
@@ -13915,7 +13919,7 @@ msgstr "Nu upgraden"
 msgid "Search Addons"
 msgstr "Zoek add-ons"
 
-#: includes/admin/class-about.php:1765 includes/admin/class-menu.php:178
+#: includes/admin/class-about.php:1765 includes/admin/class-menu.php:180
 #: lite/templates/admin/addons.php:21
 msgid "WPForms Addons"
 msgstr "WPForms add-ons"
@@ -14115,7 +14119,7 @@ msgid "Default Notification"
 msgstr "Standaard melding"
 
 #: includes/admin/builder/class-builder.php:840
-#: includes/admin/builder/functions.php:520 includes/fields/class-base.php:2489
+#: includes/admin/builder/functions.php:520 includes/fields/class-base.php:2521
 #: src/Admin/Tools/Views/Logs.php:110
 #: src/Integrations/Divi/WPFormsSelector.php:78
 #: src/Integrations/Divi/WPFormsSelector.php:88
@@ -14144,7 +14148,7 @@ msgid "Notifications"
 msgstr "Meldingen"
 
 #. translators: %s - form name.
-#: includes/class-process.php:1821 lite/wpforms-lite.php:123
+#: includes/class-process.php:1835 lite/wpforms-lite.php:123
 msgid "New %s Entry"
 msgstr "Nieuw %s inzending"
 
@@ -14338,15 +14342,15 @@ msgstr "Maak je eerste formulier met onze installatie wizard in minder dan 5 min
 msgid "Take the WPForms Challenge"
 msgstr "Ga de WPForms uitdaging aan"
 
-#: templates/admin/challenge/embed.php:113
+#: templates/admin/challenge/embed.php:117
 msgid "Submit Feedback"
 msgstr "Feedback verzenden"
 
-#: templates/admin/challenge/embed.php:110
+#: templates/admin/challenge/embed.php:114
 msgid "Yes, I give WPForms permission to contact me for any follow up questions."
 msgstr "Ja, ik geef WPForms toestemming om contact met mij op te nemen voor eventuele vervolgvragen."
 
-#: templates/admin/challenge/embed.php:81
+#: templates/admin/challenge/embed.php:84
 msgid "Rate WPForms on WordPress.org"
 msgstr "Beoordeel WPForms op WordPress.org"
 
@@ -14447,7 +14451,7 @@ msgid "Name Your Form"
 msgstr "Geef je formulier een naam"
 
 #: templates/admin/challenge/embed.php:63
-#: templates/admin/challenge/embed.php:101
+#: templates/admin/challenge/embed.php:105
 #: templates/admin/challenge/modal.php:31
 msgid "minute"
 msgid_plural "minutes"
@@ -14484,7 +14488,7 @@ msgstr "Er zijn nog geen inschrijvingen aangemeld."
 msgid "Total Entries by Form"
 msgstr "Totaal aantal ingaven bij formulier"
 
-#: includes/admin/class-menu.php:382 includes/admin/class-welcome.php:377
+#: includes/admin/class-menu.php:389 includes/admin/class-welcome.php:377
 #: includes/functions/education.php:78 src/Admin/FlyoutMenu.php:112
 #: src/Admin/Payments/Views/Coupons/Education.php:143
 #: src/Admin/Tools/Views/Importer.php:229
@@ -14522,7 +14526,9 @@ msgstr "Laatste 90 dagen"
 #: src/Admin/Notifications/EventDriven.php:590
 #: src/Admin/Notifications/EventDriven.php:656
 #: src/Admin/Notifications/EventDriven.php:709
-#: src/Admin/Pages/PrivacyCompliance.php:516
+#: src/Admin/Pages/PrivacyCompliance.php:196
+#: src/Admin/Pages/SugarCalendar.php:234
+#: src/Admin/Pages/UncannyAutomator.php:171
 #: src/Admin/Splash/SplashTrait.php:130
 #: src/Integrations/UncannyAutomator/UncannyAutomator.php:172
 #: src/Lite/Admin/DashboardWidget.php:272
@@ -14557,7 +14563,7 @@ msgstr "Maak je eerste formulier om te beginnen met het verzamelen van leads"
 msgid "Sullie the WPForms mascot"
 msgstr "Sullie de WPForms mascotte"
 
-#: includes/admin/class-menu.php:103
+#: includes/admin/class-menu.php:105
 #: src/Admin/Forms/Table/Facades/Columns.php:82 src/Admin/Forms/Views.php:571
 #: src/Lite/Admin/DashboardWidget.php:170 src/Logger/Log.php:103
 #: templates/emails/summary-body-plain.php:52
@@ -14575,7 +14581,7 @@ msgid "Show More"
 msgstr "Toon meer"
 
 #. translators: %s - addon name.
-#: src/Admin/Addons/Addons.php:490 src/Admin/Education/AddonsItemBase.php:152
+#: src/Admin/Addons/Addons.php:506 src/Admin/Education/AddonsItemBase.php:152
 msgid "%s addon"
 msgstr "%s add-on"
 
@@ -14703,9 +14709,9 @@ msgid "is a %s Feature"
 msgstr "is een %s functie"
 
 #. Author of the plugin
-#: wpforms.php includes/admin/class-menu.php:62
-#: includes/admin/class-menu.php:63 includes/admin/class-menu.php:82
-#: includes/admin/class-menu.php:168 includes/class-form.php:154
+#: wpforms.php includes/admin/class-menu.php:64
+#: includes/admin/class-menu.php:65 includes/admin/class-menu.php:84
+#: includes/admin/class-menu.php:170 includes/class-form.php:154
 #: includes/integrations.php:41 src/Emails/Templates/General.php:94
 #: src/Integrations/Divi/WPFormsSelector.php:35
 #: src/Integrations/Elementor/Widget.php:58
