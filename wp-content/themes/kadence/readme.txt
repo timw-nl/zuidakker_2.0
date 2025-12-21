@@ -2,9 +2,9 @@
 Contributors: britner
 Tags: translation-ready, accessibility-ready, two-columns, right-sidebar, left-sidebar, footer-widgets, blog, custom-logo, custom-background, custom-menu, rtl-language-support, editor-style, threaded-comments, custom-colors, featured-images, wide-blocks, full-width-template, theme-options, e-commerce.
 Requires at least: 6.3
-Tested up to: 6.8.2
+Tested up to: 6.8.3
 Requires PHP: 7.4
-Stable tag: 1.3.6
+Stable tag: 1.4.2
 License: GNU General Public License v3.0 (or later)
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -26,8 +26,27 @@ Please report security bugs found in the Kadence theme's source code through the
 
 = Changelog =
 
+= 1.4.2 | 18th November 2025
+* Fix: Optimized group block removed the wide-width and full width layout options
+* Fix: Syntax error reported in theme.json
+* Fix: Button (Adv) outline style text color settings not working when visited
+
+= 1.4.1 | 13th November 2025
+* Fix: issue with visited outline buttons in kadence blocks
+* Fix: Issue with some mega menu dropdown backgrounds
+* Fix: Issue with color palette importer/exporter
+* Update: New named format for color palette importer/exporter in the customizer (still supports old format)
+
+= 1.4.0 | 6th November 2025
+* Add: Customizer Style Guide
+* Add: Extended color palette
+* Add: Font clamp styles
+* Add: Secondary and outline button style controls
+* Add: Ability to set body class per page.
+
 = 1.3.6 | 25th September 2025
 * Fix: Ignore comment replies when scrolling to id.
+* Fix: Some social links did not have fields in the customizer.
 
 = 1.3.5 | 11th September 2025
 * Fix: Store Notice "Disable Dismiss Button" Option Not Working When Placement Set to Above

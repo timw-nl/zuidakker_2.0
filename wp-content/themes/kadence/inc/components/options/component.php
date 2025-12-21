@@ -124,6 +124,67 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function initialize() {
 		add_action( 'wp_loaded', [ $this, 'add_default_options' ] );
 		add_action( 'customize_register', [ $this, 'add_default_options' ], 5 );
+		add_filter( 'option_kadence_global_palette', [ $this, 'normalize_palette_option' ], 10, 1 );
+		add_filter( 'pre_update_option_kadence_global_palette', [ $this, 'normalize_palette_option' ], 10, 1 );
+	}
+
+	/**
+	 * Normalize palette option.
+	 *
+	 * @param string $value the value of the palette option.
+	 * @param string $option the option of the palette option.
+	 * @return string the normalized value of the palette option.
+	 */
+	public function normalize_palette_option( $value ) {
+		if ( $value && ! empty( $value ) ) {
+			$palette = json_decode( $value, true );
+			$extended_palette = [ 
+				[
+					'color' => '#FfFfFf',
+					'slug' => 'palette10',
+					'name' => 'Palette Color Complement',
+				], 
+				[
+					'color' => '#13612e',
+					'slug' => 'palette11',
+					'name' => 'Palette Color Success',
+				], 
+				[
+					'color' => '#1159af',
+					'slug' => 'palette12',
+					'name' => 'Palette Color Info',
+				], 
+				[
+					'color' => '#b82105',
+					'slug' => 'palette13',
+					'name' => 'Palette Color Alert',
+				], 
+				[
+					'color' => '#f7630c',
+					'slug' => 'palette14',
+					'name' => 'Palette Color Warning',
+				], 
+				[
+					'color' => '#f5a524',
+					'slug' => 'palette15',
+					'name' => 'Palette Color Rating',
+				]
+			];
+			if( isset( $palette['palette'] ) && is_array( $palette['palette'] ) && sizeof( $palette['palette'] ) == 9 ) {
+				$palette['palette'] = array_merge( $palette['palette'], $extended_palette );
+			}
+			if( isset( $palette['second-palette'] ) && is_array( $palette['second-palette'] ) && sizeof( $palette['second-palette'] ) == 9 ) {
+				$palette['second-palette'] = array_merge( $palette['second-palette'], $extended_palette );
+			}
+			if( isset( $palette['third-palette'] ) && is_array( $palette['third-palette'] ) && sizeof( $palette['third-palette'] ) == 9 ) {
+				$palette['third-palette'] = array_merge( $palette['third-palette'], $extended_palette );
+			}
+
+			if ( ! empty( $palette ) ) {
+				return json_encode( $palette );
+			}
+		}
+		return $value;
 	}
 
 	/**
@@ -247,6 +308,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						'blur'    => 15,
 						'spread'  => -10,
 						'inset'   => false,
+						'disabled' => false,
 					],
 					'boxed_border_radius'                  => [
 						'size'   => [ '', '', '', '' ],
@@ -272,6 +334,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						'blur'    => 15,
 						'spread'  => -10,
 						'inset'   => false,
+						'disabled' => false,
 					],
 					'boxed_grid_border_radius'             => [
 						'size'   => [ '', '', '', '' ],
@@ -495,6 +558,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						'blur'    => 0,
 						'spread'  => -7,
 						'inset'   => false,
+						'disabled' => false,
 					],
 					'buttons_shadow_hover'                 => [
 						'color'   => 'rgba(0,0,0,0.1)',
@@ -503,7 +567,139 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						'blur'    => 25,
 						'spread'  => -7,
 						'inset'   => false,
+						'disabled' => false,
 					],
+					// Buttons Secondary.
+					'buttons_secondary_color'                        => [
+						'color' => 'palette3',
+						'hover' => 'palette9',
+					],
+					'buttons_secondary_background'                   => [
+						'color' => 'palette7',
+						'hover' => 'palette2',
+					],
+					'buttons_secondary_border_colors'                => [
+						'color' => '',
+						'hover' => '',
+					],
+					'buttons_secondary_border'                       => [],
+					'buttons_secondary_border_radius'                => [
+						'size' => [
+							'mobile'  => '',
+							'tablet'  => '',
+							'desktop' => '',
+						],
+						'unit' => [
+							'mobile'  => 'px',
+							'tablet'  => 'px',
+							'desktop' => 'px',
+						],
+					],
+					'buttons_secondary_typography'                   => [
+						'size'       => [
+							'desktop' => '',
+						],
+						'lineHeight' => [
+							'desktop' => '',
+						],
+						'family'     => 'inherit',
+						'google'     => false,
+						'weight'     => '',
+						'variant'    => '',
+					],
+					'buttons_secondary_padding'                      => [
+						'size'   => [ 
+							'desktop' => [ '', '', '', '' ],
+						],
+						'unit'   => [
+							'desktop' => 'px',
+						],
+						'locked' => [
+							'desktop' => false,
+						],
+					],
+					'buttons_secondary_shadow'                       => [
+						'color'   => 'rgba(0,0,0,0)',
+						'hOffset' => 0,
+						'vOffset' => 0,
+						'blur'    => 0,
+						'spread'  => -7,
+						'inset'   => false,
+						'disabled' => true,
+					],
+					'buttons_secondary_shadow_hover'                 => [
+						'color'   => 'rgba(0,0,0,0.1)',
+						'hOffset' => 0,
+						'vOffset' => 15,
+						'blur'    => 25,
+						'spread'  => -7,
+						'inset'   => false,
+						'disabled' => true,
+					],
+					// Buttons Outline.
+					'buttons_outline_color'                        => [
+						'color' => '',
+						'hover' => '',
+					],
+					'buttons_outline_border_colors'                => [
+						'color' => '',
+						'hover' => '',
+					],
+					'buttons_outline_border'                       => [],
+					'buttons_outline_border_radius'                => [
+						'size' => [
+							'mobile'  => '',
+							'tablet'  => '',
+							'desktop' => '',
+						],
+						'unit' => [
+							'mobile'  => 'px',
+							'tablet'  => 'px',
+							'desktop' => 'px',
+						],
+					],
+					'buttons_outline_typography'                   => [
+						'size'       => [
+							'desktop' => '',
+						],
+						'lineHeight' => [
+							'desktop' => '',
+						],
+						'family'     => 'inherit',
+						'google'     => false,
+						'weight'     => '',
+						'variant'    => '',
+					],
+					'buttons_outline_padding'                      => [
+						'size'   => [ 
+							'desktop' => [ '', '', '', '' ],
+						],
+						'unit'   => [
+							'desktop' => 'px',
+						],
+						'locked' => [
+							'desktop' => false,
+						],
+					],
+					'buttons_outline_shadow'                       => [
+						'color'   => 'rgba(0,0,0,0)',
+						'hOffset' => 0,
+						'vOffset' => 0,
+						'blur'    => 0,
+						'spread'  => -7,
+						'inset'   => false,
+						'disabled' => true,
+					],
+					'buttons_outline_shadow_hover'                 => [
+						'color'   => 'rgba(0,0,0,0.1)',
+						'hOffset' => 0,
+						'vOffset' => 15,
+						'blur'    => 25,
+						'spread'  => -7,
+						'inset'   => false,
+						'disabled' => true,
+					],
+					//image
 					'image_border_radius'                  => [
 						'size' => [
 							'mobile'  => '',
@@ -516,6 +712,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 							'desktop' => 'px',
 						],
 					],
+					//footer/header
 					'enable_footer_on_bottom'              => true,
 					'enable_scroll_to_id'                  => true,
 					'blocks_header'                        => false,
@@ -1057,6 +1254,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						'style' => 'solid',
 						'color' => 'rgba(255,255,255,0.1)',
 					],
+					'dropdown_navigation_border_radius'             => [
+						'size'   => [ 0, 0, 0, 0 ],
+						'unit'   => 'px',
+						'locked' => true,
+					],
 					'dropdown_navigation_shadow'           => [
 						'color'   => 'rgba(0,0,0,0.1)',
 						'hOffset' => 0,
@@ -1064,6 +1266,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						'blur'    => 13,
 						'spread'  => 0,
 						'inset'   => false,
+						'disabled' => false,
 					],
 					'dropdown_navigation_typography'       => [
 						'size'       => [
@@ -1248,7 +1451,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					'header_button_border'                 => [
 						'width' => 2,
 						'unit'  => 'px',
-						'style' => 'none',
 					],
 					'header_button_shadow'                 => [
 						'color'   => 'rgba(0,0,0,0)',
@@ -1257,6 +1459,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						'blur'    => 0,
 						'spread'  => -7,
 						'inset'   => false,
+						'disabled' => false,
 					],
 					'header_button_shadow_hover'           => [
 						'color'   => 'rgba(0,0,0,0.1)',
@@ -1265,6 +1468,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						'blur'    => 25,
 						'spread'  => -7,
 						'inset'   => false,
+						'disabled' => false,
 					],
 					'header_button_margin'                 => [
 						'size'   => [ '', '', '', '' ],
@@ -1560,6 +1764,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						'blur'    => 0,
 						'spread'  => -7,
 						'inset'   => false,
+						'disabled' => false,
 					],
 					'mobile_button_shadow_hover'           => [
 						'color'   => 'rgba(0,0,0,0.1)',
@@ -1568,6 +1773,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						'blur'    => 25,
 						'spread'  => -7,
 						'inset'   => false,
+						'disabled' => false,
 					],
 					'mobile_button_radius'                 => [
 						'size'   => [ '', '', '', '' ],
@@ -1737,6 +1943,14 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						],
 					],
 					'header_sticky_bottom_border'          => [],
+					'header_sticky_box_shadow'                 => [
+						'color'   => 'rgba(0,0,0,0)',
+						'hOffset' => 0,
+						'vOffset' => 0,
+						'blur'    => 0,
+						'spread'  => 0,
+						'inset'   => false,
+					],
 					// Footer.
 					'footer_items'                         => [
 						'top'    => [
@@ -3083,6 +3297,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						'blur'    => 0,
 						'spread'  => 0,
 						'inset'   => false,
+						'disabled' => false,
 					],
 					'product_archive_button_shadow_hover'  => [
 						'color'   => 'rgba(0,0,0,0)',
@@ -3091,6 +3306,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						'blur'    => 0,
 						'spread'  => 0,
 						'inset'   => false,
+						'disabled' => false,
 					],
 					'product_archive_button_radius'        => [
 						'size'   => [ '', '', '', '' ],
@@ -4715,7 +4931,54 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public static function palette_defaults() {
 		// Don't store defaults until after init.
 		if ( is_null( self::$default_palette ) ) {
-			self::$default_palette = apply_filters( 'kadence_global_palette_defaults', '{"palette":[{"color":"#2B6CB0","slug":"palette1","name":"Palette Color 1"},{"color":"#215387","slug":"palette2","name":"Palette Color 2"},{"color":"#1A202C","slug":"palette3","name":"Palette Color 3"},{"color":"#2D3748","slug":"palette4","name":"Palette Color 4"},{"color":"#4A5568","slug":"palette5","name":"Palette Color 5"},{"color":"#718096","slug":"palette6","name":"Palette Color 6"},{"color":"#EDF2F7","slug":"palette7","name":"Palette Color 7"},{"color":"#F7FAFC","slug":"palette8","name":"Palette Color 8"},{"color":"#ffffff","slug":"palette9","name":"Palette Color 9"}],"second-palette":[{"color":"#2B6CB0","slug":"palette1","name":"Palette Color 1"},{"color":"#215387","slug":"palette2","name":"Palette Color 2"},{"color":"#1A202C","slug":"palette3","name":"Palette Color 3"},{"color":"#2D3748","slug":"palette4","name":"Palette Color 4"},{"color":"#4A5568","slug":"palette5","name":"Palette Color 5"},{"color":"#718096","slug":"palette6","name":"Palette Color 6"},{"color":"#EDF2F7","slug":"palette7","name":"Palette Color 7"},{"color":"#F7FAFC","slug":"palette8","name":"Palette Color 8"},{"color":"#ffffff","slug":"palette9","name":"Palette Color 9"}],"third-palette":[{"color":"#2B6CB0","slug":"palette1","name":"Palette Color 1"},{"color":"#215387","slug":"palette2","name":"Palette Color 2"},{"color":"#1A202C","slug":"palette3","name":"Palette Color 3"},{"color":"#2D3748","slug":"palette4","name":"Palette Color 4"},{"color":"#4A5568","slug":"palette5","name":"Palette Color 5"},{"color":"#718096","slug":"palette6","name":"Palette Color 6"},{"color":"#EDF2F7","slug":"palette7","name":"Palette Color 7"},{"color":"#F7FAFC","slug":"palette8","name":"Palette Color 8"},{"color":"#ffffff","slug":"palette9","name":"Palette Color 9"}],"active":"palette"}' );
+			self::$default_palette = apply_filters( 
+				'kadence_global_palette_defaults', 
+				'{"palette":[{"color":"#2B6CB0","slug":"palette1","name":"Palette Color 1"},
+				{"color":"#215387","slug":"palette2","name":"Palette Color 2"},
+				{"color":"#1A202C","slug":"palette3","name":"Palette Color 3"},
+				{"color":"#2D3748","slug":"palette4","name":"Palette Color 4"},
+				{"color":"#4A5568","slug":"palette5","name":"Palette Color 5"},
+				{"color":"#718096","slug":"palette6","name":"Palette Color 6"},
+				{"color":"#EDF2F7","slug":"palette7","name":"Palette Color 7"},
+				{"color":"#F7FAFC","slug":"palette8","name":"Palette Color 8"},
+				{"color":"#ffffff","slug":"palette9","name":"Palette Color 9"},
+				{"color":"#FfFfFf","slug":"palette10","name":"Palette Color Complement"},
+				{"color":"#13612e","slug":"palette11","name":"Palette Color Success"},
+				{"color":"#1159af","slug":"palette12","name":"Palette Color Info"},
+				{"color":"#b82105","slug":"palette13","name":"Palette Color Alert"},
+				{"color":"#f7630c","slug":"palette14","name":"Palette Color Warning"},
+				{"color":"#f5a524","slug":"palette15","name":"Palette Color Rating"}],
+				"second-palette":[{"color":"#2B6CB0","slug":"palette1","name":"Palette Color 1"},
+				{"color":"#215387","slug":"palette2","name":"Palette Color 2"},
+				{"color":"#1A202C","slug":"palette3","name":"Palette Color 3"},
+				{"color":"#2D3748","slug":"palette4","name":"Palette Color 4"},
+				{"color":"#4A5568","slug":"palette5","name":"Palette Color 5"},
+				{"color":"#718096","slug":"palette6","name":"Palette Color 6"},
+				{"color":"#EDF2F7","slug":"palette7","name":"Palette Color 7"},
+				{"color":"#F7FAFC","slug":"palette8","name":"Palette Color 8"},
+				{"color":"#ffffff","slug":"palette9","name":"Palette Color 9"},
+				{"color":"#FfFfFf","slug":"palette10","name":"Palette Color Complement"},
+				{"color":"#13612e","slug":"palette11","name":"Palette Color Success"},
+				{"color":"#1159af","slug":"palette12","name":"Palette Color Info"},
+				{"color":"#b82105","slug":"palette13","name":"Palette Color Alert"},
+				{"color":"#f7630c","slug":"palette14","name":"Palette Color Warning"},
+				{"color":"#f5a524","slug":"palette15","name":"Palette Color Rating"}],
+				"third-palette":[{"color":"#2B6CB0","slug":"palette1","name":"Palette Color 1"},
+				{"color":"#215387","slug":"palette2","name":"Palette Color 2"},
+				{"color":"#1A202C","slug":"palette3","name":"Palette Color 3"},
+				{"color":"#2D3748","slug":"palette4","name":"Palette Color 4"},
+				{"color":"#4A5568","slug":"palette5","name":"Palette Color 5"},
+				{"color":"#718096","slug":"palette6","name":"Palette Color 6"},
+				{"color":"#EDF2F7","slug":"palette7","name":"Palette Color 7"},
+				{"color":"#F7FAFC","slug":"palette8","name":"Palette Color 8"},
+				{"color":"#ffffff","slug":"palette9","name":"Palette Color 9"},
+				{"color":"#FfFfFf","slug":"palette10","name":"Palette Color Complement"},
+				{"color":"#13612e","slug":"palette11","name":"Palette Color Success"},
+				{"color":"#1159af","slug":"palette12","name":"Palette Color Info"},
+				{"color":"#b82105","slug":"palette13","name":"Palette Color Alert"},
+				{"color":"#f7630c","slug":"palette14","name":"Palette Color Warning"},
+				{"color":"#f5a524","slug":"palette15","name":"Palette Color Rating"}],
+				"active":"palette"}' );
 		}
 		return self::$default_palette;
 	}
@@ -4737,10 +5000,15 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		$active = ! empty( $active_palette ) ? $active_palette : apply_filters( 'kadence_active_palette', ( self::$palette && is_array( self::$palette ) && isset( self::$palette['active'] ) && ! empty( self::$palette['active'] ) ? self::$palette['active'] : 'palette' ) );
 		$value  = '';
 		if ( self::$palette && is_array( self::$palette ) && isset( self::$palette[ $active ] ) && is_array( self::$palette[ $active ] ) ) {
-			$palette_number = (int) substr( $subkey, -1 ) - 1;
+			$palette_number = (int) preg_replace('/[^0-9]/', '', $subkey) - 1;
 			$palette_item   = ( isset( self::$palette[ $active ][ $palette_number ] ) && is_array( self::$palette[ $active ][ $palette_number ] ) ? self::$palette[ $active ][ $palette_number ] : [] );
 			if ( isset( $palette_item['slug'] ) && $palette_item['slug'] === $subkey ) {
-				$value = ( isset( $palette_item['color'] ) && ! empty( $palette_item['color'] ) ? $palette_item['color'] : '' );
+				// #FfFfFf is the key to sync palette 10 with the complement color.
+				if ( 'palette10' == $subkey && '#FfFfFf' == $palette_item['color'] ) {
+					$value = apply_filters( 'kadence_palette_complement_color', 'oklch(from var(--global-palette1) calc(l + 0.10 * (1 - l)) calc(c * 1.00) calc(h + 180) / 100%)' );
+				} else {
+					$value = ( isset( $palette_item['color'] ) && ! empty( $palette_item['color'] ) ? $palette_item['color'] : '' );
+				}
 			}
 		}
 

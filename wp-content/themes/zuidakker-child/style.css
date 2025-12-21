@@ -932,6 +932,193 @@ body[class*="page-verblijf"] .single-content,
 }
 
 /* ===================================
+   UPDATES SECTION - Homepage Updates Container
+   =================================== */
+
+.updates-section {
+    background-color: transparent;
+    padding: var(--space-2xl) var(--space-md);
+    margin: 0;
+    position: relative;
+}
+
+.updates-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: var(--updates-bg-color, rgba(255, 255, 255, 0.15));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl) var(--space-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out 0.9s backwards;
+}
+
+.updates-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.updates-title {
+    color: var(--updates-text-color, #ffffff);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+    letter-spacing: -0.02em;
+    position: relative;
+    text-align: center;
+}
+
+.updates-content {
+    color: var(--updates-text-color, #ffffff);
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.7;
+    position: relative;
+}
+
+.updates-content p {
+    margin-bottom: var(--space-md);
+    color: var(--updates-text-color, #ffffff);
+}
+
+.updates-content p:last-child {
+    margin-bottom: 0;
+}
+
+.updates-content a {
+    color: var(--updates-text-color, #ffffff);
+    text-decoration: underline;
+    transition: opacity var(--transition-fast);
+}
+
+.updates-content a:hover {
+    opacity: 0.8;
+}
+
+.updates-content strong {
+    font-weight: 700;
+}
+
+.updates-content em {
+    font-style: italic;
+}
+
+@media (max-width: 767px) {
+    .updates-section {
+        padding: var(--space-xl) var(--space-sm);
+    }
+    
+    .updates-container {
+        padding: var(--space-xl) var(--space-md);
+    }
+}
+
+/* Updates Posts Styling */
+.updates-posts {
+    margin-top: var(--space-xl);
+    display: grid;
+    gap: var(--space-lg);
+}
+
+.update-post {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all var(--transition-base);
+}
+
+.update-post:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.update-post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.update-post-title {
+    margin: 0;
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 700;
+    flex: 1;
+    min-width: 200px;
+}
+
+.update-post-title a {
+    color: var(--updates-text-color, #ffffff);
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+}
+
+.update-post-title a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+.update-post-date {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.update-post-excerpt {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+}
+
+.update-post-excerpt p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.update-post-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--updates-text-color, #ffffff);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-size: 0.9375rem;
+}
+
+.update-post-link:hover {
+    opacity: 0.8;
+    transform: translateX(4px);
+}
+
+/* Spacing between custom content and posts */
+.updates-content + .updates-posts {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 767px) {
+    .update-post-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .update-post-title {
+        min-width: 100%;
+    }
+}
+
+/* ===================================
    BUTTON STYLES
    =================================== */
 
@@ -1400,13 +1587,14 @@ a {
 }
 
 /* ===================================
-   CONTACT & AGENDA PAGE STYLES
+   CONTACT, AGENDA & BLOG POST STYLES
    =================================== */
 
-/* Contact, Sitemap and Agenda page background */
+/* Contact, Sitemap, Agenda and Blog Post page background */
 body.page-contact,
 body.page-sitemap,
 body.page-agenda,
+body.single-post,
 body[class*="page-contact"],
 body[class*="page-agenda"],
 body.page-id-contact,
@@ -1421,10 +1609,11 @@ body.page-id-12 {
     position: relative;
 }
 
-/* Color overlay for contact, sitemap, agenda pages */
+/* Color overlay for contact, sitemap, agenda and blog post pages */
 body.page-contact::before,
 body.page-sitemap::before,
-body.page-agenda::before {
+body.page-agenda::before,
+body.single-post::before {
     content: '';
     position: fixed;
     top: 0;
@@ -1439,6 +1628,7 @@ body.page-agenda::before {
 body.page-contact .site-header,
 body.page-sitemap .site-header,
 body.page-agenda .site-header,
+body.single-post .site-header,
 body[class*="page-contact"] .site-header,
 body[class*="page-agenda"] .site-header,
 body.page-id-12 .site-header {
@@ -1483,6 +1673,7 @@ body.page-id-12 .entry-header {
 body.page-contact .site-content,
 body.page-sitemap .site-content,
 body.page-agenda .site-content,
+body.single-post .site-content,
 body[class*="page-contact"] .site-content,
 body[class*="page-agenda"] .site-content,
 body.page-id-12 .site-content {
@@ -1593,11 +1784,75 @@ body.page-contact.content-style-boxed .entry-content-wrap,
 body.page-sitemap.content-style-boxed .content-bg,
 body.page-sitemap.content-style-boxed .entry-content-wrap,
 body.page-agenda.content-style-boxed .content-bg,
-body.page-agenda.content-style-boxed .entry-content-wrap {
+body.page-agenda.content-style-boxed .entry-content-wrap,
+body.single-post.content-style-boxed .content-bg,
+body.single-post.content-style-boxed .entry-content-wrap,
+body.single-post .content-style-boxed .content-bg,
+body.single-post .content-style-boxed .entry-content-wrap {
     background-color: transparent !important;
     background: transparent !important;
     box-shadow: none !important;
     padding: 0 !important;
+}
+
+/* Override any Kadence white backgrounds on single posts */
+body.single-post .site-container,
+body.single-post .content-container,
+body.single-post #main,
+body.single-post .site-main {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Single post specific wrapper overrides */
+body.single-post .entry-content-wrap,
+body.single-post .entry,
+body.single-post .single-entry,
+body.single-post article.entry,
+body.single-post .content-bg,
+body.single-post .article-inner,
+body.single-post .post-inner,
+body.single-post .entry-content-wrap::before,
+body.single-post .entry-content-wrap::after,
+body.single-post .content-bg::before,
+body.single-post .content-bg::after {
+    background-color: transparent !important;
+    background: transparent !important;
+    background-image: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Force entry-content to have blur on single posts - multiple selectors for specificity */
+body.single-post article .entry-content,
+body.single-post .entry-content,
+body.single-post article.entry .entry-content,
+body.single-post .single-entry .entry-content,
+body.single-post .entry-content-wrap .entry-content {
+    background-color: rgba(151, 191, 133, 0.65) !important;
+    background: rgba(151, 191, 133, 0.65) !important;
+    background-image: none !important;
+    backdrop-filter: blur(15px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(15px) saturate(180%) !important;
+}
+
+/* Ensure no white background on entry-content-wrap that contains entry-content */
+body.single-post .entry-content-wrap > .entry-content {
+    background-color: rgba(151, 191, 133, 0.65) !important;
+    background: rgba(151, 191, 133, 0.65) !important;
+}
+
+/* Target the specific Kadence structure */
+body.single-post article.entry > .entry-content-wrap {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+body.single-post article.entry > .entry-content-wrap > .entry-content {
+    background-color: rgba(151, 191, 133, 0.65) !important;
+    backdrop-filter: blur(15px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(15px) saturate(180%) !important;
 }
 
 .contact-info-section {

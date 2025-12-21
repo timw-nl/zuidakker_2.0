@@ -1,6 +1,6 @@
 <?php
 /**
- * Primary Button Options
+ * Secondary Button Options
  *
  * @package Kadence
  */
@@ -12,22 +12,22 @@ use function Kadence\kadence;
 
 Theme_Customizer::add_settings(
 	array(
-		'buttons_color' => array(
+		'buttons_secondary_color' => array(
 			'control_type' => 'kadence_color_control',
-			'section'      => 'general_buttons',
+			'section'      => 'secondary_button',
 			'label'        => esc_html__( 'Text Colors', 'kadence' ),
-			'default'      => kadence()->default( 'buttons_color' ),
+			'default'      => kadence()->default( 'buttons_secondary_color' ),
 			'live_method'     => array(
 				array(
-					'type'     => 'global',
-					'selector' => '--global-palette-btn',
+					'type'     => 'css',
+					'selector' => '.button.button-style-secondary',
 					'property' => 'color',
 					'pattern'  => '$',
 					'key'      => 'color',
 				),
 				array(
-					'type'     => 'global',
-					'selector' => '--global-palette-btn-hover',
+					'type'     => 'css',
+					'selector' => '.button.button-style-secondary:hover',
 					'property' => 'color',
 					'pattern'  => '$',
 					'key'      => 'hover',
@@ -46,22 +46,22 @@ Theme_Customizer::add_settings(
 				),
 			),
 		),
-		'buttons_background' => array(
+		'buttons_secondary_background' => array(
 			'control_type' => 'kadence_color_control',
-			'section'      => 'general_buttons',
+			'section'      => 'secondary_button',
 			'label'        => esc_html__( 'Background Colors', 'kadence' ),
-			'default'      => kadence()->default( 'buttons_background' ),
+			'default'      => kadence()->default( 'buttons_secondary_background' ),
 			'live_method'     => array(
 				array(
-					'type'     => 'global',
-					'selector' => '--global-palette-btn-bg',
+					'type'     => 'css',
+					'selector' => '.button.button-style-secondary',
 					'property' => 'background',
 					'pattern'  => '$',
 					'key'      => 'color',
 				),
 				array(
-					'type'     => 'global',
-					'selector' => '--global-palette-btn-bg-hover',
+					'type'     => 'css',
+					'selector' => '.button.button-style-secondary:hover',
 					'property' => 'background',
 					'pattern'  => '$',
 					'key'      => 'hover',
@@ -81,22 +81,22 @@ Theme_Customizer::add_settings(
 				'allowGradient' => true,
 			),
 		),
-		'buttons_border_colors' => array(
+		'buttons_secondary_border_colors' => array(
 			'control_type' => 'kadence_color_control',
-			'section'      => 'general_buttons',
+			'section'      => 'secondary_button',
 			'label'        => esc_html__( 'Border Colors', 'kadence' ),
-			'default'      => kadence()->default( 'buttons_border' ),
+			'default'      => kadence()->default( 'buttons_secondary_border' ),
 			'live_method'     => array(
 				array(
 					'type'     => 'css',
-					'selector' => 'button, .button, .wp-block-button__link, input[type="button"], input[type="reset"], input[type="submit"]',
+					'selector' => '.button.button-style-secondary',
 					'property' => 'border-color',
 					'pattern'  => '$',
 					'key'      => 'color',
 				),
 				array(
 					'type'     => 'css',
-					'selector' => 'button:hover, .button:hover, .wp-block-button__link:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover',
+					'selector' => '.button.button-style-secondary:hover',
 					'property' => 'border-color',
 					'pattern'  => '$',
 					'key'      => 'hover',
@@ -115,15 +115,15 @@ Theme_Customizer::add_settings(
 				),
 			),
 		),
-		'buttons_border' => array(
+		'buttons_secondary_border' => array(
 			'control_type' => 'kadence_border_control',
-			'section'      => 'general_buttons',
+			'section'      => 'secondary_button',
 			'label'        => esc_html__( 'Border', 'kadence' ),
-			'default'      => kadence()->default( 'buttons_border' ),
+			'default'      => kadence()->default( 'buttons_secondary_border' ),
 			'live_method'     => array(
 				array(
 					'type'     => 'css_border',
-					'selector' => 'button, .button, .wp-block-button__link, input[type="button"], input[type="reset"], input[type="submit"]',
+					'selector' => '.button.button-style-secondary',
 					'property' => 'border',
 					'pattern'  => '$',
 					'key'      => 'border',
@@ -134,20 +134,20 @@ Theme_Customizer::add_settings(
 				'color'      => false,
 			),
 		),
-		'buttons_border_radius' => array(
+		'buttons_secondary_border_radius' => array(
 			'control_type' => 'kadence_range_control',
-			'section'      => 'general_buttons',
+			'section'      => 'secondary_button',
 			'label'        => esc_html__( 'Border Radius', 'kadence' ),
 			'live_method'     => array(
 				array(
 					'type'     => 'css',
-					'selector' => 'button, .button, .wp-block-button__link, input[type="button"], input[type="reset"], input[type="submit"]',
+					'selector' => '.button.button-style-secondary',
 					'property' => 'border-radius',
 					'pattern'  => '$',
 					'key'      => 'size',
 				),
 			),
-			'default'      => kadence()->default( 'buttons_border_radius' ),
+			'default'      => kadence()->default( 'buttons_secondary_border_radius' ),
 			'input_attrs'  => array(
 				'min'        => array(
 					'px'  => 0,
@@ -171,15 +171,15 @@ Theme_Customizer::add_settings(
 				'responsive' => true,
 			),
 		),
-		'buttons_typography' => array(
+		'buttons_secondary_typography' => array(
 			'control_type' => 'kadence_typography_control',
-			'section'      => 'general_buttons',
+			'section'      => 'secondary_button',
 			'label'        => esc_html__( 'Font', 'kadence' ),
-			'default'      => kadence()->default( 'buttons_typography' ),
+			'default'      => kadence()->default( 'buttons_secondary_typography' ),
 			'live_method'     => array(
 				array(
 					'type'     => 'css_typography',
-					'selector' => 'button, .button, .wp-block-button__link, input[type="button"], input[type="reset"], input[type="submit"]',
+					'selector' => '.button.button-style-secondary',
 					'pattern'  => array(
 						'desktop' => '$',
 						'tablet'  => '$',
@@ -190,20 +190,20 @@ Theme_Customizer::add_settings(
 				),
 			),
 			'input_attrs'  => array(
-				'id' => 'buttons_typography',
+				'id' => 'buttons_secondary_typography',
 				'options' => 'no-color',
 			),
 		),
-		'buttons_padding' => array(
+		'buttons_secondary_padding' => array(
 			'control_type' => 'kadence_measure_control',
-			'section'      => 'general_buttons',
+			'section'      => 'secondary_button',
 			'priority'     => 10,
-			'default'      => kadence()->default( 'buttons_padding' ),
+			'default'      => kadence()->default( 'buttons_secondary_padding' ),
 			'label'        => esc_html__( 'Padding', 'kadence' ),
 			'live_method'     => array(
 				array(
 					'type'     => 'css',
-					'selector' => 'button, .button, .wp-block-button__link, input[type="button"], input[type="reset"], input[type="submit"]',
+					'selector' => '.button.button-style-secondary',
 					'property' => 'padding',
 					'pattern'  => '$',
 					'key'      => 'measure',
@@ -213,37 +213,37 @@ Theme_Customizer::add_settings(
 				'responsive' => true,
 			),
 		),
-		'buttons_shadow' => array(
+		'buttons_secondary_shadow' => array(
 			'control_type' => 'kadence_shadow_control',
-			'section'      => 'general_buttons',
+			'section'      => 'secondary_button',
 			'priority'     => 20,
 			'label'        => esc_html__( 'Button Shadow', 'kadence' ),
 			'live_method'     => array(
 				array(
 					'type'     => 'css_boxshadow',
-					'selector' => 'button, .button, .wp-block-button__link, input[type="button"], input[type="reset"], input[type="submit"]',
+					'selector' => '.button.button-style-secondary',
 					'property' => 'box-shadow',
 					'pattern'  => '$',
 					'key'      => '',
 				),
 			),
-			'default'      => kadence()->default( 'buttons_shadow' ),
+			'default'      => kadence()->default( 'buttons_secondary_shadow' ),
 		),
-		'buttons_shadow_hover' => array(
+		'buttons_secondary_shadow_hover' => array(
 			'control_type' => 'kadence_shadow_control',
-			'section'      => 'general_buttons',
+			'section'      => 'secondary_button',
 			'priority'     => 20,
 			'label'        => esc_html__( 'Button Hover State Shadow', 'kadence' ),
 			'live_method'     => array(
 				array(
 					'type'     => 'css_boxshadow',
-					'selector' => 'button:hover, .button:hover, .wp-block-button__link:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover',
+					'selector' => '.button.button-style-secondary:hover',
 					'property' => 'box-shadow',
 					'pattern'  => '$',
 					'key'      => '',
 				),
 			),
-			'default'      => kadence()->default( 'buttons_shadow_hover' ),
+			'default'      => kadence()->default( 'buttons_secondary_shadow_hover' ),
 		),
 	)
 );

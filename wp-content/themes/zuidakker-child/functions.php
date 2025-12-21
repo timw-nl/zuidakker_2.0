@@ -19,3 +19,6 @@ require_once get_stylesheet_directory() . '/inc/sitemap-shortcode.php';
 require_once get_stylesheet_directory() . '/inc/contact-form.php';
 require_once get_stylesheet_directory() . '/inc/contact-map.php';
 require_once get_stylesheet_directory() . '/inc/social-links.php';
+require_once get_stylesheet_directory() . '/inc/updates-section.php';
+require_once get_stylesheet_directory() . '/inc/updates-admin-page.php';
+require_once get_stylesheet_directory() . '/inc/single-post-styles.php';

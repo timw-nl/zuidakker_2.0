@@ -304,13 +304,34 @@ class Component implements Component_Interface {
 		$css->add_property( '--global-palette7', kadence()->palette_option( 'palette7' ) );
 		$css->add_property( '--global-palette8', kadence()->palette_option( 'palette8' ) );
 		$css->add_property( '--global-palette9', kadence()->palette_option( 'palette9' ) );
+		$css->add_property( '--global-palette10', kadence()->palette_option( 'palette10' ) );
+		$css->add_property( '--global-palette11', kadence()->palette_option( 'palette11' ) );
+		$css->add_property( '--global-palette12', kadence()->palette_option( 'palette12' ) );
+		$css->add_property( '--global-palette13', kadence()->palette_option( 'palette13' ) );
+		$css->add_property( '--global-palette14', kadence()->palette_option( 'palette14' ) );
+		$css->add_property( '--global-palette15', kadence()->palette_option( 'palette15' ) );
 		$css->add_property( '--global-palette-highlight', $css->render_color( kadence()->sub_option( 'link_color', 'highlight' ) ) );
 		$css->add_property( '--global-palette-highlight-alt', $css->render_color( kadence()->sub_option( 'link_color', 'highlight-alt' ) ) );
 		$css->add_property( '--global-palette-highlight-alt2', $css->render_color( kadence()->sub_option( 'link_color', 'highlight-alt2' ) ) );
+
+		// Button.
 		$css->add_property( '--global-palette-btn-bg', $css->render_color_or_gradient( kadence()->sub_option( 'buttons_background', 'color' ) ) );
 		$css->add_property( '--global-palette-btn-bg-hover', $css->render_color_or_gradient( kadence()->sub_option( 'buttons_background', 'hover' ) ) );
 		$css->add_property( '--global-palette-btn', $css->render_color( kadence()->sub_option( 'buttons_color', 'color' ) ) );
 		$css->add_property( '--global-palette-btn-hover', $css->render_color( kadence()->sub_option( 'buttons_color', 'hover' ) ) );
+
+		// Button Secondary.
+		$css->add_property( '--global-palette-btn-sec-bg', $css->render_color_or_gradient( kadence()->sub_option( 'buttons_secondary_background', 'color' ) ) );
+		$css->add_property( '--global-palette-btn-sec-bg-hover', $css->render_color_or_gradient( kadence()->sub_option( 'buttons_secondary_background', 'hover' ) ) );
+		$css->add_property( '--global-palette-btn-sec', $css->render_color( kadence()->sub_option( 'buttons_secondary_color', 'color' ) ) );
+		$css->add_property( '--global-palette-btn-sec-hover', $css->render_color( kadence()->sub_option( 'buttons_secondary_color', 'hover' ) ) );
+
+		// Button Outline.
+		$css->add_property( '--global-palette-btn-out-bg', $css->render_color_or_gradient( kadence()->sub_option( 'buttons_outline_background', 'color' ) ) );
+		$css->add_property( '--global-palette-btn-out-bg-hover', $css->render_color_or_gradient( kadence()->sub_option( 'buttons_outline_background', 'hover' ) ) );
+		$css->add_property( '--global-palette-btn-out', $css->render_color( kadence()->sub_option( 'buttons_outline_color', 'color' ) ) );
+		$css->add_property( '--global-palette-btn-out-hover', $css->render_color( kadence()->sub_option( 'buttons_outline_color', 'hover' ) ) );
+
 		$css->add_property( '--global-body-font-family', $css->render_font_family( kadence()->option( 'base_font' ), '' ) );
 		$css->add_property( '--global-heading-font-family', $css->render_font_family( kadence()->option( 'heading_font' ) ) );
 		$css->add_property( '--global-fallback-font', apply_filters( 'kadence_theme_global_typography_fallback', 'sans-serif' ) );
@@ -343,6 +364,12 @@ class Component implements Component_Interface {
 		$css->add_property( '--global-palette7', kadence()->palette_option( 'palette7' ) );
 		$css->add_property( '--global-palette8', kadence()->palette_option( 'palette8' ) );
 		$css->add_property( '--global-palette9', kadence()->palette_option( 'palette9' ) );
+		$css->add_property( '--global-palette10', kadence()->palette_option( 'palette10' ) );
+		$css->add_property( '--global-palette11', kadence()->palette_option( 'palette11' ) );
+		$css->add_property( '--global-palette12', kadence()->palette_option( 'palette12' ) );
+		$css->add_property( '--global-palette13', kadence()->palette_option( 'palette13' ) );
+		$css->add_property( '--global-palette14', kadence()->palette_option( 'palette14' ) );
+		$css->add_property( '--global-palette15', kadence()->palette_option( 'palette15' ) );
 		$css->add_property( '--global-palette-highlight', $css->render_color( kadence()->sub_option( 'link_color', 'highlight' ) ) );
 		$css->add_property( '--global-palette-highlight-alt', $css->render_color( kadence()->sub_option( 'link_color', 'highlight-alt' ) ) );
 		$css->add_property( '--global-palette-highlight-alt2', $css->render_color( kadence()->sub_option( 'link_color', 'highlight-alt2' ) ) );

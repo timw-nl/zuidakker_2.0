@@ -1,6 +1,6 @@
 <?php
 /**
- * Primary Button Options
+ * Outline Button Options
  *
  * @package Kadence
  */
@@ -12,22 +12,22 @@ use function Kadence\kadence;
 
 Theme_Customizer::add_settings(
 	array(
-		'buttons_color' => array(
+		'buttons_outline_color' => array(
 			'control_type' => 'kadence_color_control',
-			'section'      => 'general_buttons',
+			'section'      => 'outline_button',
 			'label'        => esc_html__( 'Text Colors', 'kadence' ),
-			'default'      => kadence()->default( 'buttons_color' ),
+			'default'      => kadence()->default( 'buttons_outline_color' ),
 			'live_method'     => array(
 				array(
-					'type'     => 'global',
-					'selector' => '--global-palette-btn',
+					'type'     => 'css',
+					'selector' => '.button.button-style-outline:not(.has-text-color), .button.kb-btn-global-outline',
 					'property' => 'color',
 					'pattern'  => '$',
 					'key'      => 'color',
 				),
 				array(
-					'type'     => 'global',
-					'selector' => '--global-palette-btn-hover',
+					'type'     => 'css',
+					'selector' => '.button.button-style-outline:not(.has-text-color):hover, .button.kb-btn-global-outline:hover',
 					'property' => 'color',
 					'pattern'  => '$',
 					'key'      => 'hover',
@@ -46,57 +46,22 @@ Theme_Customizer::add_settings(
 				),
 			),
 		),
-		'buttons_background' => array(
+		'buttons_outline_border_colors' => array(
 			'control_type' => 'kadence_color_control',
-			'section'      => 'general_buttons',
-			'label'        => esc_html__( 'Background Colors', 'kadence' ),
-			'default'      => kadence()->default( 'buttons_background' ),
-			'live_method'     => array(
-				array(
-					'type'     => 'global',
-					'selector' => '--global-palette-btn-bg',
-					'property' => 'background',
-					'pattern'  => '$',
-					'key'      => 'color',
-				),
-				array(
-					'type'     => 'global',
-					'selector' => '--global-palette-btn-bg-hover',
-					'property' => 'background',
-					'pattern'  => '$',
-					'key'      => 'hover',
-				),
-			),
-			'input_attrs'  => array(
-				'colors' => array(
-					'color' => array(
-						'tooltip' => __( 'Initial Color', 'kadence' ),
-						'palette' => true,
-					),
-					'hover' => array(
-						'tooltip' => __( 'Hover Color', 'kadence' ),
-						'palette' => true,
-					),
-				),
-				'allowGradient' => true,
-			),
-		),
-		'buttons_border_colors' => array(
-			'control_type' => 'kadence_color_control',
-			'section'      => 'general_buttons',
+			'section'      => 'outline_button',
 			'label'        => esc_html__( 'Border Colors', 'kadence' ),
-			'default'      => kadence()->default( 'buttons_border' ),
+			'default'      => kadence()->default( 'buttons_outline_border' ),
 			'live_method'     => array(
 				array(
 					'type'     => 'css',
-					'selector' => 'button, .button, .wp-block-button__link, input[type="button"], input[type="reset"], input[type="submit"]',
+					'selector' => '.button.button-style-outline, .button.kb-btn-global-outline',
 					'property' => 'border-color',
 					'pattern'  => '$',
 					'key'      => 'color',
 				),
 				array(
 					'type'     => 'css',
-					'selector' => 'button:hover, .button:hover, .wp-block-button__link:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover',
+					'selector' => '.button.button-style-outline:hover, .button.kb-btn-global-outline:hover',
 					'property' => 'border-color',
 					'pattern'  => '$',
 					'key'      => 'hover',
@@ -115,15 +80,15 @@ Theme_Customizer::add_settings(
 				),
 			),
 		),
-		'buttons_border' => array(
+		'buttons_outline_border' => array(
 			'control_type' => 'kadence_border_control',
-			'section'      => 'general_buttons',
+			'section'      => 'outline_button',
 			'label'        => esc_html__( 'Border', 'kadence' ),
-			'default'      => kadence()->default( 'buttons_border' ),
+			'default'      => kadence()->default( 'buttons_outline_border' ),
 			'live_method'     => array(
 				array(
 					'type'     => 'css_border',
-					'selector' => 'button, .button, .wp-block-button__link, input[type="button"], input[type="reset"], input[type="submit"]',
+					'selector' => '.button.button-style-outline, .button.kb-btn-global-outline',
 					'property' => 'border',
 					'pattern'  => '$',
 					'key'      => 'border',
@@ -134,20 +99,20 @@ Theme_Customizer::add_settings(
 				'color'      => false,
 			),
 		),
-		'buttons_border_radius' => array(
+		'buttons_outline_border_radius' => array(
 			'control_type' => 'kadence_range_control',
-			'section'      => 'general_buttons',
+			'section'      => 'outline_button',
 			'label'        => esc_html__( 'Border Radius', 'kadence' ),
 			'live_method'     => array(
 				array(
 					'type'     => 'css',
-					'selector' => 'button, .button, .wp-block-button__link, input[type="button"], input[type="reset"], input[type="submit"]',
+					'selector' => '.button.button-style-outline, .button.kb-btn-global-outline',
 					'property' => 'border-radius',
 					'pattern'  => '$',
 					'key'      => 'size',
 				),
 			),
-			'default'      => kadence()->default( 'buttons_border_radius' ),
+			'default'      => kadence()->default( 'buttons_outline_border_radius' ),
 			'input_attrs'  => array(
 				'min'        => array(
 					'px'  => 0,
@@ -171,15 +136,15 @@ Theme_Customizer::add_settings(
 				'responsive' => true,
 			),
 		),
-		'buttons_typography' => array(
+		'buttons_outline_typography' => array(
 			'control_type' => 'kadence_typography_control',
-			'section'      => 'general_buttons',
+			'section'      => 'outline_button',
 			'label'        => esc_html__( 'Font', 'kadence' ),
-			'default'      => kadence()->default( 'buttons_typography' ),
+			'default'      => kadence()->default( 'buttons_outline_typography' ),
 			'live_method'     => array(
 				array(
 					'type'     => 'css_typography',
-					'selector' => 'button, .button, .wp-block-button__link, input[type="button"], input[type="reset"], input[type="submit"]',
+					'selector' => '.button.button-style-outline, .button.kb-btn-global-outline',
 					'pattern'  => array(
 						'desktop' => '$',
 						'tablet'  => '$',
@@ -190,20 +155,20 @@ Theme_Customizer::add_settings(
 				),
 			),
 			'input_attrs'  => array(
-				'id' => 'buttons_typography',
+				'id' => 'buttons_outline_typography',
 				'options' => 'no-color',
 			),
 		),
-		'buttons_padding' => array(
+		'buttons_outline_padding' => array(
 			'control_type' => 'kadence_measure_control',
-			'section'      => 'general_buttons',
+			'section'      => 'outline_button',
 			'priority'     => 10,
-			'default'      => kadence()->default( 'buttons_padding' ),
+			'default'      => kadence()->default( 'buttons_outline_padding' ),
 			'label'        => esc_html__( 'Padding', 'kadence' ),
 			'live_method'     => array(
 				array(
 					'type'     => 'css',
-					'selector' => 'button, .button, .wp-block-button__link, input[type="button"], input[type="reset"], input[type="submit"]',
+					'selector' => '.button.button-style-outline, .button.kb-btn-global-outline',
 					'property' => 'padding',
 					'pattern'  => '$',
 					'key'      => 'measure',
@@ -213,37 +178,38 @@ Theme_Customizer::add_settings(
 				'responsive' => true,
 			),
 		),
-		'buttons_shadow' => array(
+		'buttons_outline_shadow' => array(
 			'control_type' => 'kadence_shadow_control',
-			'section'      => 'general_buttons',
+			'section'      => 'outline_button',
 			'priority'     => 20,
 			'label'        => esc_html__( 'Button Shadow', 'kadence' ),
 			'live_method'     => array(
 				array(
 					'type'     => 'css_boxshadow',
-					'selector' => 'button, .button, .wp-block-button__link, input[type="button"], input[type="reset"], input[type="submit"]',
+					'selector' => '.button.button-style-outline, .button.kb-btn-global-outline',
 					'property' => 'box-shadow',
 					'pattern'  => '$',
 					'key'      => '',
 				),
 			),
-			'default'      => kadence()->default( 'buttons_shadow' ),
+			'default'      => kadence()->default( 'buttons_outline_shadow' ),
 		),
-		'buttons_shadow_hover' => array(
+		'buttons_outline_shadow_hover' => array(
 			'control_type' => 'kadence_shadow_control',
-			'section'      => 'general_buttons',
+			'section'      => 'outline_button',
 			'priority'     => 20,
 			'label'        => esc_html__( 'Button Hover State Shadow', 'kadence' ),
 			'live_method'     => array(
 				array(
 					'type'     => 'css_boxshadow',
-					'selector' => 'button:hover, .button:hover, .wp-block-button__link:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover',
+					'selector' => '.button.button-style-outline:hover, .button.kb-btn-global-outline:hover',
 					'property' => 'box-shadow',
 					'pattern'  => '$',
 					'key'      => '',
 				),
 			),
-			'default'      => kadence()->default( 'buttons_shadow_hover' ),
+			'default'      => kadence()->default( 'buttons_outline_shadow_hover' ),
 		),
 	)
 );
+

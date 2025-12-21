@@ -1,3 +1,22 @@
+= 1.4.2 | 18th November 2025
+* Fix: Optimized group block removed the wide-width and full width layout options
+* Fix: Syntax error reported in theme.json
+* Fix: Button (Adv) outline style text color settings not working when visited
+
+= 1.4.1 | 13th November 2025
+* Fix: issue with visited outline buttons in kadence blocks
+* Fix: Issue with some mega menu dropdown backgrounds
+* Fix: Issue with color palette importer/exporter
+* Update: New named format for color palette importer/exporter in the customizer (still supports old format)
+
+= 1.4.0 | 6th November 2025
+* Add: Customizer Style Guide
+* Add: Extended color palette
+* Add: Font clamp styles
+* Add: Secondary and outline button style controls
+* Add: Ability to add custom classes to pages
+* Add: Ability to set body class per page.
+
 = 1.3.6 | 25th September 2025
 * Fix: Ignore comment replies when scrolling to id.
 * Fix: Some social links did not have fields in the customizer.

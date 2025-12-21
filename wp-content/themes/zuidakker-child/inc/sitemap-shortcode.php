@@ -78,15 +78,6 @@ function zuidakker_sitemap_tree_shortcode() {
             </div>
         <?php endif; ?>
         
-        <?php if ( ! empty( $other_pages ) ) : ?>
-            <div class="sitemap-group">
-                <h3 class="sitemap-group-title">📑 Overige Pagina's</h3>
-                <ul class="sitemap-list">
-                    <?php zuidakker_display_grouped_pages( $other_pages, array() ); ?>
-                </ul>
-            </div>
-        <?php endif; ?>
-        
     </div>
     
     <style>
@@ -102,18 +93,18 @@ function zuidakker_sitemap_tree_shortcode() {
     }
     
     .sitemap-group {
-        background: var(--pillar-sitemap-secondary, #4a7c59);
-        border-radius: var(--radius-xl, 1rem);
+        background: rgba(74, 124, 89, 0.15);
+        border-radius: 2rem;
         padding: var(--space-xl, 2rem);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(74, 124, 89, 0.2);
         transition: all var(--transition-base, 250ms);
     }
     
     .sitemap-group:hover {
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
         transform: translateY(-2px);
-        background: var(--pillar-sitemap-light, #5a9668);
+        background: rgba(74, 124, 89, 0.2);
     }
     
     .sitemap-group-title {
@@ -201,27 +192,27 @@ function zuidakker_sitemap_tree_shortcode() {
     }
     
     .sitemap-list .pillar-tuinen a {
-        color: var(--pillar-tuinen-secondary);
+        color: #ffffff;
         font-weight: 600;
     }
     
     .sitemap-list .pillar-geschiedenis a {
-        color: var(--pillar-geschiedenis-secondary);
+        color: #ffffff;
         font-weight: 600;
     }
     
     .sitemap-list .pillar-ontmoeting a {
-        color: var(--pillar-ontmoeting-secondary);
+        color: #ffffff;
         font-weight: 600;
     }
     
     .sitemap-list .pillar-educatie a {
-        color: var(--pillar-educatie-secondary);
+        color: #ffffff;
         font-weight: 600;
     }
     
     .sitemap-list .pillar-verblijf a {
-        color: var(--pillar-verblijf-secondary);
+        color: #ffffff;
         font-weight: 600;
     }
     
